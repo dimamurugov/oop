@@ -1,0 +1,6 @@
+var x
+let x=42
+print x
+let y=8
+print y
+fn XPlusY=x+y

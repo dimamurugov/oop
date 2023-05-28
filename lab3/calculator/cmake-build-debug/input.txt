@@ -1,0 +1,7 @@
+var x
+let x=42
+let y=x
+fn XPlusY=x+y
+print XPlusY
+let x=10
+printvars
