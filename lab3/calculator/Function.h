@@ -20,8 +20,8 @@ public:
     );
     double getValue(double firstArgument, double secondArgument);
     void CalculateExpression(double firstArgument, double secondArgument);
-    const std::string& m_firstArgument;
-    const std::string& m_secondArgument;
+    const std::string m_firstArgument;
+    const std::string m_secondArgument;
 private:
     std::optional<Operator> m_functionOperator;
     Calculator m_calculator;

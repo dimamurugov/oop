@@ -1,7 +1,11 @@
-var x
-let x=42
-let y=x
-fn XPlusY=x+y
-print XPlusY
-let x=10
+var radius
+let pi=3.14159265
+fn radiusSquared=radius*radius
+fn circleArea=pi*radiusSquared
+let radius=10
+print circleArea
+let circle10Area=circleArea
+let radius=20
+let circle20Area=circleArea
+printfns
 printvars

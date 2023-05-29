@@ -45,6 +45,7 @@ public:
     static std::optional<Command> GetCommand(const std::string& line);
     static std::optional<Operator> GetOperator(char symbol);
     void PrintVars();
+    void PrintFns();
     double getValue(const std::string &identifier);
     void Print(const std::string& identifier);
     void ReadFile(const std::string &filePath);

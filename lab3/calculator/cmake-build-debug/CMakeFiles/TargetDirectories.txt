@@ -1,3 +1,3 @@
-C:/Users/dmitriy.murugov/Documents/OOP/myRepo/calculator_4/calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/dmitriy.murugov/Documents/OOP/myRepo/calculator_4/calculator/cmake-build-debug/CMakeFiles/Calculator.dir
-C:/Users/dmitriy.murugov/Documents/OOP/myRepo/calculator_4/calculator/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab3/calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab3/calculator/cmake-build-debug/CMakeFiles/Calculator.dir
+C:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab3/calculator/cmake-build-debug/CMakeFiles/edit_cache.dir

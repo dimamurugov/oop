@@ -92,9 +92,9 @@ void CalculatorController::LineExecution(const std::string &line) {
         case Command::PRINT_VARS:
             PrintVars();
             break;
-//        case Command::PRINT_FNS:
-//            Print(elements.identifier.value());
-//            break;
+        case Command::PRINT_FNS:
+            PrintFns();
+            break;
         case Command::FN:
             InitFunction(elements.identifier.value(), elements.value.value());
             break;
@@ -146,8 +146,6 @@ void CalculatorController::AssignValue(const std::string &identifier, const std:
 
 void CalculatorController::InitFunction(const std::string &identifier, const std::string &value) {
     // проверка что такой функции ещё нету
-
-//    FunctionElements functionElements;
     std::string stringCommand;
     std::string firstArgument;
     std::string secondArgument;
@@ -172,51 +170,20 @@ void CalculatorController::InitFunction(const std::string &identifier, const std
         secondArgument = stringCommand;
     }
 
-    AddFunction(identifier, new Function(
-            m_calculator,
-            functionOperator,
-            firstArgument,
-            secondArgument,
-            std::numeric_limits<double>::quiet_NaN()
-    ));
+    if (!functionOperator.has_value())
+    {
+        AddVariables(identifier, getValue(secondArgument));
+    } else {
+        AddFunction(identifier, new Function(
+                m_calculator,
+                functionOperator,
+                firstArgument,
+                secondArgument,
+                std::numeric_limits<double>::quiet_NaN()
+        ));
+    }
 
-//    auto firstValue = m_storage.getValue(functionElements.firstArgument);
-//    auto secondValue = m_storage.getValue(functionElements.secondArgument);
-//    functionElements.value = std::numeric_limits<double>::quiet_NaN();
-
-//    if (functionElements.functionOperator.has_value()) {
-//        functionElements.value = CalculateExpression(functionElements.functionOperator.value(), firstValue, secondValue);
-//    }
-
-//    m_functions[identifier] = functionElements;
-//    std::cout << "Foo: " << m_functions[identifier].value.value() << std::endl;
 }
-
-//std::optional<double> CalculatorController::GetValue(const std::string &identifier) {
-//    if (m_variables.count(identifier)) {
-//        return m_variables[identifier];
-//    }
-//
-//    if (m_functions.count(identifier)) {
-//        return m_functions[identifier].value;
-//    }
-//
-//    return std::nullopt;
-//}
-
-//double CalculatorController::CalculateExpression(Operator operatorSign, double firstOperator, double secondOperator) {
-//    switch (operatorSign) {
-//        case Operator::ADDITION:
-//            return Calculator::Addition(firstOperator, secondOperator);
-//        case Operator::DIVISION:
-//            return Calculator::Division(firstOperator, secondOperator);
-//        case Operator::MULTIPLICATION:
-//            return Calculator::Multiplication(firstOperator, secondOperator);
-//        case Operator::SUBTRACTION:
-//            return Calculator::Subtraction(firstOperator, secondOperator);
-//    }
-//    return std::numeric_limits<double>::quiet_NaN();
-//}
 
 void CalculatorController::PrintVars() {
     for(auto iter{m_variables.begin()}; iter != m_variables.end(); iter++)
@@ -242,15 +209,18 @@ double CalculatorController::getValue(const std::string &identifier) {
     return std::numeric_limits<double>::quiet_NaN();
 }
 
-void CalculatorController::AddFunction(std::string identifier, Function *function) {
+void CalculatorController::AddFunction(std::string identifier, Function* function) {
     m_functions[identifier] = function;
 }
 
-//void CalculatorController::PrintFns() {
-//    for(auto iter{m_functions.begin()}; iter != m_functions.end(); iter++)
-//    {
-//        std::cout << iter->first << ": " << iter->second.value.value() << std::endl;
-//    }
-//}
+void CalculatorController::PrintFns() {
+    for(auto iter{m_functions.begin()}; iter != m_functions.end(); iter++)
+    {
+        double firstArgument = getValue(iter->second->m_firstArgument);
+        double secondArgument = getValue(iter->second->m_secondArgument);
+
+        std::cout << iter->first << ": " << iter->second->getValue(firstArgument, secondArgument) << std::endl;
+    }
+}
 
 

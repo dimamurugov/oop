@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Function.h"
 
 Function::Function(
@@ -20,14 +21,14 @@ void Function::CalculateExpression(double firstArgument, double secondArgument) 
             case Operator::ADDITION:
                 m_value = Calculator::Addition(firstArgument, secondArgument);
                 break;
+            case Operator::SUBTRACTION:
+                m_value = Calculator::Subtraction(firstArgument, secondArgument);
+                break;
             case Operator::DIVISION:
                 m_value = Calculator::Division(firstArgument, secondArgument);
                 break;
             case Operator::MULTIPLICATION:
                 m_value = Calculator::Multiplication(firstArgument, secondArgument);
-                break;
-            case Operator::SUBTRACTION:
-                m_value = Calculator::Subtraction(firstArgument, secondArgument);
                 break;
         }
     }
@@ -35,20 +36,8 @@ void Function::CalculateExpression(double firstArgument, double secondArgument) 
 
 double Function::getValue(double firstArgument, double secondArgument) {
     Function::CalculateExpression(firstArgument, secondArgument);
+//    double temp = 200;
+//    std::cout << temp.precision(2) << std::endl;
     return m_value;
 }
-
-//std::optional<double> Function::CalculateExpression(Operator operatorSign, double firstOperator, double secondOperator) {
-//    switch (operatorSign) {
-//        case Operator::ADDITION:
-//            return Calculator::Addition(firstOperator, secondOperator);
-//        case Operator::DIVISION:
-//            return Calculator::Division(firstOperator, secondOperator);
-//        case Operator::MULTIPLICATION:
-//            return Calculator::Multiplication(firstOperator, secondOperator);
-//        case Operator::SUBTRACTION:
-//            return Calculator::Subtraction(firstOperator, secondOperator);
-//    }
-//    return std::nullopt;
-//}
 

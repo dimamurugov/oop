@@ -10,18 +10,11 @@ enum class Operator
     DIVISION
 };
 
-struct FunctionElements {
-    std::string firstArgument;
-    std::string secondArgument;
-    std::optional<Operator> functionOperator;
-    double value;
-};
-
 namespace {
     const std::map<char, Operator> operators = {
             { '+', Operator::ADDITION },
-            { '-', Operator::DIVISION },
+            { '-', Operator::SUBTRACTION },
             { '*', Operator::MULTIPLICATION },
-            { '/', Operator::SUBTRACTION },
+            { '/', Operator::DIVISION },
     };
 }

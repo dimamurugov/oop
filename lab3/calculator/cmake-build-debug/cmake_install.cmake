@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/dmitriy.murugov/Documents/OOP/myRepo/calculator_4/calculator
+# Install script for directory: C:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab3/calculator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/dmitriy.murugov/Documents/OOP/myRepo/calculator_4/calculator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab3/calculator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

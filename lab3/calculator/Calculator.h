@@ -12,5 +12,4 @@ public:
     static double Division(double firstOperator, double secondOperator);
 };
 
-
 #endif //CALCULATOR_CALCULATOR_H
