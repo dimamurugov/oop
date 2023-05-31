@@ -11,7 +11,7 @@ double Calculator::Subtraction(double firstOperator, double secondOperator) {
 }
 
 double Calculator::Division(double firstOperator, double secondOperator) {
-    if (firstOperator != 0) {
+    if (secondOperator != 0) {
         return firstOperator / secondOperator;
     }
 

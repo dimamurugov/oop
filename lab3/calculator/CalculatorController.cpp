@@ -26,6 +26,10 @@ std::optional<Operator> CalculatorController::GetOperator(char symbol)
     return std::nullopt;
 }
 
+bool CalculatorController::CheckBusyIdentifier(const std::string &identifier) {
+    return getValue(identifier) != std::numeric_limits<double>::quiet_NaN();
+}
+
 void CalculatorController::ReadFile(const std::string &filePath) {
     std::ifstream inputFile(filePath);
     if (!inputFile.is_open())
@@ -104,7 +108,12 @@ void CalculatorController::LineExecution(const std::string &line) {
 }
 
 void CalculatorController::InitVariable(const std::string &identifier) {
-    // добавить проверки на дублирование идентификаторов (для переменных и функций - одновременно)
+    if (!CheckBusyIdentifier(identifier))
+    {
+        std::cout << FUNCTION_ALREADY_EXISTS;
+        return;
+    }
+
     AddVariables(identifier, std::numeric_limits<double>::quiet_NaN());
 }
 
@@ -138,14 +147,19 @@ void CalculatorController::AssignValue(const std::string &identifier, const std:
         AddVariables(identifier, valueVariables);
         return;
     }
-    // проверка что есть такое переменная\функция value
+
     if (getValue(value) != std::numeric_limits<double>::quiet_NaN()) {
         AddVariables(identifier, getValue(value));
     }
 }
 
 void CalculatorController::InitFunction(const std::string &identifier, const std::string &value) {
-    // проверка что такой функции ещё нету
+    if (!CheckBusyIdentifier(identifier))
+    {
+        std::cout << FUNCTION_ALREADY_EXISTS;
+        return;
+    }
+
     std::string stringCommand;
     std::string firstArgument;
     std::string secondArgument;
@@ -172,7 +186,6 @@ void CalculatorController::InitFunction(const std::string &identifier, const std
 
     if (!functionOperator.has_value())
     {
-        // AddVariables(identifier, getValue(secondArgument));
         AddFunction(identifier, new Function(
                 m_calculator,
                 std::nullopt,

@@ -15,10 +15,13 @@ Function::Function(
 {}
 
 void Function::CalculateExpression(double firstArgument, double secondArgument) {
+    std::cout << firstArgument << std::endl;
     if (m_functionOperator.has_value())
     {
+        std::cout << secondArgument << std::endl;
         switch (m_functionOperator.value()) {
             case Operator::ADDITION:
+                std::cout << "test: " << Calculator::Addition(firstArgument, secondArgument) << std::endl;
                 m_value = Calculator::Addition(firstArgument, secondArgument);
                 break;
             case Operator::SUBTRACTION:

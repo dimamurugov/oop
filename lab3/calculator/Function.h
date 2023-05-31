@@ -18,14 +18,14 @@ public:
             std::string secondArgument,
             double value
     );
-    double getValue(double firstArgument, double secondArgument);
     void CalculateExpression(double firstArgument, double secondArgument);
+    double getValue(double firstArgument, double secondArgument);
     const std::string m_firstArgument;
     const std::string m_secondArgument;
+    double m_value;
 private:
     std::optional<Operator> m_functionOperator;
     Calculator m_calculator;
-    double m_value;
 };
 
 
