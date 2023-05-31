@@ -31,13 +31,14 @@ void Function::CalculateExpression(double firstArgument, double secondArgument) 
                 m_value = Calculator::Multiplication(firstArgument, secondArgument);
                 break;
         }
+    } else
+    {
+        m_value = firstArgument;
     }
 }
 
 double Function::getValue(double firstArgument, double secondArgument) {
     Function::CalculateExpression(firstArgument, secondArgument);
-//    double temp = 200;
-//    std::cout << temp.precision(2) << std::endl;
     return m_value;
 }
 

@@ -172,7 +172,14 @@ void CalculatorController::InitFunction(const std::string &identifier, const std
 
     if (!functionOperator.has_value())
     {
-        AddVariables(identifier, getValue(secondArgument));
+        // AddVariables(identifier, getValue(secondArgument));
+        AddFunction(identifier, new Function(
+                m_calculator,
+                std::nullopt,
+                secondArgument,
+                "",
+                std::numeric_limits<double>::quiet_NaN()
+        ));
     } else {
         AddFunction(identifier, new Function(
                 m_calculator,
