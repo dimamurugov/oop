@@ -5,6 +5,8 @@
 #include "../Calculator.h"
 #include "../Function.h"
 #include "../Function.cpp"
+#include "../CalculatorController.h"
+#include "../CalculatorController.cpp"
 
 TEST_CASE("Testing class Calculator")
 {
@@ -165,9 +167,95 @@ TEST_CASE("Testing class Function")
 
 TEST_CASE("Testing class CalculatorController")
 {
-    std::cout << "Function: " << std::endl;
-    SECTION("")
+    std::cout << "Function: GetCommand" << std::endl;
+    SECTION("GetCommand")
     {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetCommand("var") == commands.at("var"));
+    }
 
+    std::cout << "Function: GetCommand" << std::endl;
+    SECTION("GetCommand")
+    {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetCommand("print") == commands.at("print"));
+    }
+
+    std::cout << "Function: GetCommand" << std::endl;
+    SECTION("GetCommand")
+    {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetCommand("let") == commands.at("let"));
+    }
+
+    std::cout << "Function: GetCommand" << std::endl;
+    SECTION("GetCommand")
+    {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetCommand("printvars") == commands.at("printvars"));
+    }
+
+    std::cout << "Function: GetCommand" << std::endl;
+    SECTION("GetCommand")
+    {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetCommand("printfns") == commands.at("printfns"));
+    }
+
+    std::cout << "Function: GetCommand" << std::endl;
+    SECTION("GetCommand")
+    {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetCommand("fn") == commands.at("fn"));
+    }
+
+    std::cout << "Function: GetCommand without command" << std::endl;
+    SECTION("GetCommand")
+    {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetCommand("Diman") == std::nullopt);
+    }
+
+    std::cout << "Function: GetOperator" << std::endl;
+    SECTION("GetOperator")
+    {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetOperator('+') == operators.at('+'));
+    }
+
+    std::cout << "Function: GetOperator" << std::endl;
+    SECTION("GetOperator")
+    {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetOperator('-') == operators.at('-'));
+    }
+
+    std::cout << "Function: GetOperator" << std::endl;
+    SECTION("GetOperator")
+    {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetOperator('*') == operators.at('*'));
+    }
+
+    std::cout << "Function: GetOperator" << std::endl;
+    SECTION("GetOperator")
+    {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetOperator('/') == operators.at('/'));
+    }
+
+    std::cout << "Function: GetOperator" << std::endl;
+    SECTION("GetOperator")
+    {
+        CalculatorController calculatorController;
+        REQUIRE(calculatorController.GetOperator('D') == std::nullopt);
+    }
+
+    std::cout << "Function: getValue" << std::endl;
+    SECTION("getValue")
+    {
+        CalculatorController calculatorController;
+        calculatorController.InitVariable("test_1");
+        REQUIRE(calculatorController.getValue() == std::nullopt);
     }
 }

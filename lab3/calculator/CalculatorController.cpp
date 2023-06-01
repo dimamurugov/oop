@@ -4,6 +4,7 @@
 #include <sstream>
 #include <limits>
 #include <cmath>
+#include <iomanip>
 #include "CalculatorController.h"
 
 CalculatorController::CalculatorController() = default;
@@ -28,6 +29,10 @@ std::optional<Operator> CalculatorController::GetOperator(char symbol)
 
 bool CalculatorController::CheckBusyIdentifier(const std::string &identifier) {
     return getValue(identifier) != std::numeric_limits<double>::quiet_NaN();
+}
+
+bool CalculatorController::CheckNameIdentifier(const std::string &identifier) {
+    return isdigit(identifier[0]);
 }
 
 void CalculatorController::ReadFile(const std::string &filePath) {
@@ -114,6 +119,12 @@ void CalculatorController::InitVariable(const std::string &identifier) {
         return;
     }
 
+    if (CheckNameIdentifier(identifier))
+    {
+        std::cout << NAME_NOT_START_WITH_NUMBER;
+        return;
+    }
+
     AddVariables(identifier, std::numeric_limits<double>::quiet_NaN());
 }
 
@@ -122,12 +133,11 @@ void CalculatorController::AddVariables(const std::string &identifier, double va
 }
 
 void CalculatorController::Print(const std::string &identifier) {
-
     double value = getValue(identifier);
 
     if (value != std::numeric_limits<double>::quiet_NaN())
     {
-        std::cout << value << std::endl;
+        std::cout << std::fixed << std::setprecision(2) << value << std::endl;
     } else {
         std::cout << VARIABLE_NOT_FOUND;
     }
@@ -157,6 +167,12 @@ void CalculatorController::InitFunction(const std::string &identifier, const std
     if (!CheckBusyIdentifier(identifier))
     {
         std::cout << FUNCTION_ALREADY_EXISTS;
+        return;
+    }
+
+    if (CheckNameIdentifier(identifier))
+    {
+        std::cout << NAME_NOT_START_WITH_NUMBER;
         return;
     }
 
@@ -208,7 +224,7 @@ void CalculatorController::InitFunction(const std::string &identifier, const std
 void CalculatorController::PrintVars() {
     for(auto iter{m_variables.begin()}; iter != m_variables.end(); iter++)
     {
-        std::cout << iter->first << ": " << iter->second << std::endl;
+        std::cout << iter->first << ": " << std::fixed << std::setprecision(2) << iter->second << std::endl;
     }
 }
 
@@ -239,7 +255,7 @@ void CalculatorController::PrintFns() {
         double firstArgument = getValue(iter->second->m_firstArgument);
         double secondArgument = getValue(iter->second->m_secondArgument);
 
-        std::cout << iter->first << ": " << iter->second->getValue(firstArgument, secondArgument) << std::endl;
+        std::cout << iter->first << ": " << std::fixed << std::setprecision(2) << iter->second->getValue(firstArgument, secondArgument) << std::endl;
     }
 }
 

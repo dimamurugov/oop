@@ -36,7 +36,8 @@ namespace {
     const std::string FILE_NOT_FOUND = "File not found!\n";
     const std::string COMMOND_NOT_FOUND = "Command not found!\n";
     const std::string VARIABLE_NOT_FOUND = "Variable not found!\n";
-    const std::string FUNCTION_ALREADY_EXISTS = "This feature already exists.!\n";
+    const std::string FUNCTION_ALREADY_EXISTS = "This feature already exists!\n";
+    const std::string NAME_NOT_START_WITH_NUMBER = "The name must not start with a number!\n";
 }
 
 class CalculatorController
@@ -57,6 +58,7 @@ public:
     void InitFunction(const std::string& identifier, const std::string &value);
     void AddFunction(std::string identifier, Function* function);
     bool CheckBusyIdentifier(const std::string &identifier);
+    bool CheckNameIdentifier(const std::string &identifier);
     double CalculateExpression(Operator operatorSign, double firstOperator, double secondOperator);
 
 private:
