@@ -85,12 +85,6 @@ build CMakeFiles/Calculator.dir/Function.cpp.obj: CXX_COMPILER__Calculator_Debug
   OBJECT_DIR = CMakeFiles\Calculator.dir
   OBJECT_FILE_DIR = CMakeFiles\Calculator.dir
 
-build CMakeFiles/Calculator.dir/Storage.cpp.obj: CXX_COMPILER__Calculator_Debug C$:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab3/calculator/Storage.cpp || cmake_object_order_depends_target_Calculator
-  DEP_FILE = CMakeFiles\Calculator.dir\Storage.cpp.obj.d
-  FLAGS = -g -std=gnu++17
-  OBJECT_DIR = CMakeFiles\Calculator.dir
-  OBJECT_FILE_DIR = CMakeFiles\Calculator.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Calculator
@@ -99,7 +93,7 @@ build CMakeFiles/Calculator.dir/Storage.cpp.obj: CXX_COMPILER__Calculator_Debug 
 #############################################
 # Link the executable Calculator.exe
 
-build Calculator.exe: CXX_EXECUTABLE_LINKER__Calculator_Debug CMakeFiles/Calculator.dir/main.cpp.obj CMakeFiles/Calculator.dir/Calculator.cpp.obj CMakeFiles/Calculator.dir/CalculatorController.cpp.obj CMakeFiles/Calculator.dir/Function.cpp.obj CMakeFiles/Calculator.dir/Storage.cpp.obj
+build Calculator.exe: CXX_EXECUTABLE_LINKER__Calculator_Debug CMakeFiles/Calculator.dir/main.cpp.obj CMakeFiles/Calculator.dir/Calculator.cpp.obj CMakeFiles/Calculator.dir/CalculatorController.cpp.obj CMakeFiles/Calculator.dir/Function.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Calculator.dir

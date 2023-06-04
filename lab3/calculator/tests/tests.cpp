@@ -101,7 +101,7 @@ TEST_CASE("Testing class Function")
         double firstArg = 2;
         double secondArg = 2;
         function.CalculateExpression(firstArg, secondArg);
-        REQUIRE(function.m_value == result);
+        REQUIRE(function.getValue(firstArg, secondArg) == result);
     }
 
     std::cout << "Function: CalculateExpression Subtraction" << std::endl;
@@ -121,7 +121,7 @@ TEST_CASE("Testing class Function")
         double secondArg = 2;
         double result = 4;
         function.CalculateExpression(firstArg, secondArg);
-        REQUIRE(function.m_value == result);
+        REQUIRE(function.getValue(firstArg, secondArg) == result);
     }
 
     std::cout << "Function: CalculateExpression DIVISION" << std::endl;
@@ -141,7 +141,7 @@ TEST_CASE("Testing class Function")
         double secondArg = 2;
         double result = 3;
         function.CalculateExpression(firstArg, secondArg);
-        REQUIRE(function.m_value == result);
+        REQUIRE(function.getValue(firstArg, secondArg) == result);
     }
 
     std::cout << "Function: CalculateExpression MULTIPLICATION" << std::endl;
@@ -161,7 +161,7 @@ TEST_CASE("Testing class Function")
         double secondArg = 2;
         double result = 12;
         function.CalculateExpression(firstArg, secondArg);
-        REQUIRE(function.m_value == result);
+        REQUIRE(function.getValue(firstArg, secondArg) == result);
     }
 }
 
@@ -251,11 +251,73 @@ TEST_CASE("Testing class CalculatorController")
         REQUIRE(calculatorController.GetOperator('D') == std::nullopt);
     }
 
-    std::cout << "Function: getValue" << std::endl;
+    std::cout << "Function: getValue " << std::endl;
     SECTION("getValue")
     {
         CalculatorController calculatorController;
-        calculatorController.InitVariable("test_1");
-        REQUIRE(calculatorController.getValue() == std::nullopt);
+        double value = 10;
+        calculatorController.AddVariables("test_1", value);
+        double result = 10;
+        REQUIRE(calculatorController.getValue("test_1") == result);
+    }
+
+    std::cout << "Function: getValue from function" << std::endl;
+    SECTION("getValue")
+    {
+        CalculatorController calculatorController;
+        double value = 10;
+        calculatorController.AddVariables("x", value);
+        calculatorController.AddVariables("y", value);
+        calculatorController.InitFunction("XplusY", "x+y");
+        double result = 20;
+        REQUIRE(calculatorController.getValue("XplusY") == result);
+        double result2 = calculatorController.getValue("XplusssY");
+        REQUIRE(result != result2);
+    }
+
+    std::cout << "Function: AssignValue with var" << std::endl;
+    SECTION("AssignValue")
+    {
+        CalculatorController calculatorController;
+        double value = 10;
+        double value2 = 20;
+        calculatorController.AddVariables("x", value);
+        calculatorController.AddVariables("y", value2);
+        calculatorController.AssignValue("x", "y");
+        double result = 20;
+        REQUIRE(calculatorController.getValue("y") == result);
+    }
+
+    std::cout << "Function: AssignValue without var" << std::endl;
+    SECTION("AssignValue")
+    {
+        CalculatorController calculatorController;
+        calculatorController.AssignValue("x", "20");
+        double result = 20;
+        REQUIRE(calculatorController.getValue("x") == result);
+    }
+
+    std::cout << "Function: InitFunction" << std::endl;
+    SECTION("InitFunction")
+    {
+        CalculatorController calculatorController;
+        double value = 10;
+        double value2 = 20;
+        calculatorController.AddVariables("x", value);
+        calculatorController.AddVariables("y", value2);
+        calculatorController.InitFunction("XPlusY", "x+y");
+        double result = 30;
+        REQUIRE(calculatorController.getValue("XPlusY") == result);
+    }
+
+    std::cout << "Function: InitFunction " << std::endl;
+    SECTION("InitFunction")
+    {
+        CalculatorController calculatorController;
+        double value = 10;
+        calculatorController.AddVariables("x", value);
+        calculatorController.InitFunction("XPlusY", "x");
+        double result = 10;
+        REQUIRE(calculatorController.getValue("XPlusY") == result);
     }
 }

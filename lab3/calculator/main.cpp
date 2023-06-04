@@ -2,13 +2,12 @@
 #include <optional>
 #include "Calculator.h"
 #include "CalculatorController.h"
-#include "Storage.h"
 
 std::optional<std::string> ParseCommandLine(int argc, char* argv[])
 {
     if (argc < 2) {
         return std::nullopt;
-    }
+    }//нужно сделать live режим
 
     if (argv[2] == "") {
         std::cout << "2 argument must not be empty!" << std::endl;
@@ -25,7 +24,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
     Calculator calculator;
-    CalculatorController calculatorController;
+    CalculatorController calculatorController(calculator);
     calculatorController.ReadFile(filePath.value());
 
     return EXIT_SUCCESS;
