@@ -68,39 +68,6 @@ void CalculatorController::LineExecution(const std::string &line) {
         std::cout << COMMAND_NOT_FOUND;
         return;
     }
-
-//    for (char symbol : line) // use regexp
-//    {
-//        if (symbol == DELIMITER)
-//        {
-//            elements.command = GetCommand(stringCommand);
-//            stringCommand = "";\
-//            continue;
-//        }
-//
-//        if ((symbol == '=') && elements.command.has_value()) {
-//            elements.identifier = stringCommand;
-//            stringCommand = "";\
-//            continue;
-//        }
-//
-//        stringCommand.push_back(symbol);
-//    }
-
-//    if (!elements.command.has_value()) {
-//        elements.command = GetCommand(stringCommand);
-//        stringCommand = "";
-//    }
-
-//    if (!elements.identifier.has_value() && !stringCommand.empty())
-//    {
-//        elements.identifier = stringCommand;
-//        stringCommand = "";
-//    }
-//
-//    if (!elements.value.has_value() && !stringCommand.empty()) {
-//        elements.value = stringCommand;
-//    }
 }
 
 void CalculatorController::Print(const std::string &identifier) {
