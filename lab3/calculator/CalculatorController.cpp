@@ -3,6 +3,7 @@
 #include <fstream>
 #include <limits>
 #include <iomanip>
+#include <regex>
 #include "CalculatorController.h"
 
 CalculatorController::CalculatorController(Calculator &calculator) : m_calculator(calculator) {};
@@ -26,8 +27,7 @@ void CalculatorController::ReadFile(const std::string &filePath) {
     }
 
     std::string line;
-    for (; getline(inputFile, line); )//while
-    {
+    while (getline(inputFile, line)) {
         LineExecution(line);
     }
 }
@@ -35,62 +35,72 @@ void CalculatorController::ReadFile(const std::string &filePath) {
 void CalculatorController::LineExecution(const std::string &line) {
     std::string stringCommand;
     ExpressionElements elements = {std::nullopt, std::nullopt, std::nullopt};
+    std::cmatch matched;
+    std::regex regex("(printvars|printfns|var|print|let|fn)($|\\s)(\\w*)(=?)(.*)");
 
-    for (char symbol : line) // use regexp
+    if (regex_match(line.c_str(), matched, regex))
     {
-        if (symbol == DELIMITER)
-        {
-            elements.command = GetCommand(stringCommand);
-            stringCommand = "";\
-            continue;
+        elements.command = GetCommand(matched[1]);
+        elements.identifier = matched[3];
+        elements.value = matched[5];
+
+        switch (elements.command.value()) { // push to map and iterate map
+            case Command::VAR:
+                m_calculator.InitVariable(elements.identifier.value());
+                break;
+            case Command::PRINT:
+                Print(elements.identifier.value());
+                break;
+            case Command::LET:
+                m_calculator.AssignValue(elements.identifier.value(), elements.value.value());
+                break;
+            case Command::PRINT_VARS:
+                PrintVars();
+                break;
+            case Command::PRINT_FNS:
+                PrintFns();
+                break;
+            case Command::FN:
+                m_calculator.InitFunction(elements.identifier.value(), elements.value.value());
+                break;
         }
-
-        if ((symbol == '=') && elements.command.has_value()) {
-            elements.identifier = stringCommand;
-            stringCommand = "";\
-            continue;
-        }
-
-        stringCommand.push_back(symbol);
+    } else {
+        std::cout << COMMAND_NOT_FOUND;
+        return;
     }
 
-    if (!elements.command.has_value()) {
-        elements.command = GetCommand(stringCommand);
-        stringCommand = "";
-    }
+//    for (char symbol : line) // use regexp
+//    {
+//        if (symbol == DELIMITER)
+//        {
+//            elements.command = GetCommand(stringCommand);
+//            stringCommand = "";\
+//            continue;
+//        }
+//
+//        if ((symbol == '=') && elements.command.has_value()) {
+//            elements.identifier = stringCommand;
+//            stringCommand = "";\
+//            continue;
+//        }
+//
+//        stringCommand.push_back(symbol);
+//    }
 
-    if (!elements.identifier.has_value() && !stringCommand.empty())
-    {
-        elements.identifier = stringCommand;
-        stringCommand = "";
-    }
+//    if (!elements.command.has_value()) {
+//        elements.command = GetCommand(stringCommand);
+//        stringCommand = "";
+//    }
 
-    if (!elements.value.has_value() && !stringCommand.empty()) {
-        elements.value = stringCommand;
-    }
-
-    switch (elements.command.value()) { // push to map and iterate map
-        case Command::VAR:
-            m_calculator.InitVariable(elements.identifier.value());
-            break;
-        case Command::PRINT:
-            Print(elements.identifier.value());
-            break;
-        case Command::LET:
-            m_calculator.AssignValue(elements.identifier.value(), elements.value.value());
-            break;
-        case Command::PRINT_VARS:
-            PrintVars();
-            break;
-        case Command::PRINT_FNS:
-            PrintFns();
-            break;
-        case Command::FN:
-            m_calculator.InitFunction(elements.identifier.value(), elements.value.value());
-            break;
-        default:
-            std::cout << COMMAND_NOT_FOUND;// command
-    }
+//    if (!elements.identifier.has_value() && !stringCommand.empty())
+//    {
+//        elements.identifier = stringCommand;
+//        stringCommand = "";
+//    }
+//
+//    if (!elements.value.has_value() && !stringCommand.empty()) {
+//        elements.value = stringCommand;
+//    }
 }
 
 void CalculatorController::Print(const std::string &identifier) {
