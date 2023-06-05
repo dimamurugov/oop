@@ -31,7 +31,7 @@ public:
     void AddVariables(const std::string &identifier, double value);
     void AssignValue(const std::string& identifier, const std::string &value);
     double getValue(const std::string &identifier);
-    double CalculateExpression(double firstArgument, double secondArgument, std::optional<Operator> functionOperator);
+    static double CalculateExpression(double firstArgument, double secondArgument, std::optional<Operator> functionOperator);
     std::map<std::string, double> getVariables();
     std::map<std::string, double> getFunctions();
     bool ValidateIdentifier(const std::string &identifier);
