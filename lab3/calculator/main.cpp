@@ -1,5 +1,6 @@
 #include <iostream>
 #include <optional>
+#include <iterator>
 #include "Calculator.h"
 #include "CalculatorController.h"
 
@@ -7,7 +8,7 @@ std::optional<std::string> ParseCommandLine(int argc, char* argv[])
 {
     if (argc < 2) {
         return std::nullopt;
-    }//нужно сделать live режим
+    }
 
     if (argv[2] == "") {
         std::cout << "2 argument must not be empty!" << std::endl;
@@ -19,13 +20,19 @@ std::optional<std::string> ParseCommandLine(int argc, char* argv[])
 
 int main(int argc, char* argv[]) {
     const std::optional<std::string> filePath = ParseCommandLine(argc, argv);
-    if (!filePath.has_value())
-    {
-        return EXIT_FAILURE;
-    }
     Calculator calculator;
     CalculatorController calculatorController(calculator);
-    calculatorController.ReadFile(filePath.value());
+    if (!filePath.has_value())
+    {
+        std::string str;
+        while (getline(std::cin, str))
+        {
+            calculatorController.LineExecution(str);
+        }
+        return EXIT_SUCCESS;
+    } else {
+        calculatorController.ReadFile(filePath.value());
+    }
 
     return EXIT_SUCCESS;
 }
