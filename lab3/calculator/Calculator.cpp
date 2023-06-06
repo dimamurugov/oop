@@ -173,10 +173,9 @@ double Calculator::CalculateExpression(double firstArgument, double secondArgume
             case Operator::MULTIPLICATION:
                 return Calculator::Multiplication(firstArgument, secondArgument);
         }
-    } else
-    {
-        return secondArgument;
     }
+
+    return secondArgument;
 }
 
 std::map<std::string, double> Calculator::getFunctions() {
