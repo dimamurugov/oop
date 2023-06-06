@@ -31,12 +31,10 @@ void CShapeController::LineExecution(const std::string &line) {
 
 void CShapeController::InitRectangle(const std::string &points, std::string colors) {
     std::cmatch matched;
-    std::regex pattern(R"([\d\.]+)\s([\d\.]+)\s([\d\.]+)\s([\d\.]+)");
+    std::regex pattern(R"(([\d\.]+)\s([\d\.]+)\s([\d\.]+)\s([\d\.]+)\s)"); // ([\d\.]+)\s([\d\.]+)\s([\d\.]+)\s([\d\.]+)
     if (regex_match(points.c_str(), matched, pattern))
     {
-        for (int i = 0; i < matched.size(); ++i) {
-            std::cout << i << ' ' << matched[i] << std::endl;
-        }
+
     }
 }
 
