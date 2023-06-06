@@ -41,4 +41,3 @@ private:
 };
 
 #endif //CALCULATOR_CALCULATOR_H
-// может быть print у calculator и у Controller

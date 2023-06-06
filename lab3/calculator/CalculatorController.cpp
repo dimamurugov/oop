@@ -44,7 +44,8 @@ void CalculatorController::LineExecution(const std::string &line) {
         elements.identifier = matched[3];
         elements.value = matched[5];
 
-        switch (elements.command.value()) { // push to map and iterate map
+        switch (elements.command.value())
+        {
             case Command::VAR:
                 m_calculator.InitVariable(elements.identifier.value());
                 break;
