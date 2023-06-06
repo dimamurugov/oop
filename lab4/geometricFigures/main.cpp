@@ -1,8 +1,13 @@
 #include <iostream>
 #include <iterator>
+#include "CShapeController.h"
 
-int main(int argc, char* argv[]) {
-    std::cout << "Start";
-
+int main() {
+    std::string str;
+    CShapeController controller;
+    while (getline(std::cin, str))
+    {
+        controller.LineExecution(str);
+    }
     return EXIT_SUCCESS;
 }

@@ -1,0 +1,20 @@
+# ninja log v5
+3	75	7077730862660118	CMakeFiles/geometricFigures.dir/CPoint.cpp.obj	a60c2f16c14799b1
+18	235	7077730864260142	CMakeFiles/geometricFigures.dir/ISolidShape.cpp.obj	90b1a77ae24483d1
+11	238	7077730864260142	CMakeFiles/geometricFigures.dir/IShape.cpp.obj	60d242adc8e9e9c
+1	133	7077734645184604	build.ninja	f268bb9b75c86e44
+2	327	7077731774966985	CMakeFiles/geometricFigures.dir/main.cpp.obj	51cdc17e14bad854
+328	431	7077731775992773	geometricFigures.exe	57bd5ae90c542244
+3	293	7077758758162187	CMakeFiles/geometricFigures.dir/main.cpp.obj	51cdc17e14bad854
+12	1747	7077758772670275	CMakeFiles/geometricFigures.dir/CShapeController.cpp.obj	cddba4592a3136d
+1748	2549	7077758780712811	geometricFigures.exe	bda76750dce4f4cb
+2	220	7077759450325111	CMakeFiles/geometricFigures.dir/main.cpp.obj	51cdc17e14bad854
+220	1010	7077759458222658	geometricFigures.exe	bda76750dce4f4cb
+3	1727	7077759880852092	CMakeFiles/geometricFigures.dir/CShapeController.cpp.obj	cddba4592a3136d
+1727	2509	7077759888719368	geometricFigures.exe	bda76750dce4f4cb
+2	234	7077760052145811	CMakeFiles/geometricFigures.dir/main.cpp.obj	51cdc17e14bad854
+235	1031	7077760060128295	geometricFigures.exe	bda76750dce4f4cb
+2	1727	7077760951027223	CMakeFiles/geometricFigures.dir/CShapeController.cpp.obj	cddba4592a3136d
+1727	2507	7077760958866880	geometricFigures.exe	bda76750dce4f4cb
+2	1742	7077770362728049	CMakeFiles/geometricFigures.dir/CShapeController.cpp.obj	cddba4592a3136d
+1742	2537	7077770370727615	geometricFigures.exe	bda76750dce4f4cb

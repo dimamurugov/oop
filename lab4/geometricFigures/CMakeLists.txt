@@ -10,4 +10,4 @@ add_executable(geometricFigures
         IShape.h
         ISolidShape.cpp
         ISolidShape.h
-        main.cpp)
+        main.cpp CShapeController.cpp CShapeController.h)
