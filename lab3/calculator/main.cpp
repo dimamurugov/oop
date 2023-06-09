@@ -22,6 +22,7 @@ int main(int argc, char* argv[]) {
     const std::optional<std::string> filePath = ParseCommandLine(argc, argv);
     Calculator calculator;
     CalculatorController calculatorController(calculator);
+
     if (!filePath.has_value())
     {
         std::string str;
@@ -29,7 +30,6 @@ int main(int argc, char* argv[]) {
         {
             calculatorController.LineExecution(str);
         }
-        return EXIT_SUCCESS;
     } else {
         calculatorController.ReadFile(filePath.value());
     }

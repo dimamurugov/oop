@@ -34,7 +34,22 @@ void CShapeController::InitRectangle(const std::string &points, std::string colo
     std::regex pattern(R"(([\d\.]+)\s([\d\.]+)\s([\d\.]+)\s([\d\.]+)\s)"); // ([\d\.]+)\s([\d\.]+)\s([\d\.]+)\s([\d\.]+)
     if (regex_match(points.c_str(), matched, pattern))
     {
+        std::vector<double> sides;
+        std::CPoint
+//        for (int i = 1; i < matched.size(); ++i) {
+//            std::stringstream ss(matched[i]);
+//            double side;
+//            ss >> side;
+//
+//            if (!ss.eof()) {
+//                std::cout << NOT_NUMBER;
+//                return;
+//            }
+//
+//            sides.push_back(1);
+//        }
 
+        std::cout << "Test!";
     }
 }
 

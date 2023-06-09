@@ -51,31 +51,37 @@ build cmake_object_order_depends_target_geometricFigures: phony || CMakeFiles/ge
 
 build CMakeFiles/geometricFigures.dir/CPoint.cpp.obj: CXX_COMPILER__geometricFigures_Debug C$:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab4/geometricFigures/CPoint.cpp || cmake_object_order_depends_target_geometricFigures
   DEP_FILE = CMakeFiles\geometricFigures.dir\CPoint.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles\geometricFigures.dir
   OBJECT_FILE_DIR = CMakeFiles\geometricFigures.dir
 
 build CMakeFiles/geometricFigures.dir/IShape.cpp.obj: CXX_COMPILER__geometricFigures_Debug C$:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab4/geometricFigures/IShape.cpp || cmake_object_order_depends_target_geometricFigures
   DEP_FILE = CMakeFiles\geometricFigures.dir\IShape.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles\geometricFigures.dir
   OBJECT_FILE_DIR = CMakeFiles\geometricFigures.dir
 
 build CMakeFiles/geometricFigures.dir/ISolidShape.cpp.obj: CXX_COMPILER__geometricFigures_Debug C$:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab4/geometricFigures/ISolidShape.cpp || cmake_object_order_depends_target_geometricFigures
   DEP_FILE = CMakeFiles\geometricFigures.dir\ISolidShape.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles\geometricFigures.dir
   OBJECT_FILE_DIR = CMakeFiles\geometricFigures.dir
 
 build CMakeFiles/geometricFigures.dir/main.cpp.obj: CXX_COMPILER__geometricFigures_Debug C$:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab4/geometricFigures/main.cpp || cmake_object_order_depends_target_geometricFigures
   DEP_FILE = CMakeFiles\geometricFigures.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles\geometricFigures.dir
   OBJECT_FILE_DIR = CMakeFiles\geometricFigures.dir
 
 build CMakeFiles/geometricFigures.dir/CShapeController.cpp.obj: CXX_COMPILER__geometricFigures_Debug C$:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab4/geometricFigures/CShapeController.cpp || cmake_object_order_depends_target_geometricFigures
   DEP_FILE = CMakeFiles\geometricFigures.dir\CShapeController.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles\geometricFigures.dir
+  OBJECT_FILE_DIR = CMakeFiles\geometricFigures.dir
+
+build CMakeFiles/geometricFigures.dir/CRectangle.cpp.obj: CXX_COMPILER__geometricFigures_Debug C$:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab4/geometricFigures/CRectangle.cpp || cmake_object_order_depends_target_geometricFigures
+  DEP_FILE = CMakeFiles\geometricFigures.dir\CRectangle.cpp.obj.d
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles\geometricFigures.dir
   OBJECT_FILE_DIR = CMakeFiles\geometricFigures.dir
 
@@ -87,7 +93,7 @@ build CMakeFiles/geometricFigures.dir/CShapeController.cpp.obj: CXX_COMPILER__ge
 #############################################
 # Link the executable geometricFigures.exe
 
-build geometricFigures.exe: CXX_EXECUTABLE_LINKER__geometricFigures_Debug CMakeFiles/geometricFigures.dir/CPoint.cpp.obj CMakeFiles/geometricFigures.dir/IShape.cpp.obj CMakeFiles/geometricFigures.dir/ISolidShape.cpp.obj CMakeFiles/geometricFigures.dir/main.cpp.obj CMakeFiles/geometricFigures.dir/CShapeController.cpp.obj
+build geometricFigures.exe: CXX_EXECUTABLE_LINKER__geometricFigures_Debug CMakeFiles/geometricFigures.dir/CPoint.cpp.obj CMakeFiles/geometricFigures.dir/IShape.cpp.obj CMakeFiles/geometricFigures.dir/ISolidShape.cpp.obj CMakeFiles/geometricFigures.dir/main.cpp.obj CMakeFiles/geometricFigures.dir/CShapeController.cpp.obj CMakeFiles/geometricFigures.dir/CRectangle.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\geometricFigures.dir

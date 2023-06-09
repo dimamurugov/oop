@@ -8,11 +8,11 @@
 
 CalculatorController::CalculatorController(Calculator &calculator) : m_calculator(calculator) {};
 
-std::optional<Command> CalculatorController::GetCommand(const std::string& commandLine)
+std::optional<Command> CalculatorController::GetCommand(const std::string& str)
 {
-    if (commands.find(commandLine) != commands.end())
+    if (commands.find(str) != commands.end())
     {
-        return commands.at(commandLine);
+        return commands.at(str);
     }
     return std::nullopt;
 }
@@ -72,7 +72,7 @@ void CalculatorController::LineExecution(const std::string &line) {
 }
 
 void CalculatorController::Print(const std::string &identifier) {
-    double value = m_calculator.getValue(identifier);
+    double value = m_calculator.GetValue(identifier);
     if (value != std::numeric_limits<double>::quiet_NaN())
     {
         std::cout << std::fixed << std::setprecision(2) << value << std::endl;
@@ -82,7 +82,7 @@ void CalculatorController::Print(const std::string &identifier) {
 }
 
 void CalculatorController::PrintVars() {
-    auto variables = m_calculator.getVariables();
+    auto variables = m_calculator.GetVariables();
     for(auto iter{variables.begin()}; iter != variables.end(); iter++)
     {
         std::cout << iter->first << ": " << std::fixed << std::setprecision(2) << iter->second << std::endl;
@@ -90,7 +90,7 @@ void CalculatorController::PrintVars() {
 }
 
 void CalculatorController::PrintFns() {
-    auto functions = m_calculator.getFunctions();
+    auto functions = m_calculator.GetFunctions();
     for(auto iter{functions.begin()}; iter != functions.end(); iter++)
     {
         std::cout << iter->first << ": " << std::fixed << std::setprecision(2) << iter->second << std::endl;

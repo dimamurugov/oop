@@ -34,7 +34,6 @@ namespace {
     const std::string FILE_NOT_FOUND = "File not found!\n";
     const std::string COMMAND_NOT_FOUND = "Command not found!\n";
     const std::string VARIABLE_NOT_FOUND = "Variable not found!\n";
-    const char DELIMITER = ' ';
 }
 
 class CalculatorController
@@ -50,8 +49,6 @@ public:
 
 private:
     Calculator m_calculator;
-//    std::map<std::string, double> m_variables;
-//    std::map<std::string, Function*> m_functions;
 };
 
 

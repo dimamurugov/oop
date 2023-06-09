@@ -1,6 +1,0 @@
-var radius
-fn twoRadios=radius*radius
-fn tRadios=radius*tRadios
-let radius=3
-printfns
-printvars
