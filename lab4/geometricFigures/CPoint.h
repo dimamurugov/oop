@@ -3,8 +3,9 @@
 
 class CPoint {
 public:
-    static double m_x;
-    static double m_y;
+    CPoint(double x, double y);
+    double m_x;
+    double m_y;
 };
 
 #endif //GEOMETRICFIGURES_CPOINT_H

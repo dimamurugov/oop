@@ -34,11 +34,15 @@ namespace {
 
 class CShapeController {
 public:
-    static void LineExecution(const std::string &line);
-    static void InitRectangle(const std::string &points, std::string colors);
+    void LineExecution(const std::string &line);
+    void InitRectangle(const std::string &points, std::string colors);
     static std::optional<ShapesType> GetShapeType(const std::string& str);
+    static std::optional<std::vector<double>> ParseArguments(const std::string& arguments);
+    static std::optional<std::vector<std::string>> ParseColors(const std::string& colors);
 private:
-    std::map<int, CRectangle> m_rectangles;
+    // хранить отдельный вектор для каждой фигуры
+    // нужен индекс для сохранения порядка создания
+    std::vector<CRectangle> m_rectangles;
 };
 
 #endif //GEOMETRICFIGURES_CSHAPECONTROLLER_H

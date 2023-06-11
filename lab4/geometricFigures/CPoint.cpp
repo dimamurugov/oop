@@ -1,5 +1,3 @@
-//
-// Created by dimam on 05.06.2023.
-//
-
 #include "CPoint.h"
+
+CPoint::CPoint(double x, double y) : m_x(x), m_y(y) {}

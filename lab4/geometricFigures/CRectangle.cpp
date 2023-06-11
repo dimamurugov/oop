@@ -1,8 +1,9 @@
 #include "CRectangle.h"
 
 
-CRectangle::CRectangle(CPoint &point, std::vector<double> &sides, std::vector<std::string> &colors) :
-    m_sides(sides),
+CRectangle::CRectangle(CPoint point, double width, double height, std::vector<std::string> colors) :
+    m_width(width),
+    m_height(height),
     m_colors{colors},
     m_point(point)
 {}
