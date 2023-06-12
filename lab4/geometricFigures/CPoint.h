@@ -4,6 +4,8 @@
 class CPoint {
 public:
     CPoint(double x, double y);
+    std::vector<double> GetPoints();
+private:
     double m_x;
     double m_y;
 };
