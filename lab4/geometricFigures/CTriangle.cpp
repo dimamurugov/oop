@@ -1,8 +1,6 @@
 #include "CTriangle.h"
-#include <utility>
-#include <cmath>
 
-CTriangle::CTriangle(std::vector<CPoint> points, std::vector<std::string> colors) :
+CTriangle::CTriangle(std::vector<CPoint> points, std::vector<uint32_t> colors) :
     m_points(std::move(points)),
     m_colors(std::move(colors)) {
 }
@@ -28,26 +26,34 @@ double CTriangle::GetPerimeter() {
     return perimeter;
 }
 
+std::string CTriangle::GetStringColor(uint32_t color) {
+    std::stringstream stream;
+    stream << std::setfill('0')
+           << std::setw(NUMBER_OF_DIGITS_IN_COLOR)
+           << std::hex << color;
+    return stream.str();
+}
+
 std::string CTriangle::ToString() {
     std::string shape = "Shape: Triangle\n";
     std::string perimeter = "Perimeter: " + std::to_string(GetPerimeter()) + "\n";
     std::string area = "Area: "  + std::to_string(GetArea()) + "\n";
-    std::string outlineColor = "Outline color: " + GetOutlineColor() + "\n";
-    std::string fillColor = "Fill color: " + GetFillColor() + "\n";
+    std::string outlineColor = "Outline color: " + GetStringColor(m_colors[0]) + "\n";
+    std::string fillColor = "Fill color: " + GetStringColor(m_colors[1]) + "\n";
     auto vertex1 = GetVertex1().GetPoints();
     auto vertex2 = GetVertex2().GetPoints();
     auto vertex3 = GetVertex3().GetPoints();
-    std::string vertexA = "vertex A: " + std::to_string(vertex1[0]) + " " + std::to_string(vertex1[1]) + "\n";
-    std::string vertexB = "vertex B: " + std::to_string(vertex2[0]) + " " + std::to_string(vertex2[1]) + "\n";
-    std::string vertexC = "vertex C: " + std::to_string(vertex3[0]) + " " + std::to_string(vertex3[1]) + "\n";
+    std::string vertexA = "vertex A: " + std::to_string(vertex1[0]) + DELIMITER + std::to_string(vertex1[1]) + "\n";
+    std::string vertexB = "vertex B: " + std::to_string(vertex2[0]) + DELIMITER + std::to_string(vertex2[1]) + "\n";
+    std::string vertexC = "vertex C: " + std::to_string(vertex3[0]) + DELIMITER + std::to_string(vertex3[1]) + "\n";
     return shape + perimeter + area + outlineColor + fillColor + vertexA + vertexB + vertexC;
 }
 
-std::string CTriangle::GetOutlineColor() {
+uint32_t CTriangle::GetOutlineColor() {
     return m_colors[0];
 }
 
-std::string CTriangle::GetFillColor() {
+uint32_t CTriangle::GetFillColor() {
     return m_colors[1];
 }
 

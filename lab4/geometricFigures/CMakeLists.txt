@@ -10,4 +10,4 @@ add_executable(geometricFigures
         IShape.h
         ISolidShape.cpp
         ISolidShape.h
-        main.cpp CShapeController.cpp CShapeController.h CRectangle.cpp CRectangle.h CTriangle.cpp CTriangle.h CCircle.cpp CCircle.h)
+        main.cpp CShapeController.cpp CShapeController.h CRectangle.cpp CRectangle.h CTriangle.cpp CTriangle.h CCircle.cpp CCircle.h CLineSegment.cpp CLineSegment.h)

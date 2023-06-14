@@ -1,15 +1,14 @@
-#include <iostream>
 #include "CRectangle.h"
 
 
-CRectangle::CRectangle(CPoint pointLeftTop, double width, double height, std::vector<std::string> colors) :
+CRectangle::CRectangle(CPoint pointLeftTop, double width, double height, std::vector<uint32_t> colors) :
     m_width(width),
     m_height(height),
     m_colors{colors},
     m_pointLeftTop(pointLeftTop)
 {}
 
-std::string CRectangle::GetFillColor() {
+uint32_t CRectangle::GetFillColor() {
     return m_colors[1];
 }
 
@@ -21,18 +20,26 @@ double CRectangle::GetPerimeter() {
     return 2 * (m_width + m_height);
 }
 
+std::string CRectangle::GetStringColor(uint32_t color) {
+    std::stringstream stream;
+    stream << std::setfill('0') << std::setw(NUMBER_OF_DIGITS_IN_COLOR)
+           << std::hex << color;
+
+    return stream.str();
+}
+
 std::string CRectangle::ToString() {
     std::string shape = "Shape: Rectangle\n";
     std::string perimeter = "Perimeter: " + std::to_string(GetPerimeter()) + "\n";
     std::string area = "Area: "  + std::to_string(GetArea()) + "\n";
-    std::string outlineColor = "Outline color: " + m_colors[0] + "\n";
-    std::string fillColor = "Fill color: " + m_colors[1] + "\n";
+    std::string outlineColor = "Outline color: " + GetStringColor(m_colors[0]) + "\n";
+    std::string fillColor = "Fill color: " +  GetStringColor(m_colors[1]) + "\n";
     std::vector points = m_pointLeftTop.GetPoints();
-    std::string point = "Left Top: " + std::to_string(points[0]) + " " + std::to_string(points[1]) + "\n";
+    std::string point = "Left Top: " + std::to_string(points[0]) + DELIMITER + std::to_string(points[1]) + "\n";
     return shape + perimeter + area + outlineColor + fillColor + point;
 }
-// должен быть uint32_t
-std::string CRectangle::GetOutlineColor() {
+
+uint32_t CRectangle::GetOutlineColor() {
     return m_colors[0];
 }
 
