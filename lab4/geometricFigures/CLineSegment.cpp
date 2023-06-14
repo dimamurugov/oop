@@ -43,3 +43,7 @@ CPoint CLineSegment::GetStartPoint() {
 CPoint CLineSegment::GetEndPoint() {
     return m_points[1];
 }
+
+double CLineSegment::GetArea() {
+    return 0;
+}

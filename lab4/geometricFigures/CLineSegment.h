@@ -11,6 +11,7 @@ class CLineSegment : public IShape {
 public:
     CLineSegment(std::vector<CPoint> points, std::vector<uint32_t> colors);
     double GetPerimeter() override;
+    double GetArea() override;
     std::string ToString() override;
     uint32_t GetOutlineColor() override;
     CPoint GetStartPoint();
