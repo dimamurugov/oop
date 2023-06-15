@@ -8,9 +8,6 @@
 void CShapeController::LineExecution(const std::string &line) {
     std::cmatch matched;
     std::regex pattern(R"(^(rectangle|triangle|circle|line|printMaxArea|printMinPerimeter)(\s|$)((([0-9]*(\.[0-9]+)?)(\s?)){0,6})(((\w{6})(\s?)){0,2})$)");
-    // 1) R"(^(rectangle|triangle|circle|line|printMaxArea|printMinPerimeter)(\s|$)((([0-9]*(\.[0-9]+)?)(\s)){0,6})(((\w{6})(\s?)){0,2})$)"
-    // 2)
-
     if (regex_match(line.c_str(), matched, pattern))
     {
         Params params = {std::nullopt, std::nullopt, std::nullopt};
@@ -19,8 +16,6 @@ void CShapeController::LineExecution(const std::string &line) {
         params.colors = matched[8];
         auto arguments = ParseArguments(params.peaks.value());
         auto colorsParsed = ParseColors(params.colors.value());
-        // добавить проверку аргументов и колоров! что по два и всё такое
-
         switch (params.shapeType.value())
         {
             case CommandType::RECTANGLE:
@@ -40,16 +35,11 @@ void CShapeController::LineExecution(const std::string &line) {
                 break;
             case CommandType::PRINT_MIN_PERIMETER:
                 PrintMinPerimeterShape();
-                break;
         }
     } else {
         std::cout << NOT_READ_COMMAND;
     }
 }
-
-//        for (int i = 0; i < matched.size(); ++i) {
-//            std::cout << i << ' ' << matched[i] << std::endl;
-//        }
 
 void CShapeController::InitRectangle(std::vector<double> arguments, std::vector<uint32_t> colors) {
    double x = arguments[0];
@@ -62,7 +52,6 @@ void CShapeController::InitRectangle(std::vector<double> arguments, std::vector<
        return;
    }
    CRectangle rectangle(point, width, height, colors);
-   std::cout << rectangle.ToString() << std::endl;
    m_shape.push_back(new CRectangle(point, width, height, colors));
 }
 
@@ -84,22 +73,17 @@ std::optional<std::vector<double>> CShapeController::ParseArguments(const std::s
             std::stringstream ss(matched[i]);
             double side;
             ss >> side;
-
             if (matched[i] == "") {
                 break;
             }
-
             if (!ss.eof()) {
                 std::cout << NOT_NUMBER;
                 return std::nullopt;
             }
-
             numbers.push_back(side);
         }
-
         return numbers;
     }
-
     return std::nullopt;
 }
 
@@ -117,7 +101,6 @@ void CShapeController::InitTriangle(std::vector<double> arguments, std::vector<u
         points.push_back(point);
     }
     CTriangle triangle(points, colors);
-    std::cout << triangle.ToString() << std::endl;
     if (triangle.GetArea() != 0) {
         m_shape.push_back(new CTriangle(points, colors));
     } else {
@@ -138,9 +121,9 @@ std::vector<uint32_t> CShapeController::ParseColors(const std::string &line) {
     if (stringColors.empty()) {
         return colors;
     }
-    for (int i = 0; i < stringColors.size(); ++i) {
-        if (!stringColors[i].empty()) {
-            uint32_t colorValue = stoi(stringColors[i], 0, 16);
+    for (auto & stringColor : stringColors) {
+        if (!stringColor.empty()) {
+            uint32_t colorValue = stoi(stringColor, nullptr, 16);
             colors.push_back(colorValue);
         }
     }
@@ -162,7 +145,6 @@ void CShapeController::InitLineSegment(std::vector<double> arguments, std::vecto
     CPoint endPoint = {x2, y2};
     std::vector<CPoint> points = {startPoint, endPoint};
     CLineSegment lineSegment(points, colors);
-    std::cout << lineSegment.ToString() << std::endl;
     m_shape.push_back(new CLineSegment(points, colors));
 }
 
@@ -181,7 +163,6 @@ void CShapeController::InitCircle(std::vector<double> arguments, std::vector<uin
     }
     CPoint center = {x, y};
     CCircle circle(center, radius, colors);
-    std::cout << circle.ToString();
     m_shape.push_back(new CCircle(center, radius, colors));
 }
 
@@ -210,7 +191,7 @@ void CShapeController::PrintMinPerimeterShape() {
         return;
     }
 
-    int indexShapeWithMinPerimeter = -1;
+    int indexShapeWithMinPerimeter = 0;
     double minPerimeter = m_shape[0]->GetPerimeter();
 
     for (int i = 1; i < m_shape.size(); ++i) {
