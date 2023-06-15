@@ -7,9 +7,9 @@
 
 void CShapeController::LineExecution(const std::string &line) {
     std::cmatch matched;
-    std::regex pattern(R"(^(rectangle|triangle|circle|line|printMaxArea|printMinPerimeter)(\s|$)((([0-9]*(\.[0-9]+)?)(\s)){0,6})(((\w{6})(\s?)){0,2})$)");
-    // 1) ^(rectangle|triangle|circle|line|printMaxArea|printMinPerimeter)(\s|$)((([0-9]*(\.[0-9]+)?)(\s)){0,6})(((\w{6})(\s?)){0,2})$
-    // 2) R"(^(rectangle|triangle|circle|line)(\s)((([0-9]*(\.[0-9]+)?)(\s)){1,6})(((\w{6})(\s?)){1,2})$)"
+    std::regex pattern(R"(^(rectangle|triangle|circle|line|printMaxArea|printMinPerimeter)(\s|$)((([0-9]*(\.[0-9]+)?)(\s?)){0,6})(((\w{6})(\s?)){0,2})$)");
+    // 1) R"(^(rectangle|triangle|circle|line|printMaxArea|printMinPerimeter)(\s|$)((([0-9]*(\.[0-9]+)?)(\s)){0,6})(((\w{6})(\s?)){0,2})$)"
+    // 2)
 
     if (regex_match(line.c_str(), matched, pattern))
     {
@@ -19,20 +19,21 @@ void CShapeController::LineExecution(const std::string &line) {
         params.colors = matched[8];
         auto arguments = ParseArguments(params.peaks.value());
         auto colorsParsed = ParseColors(params.colors.value());
+        // добавить проверку аргументов и колоров! что по два и всё такое
 
         switch (params.shapeType.value())
         {
             case CommandType::RECTANGLE:
-                InitRectangle(arguments.value(), colorsParsed.value());
+                InitRectangle(arguments.value(), colorsParsed);
                 break;
             case CommandType::TRIANGLE:
-                InitTriangle(arguments.value(), colorsParsed.value());
+                InitTriangle(arguments.value(), colorsParsed);
                 break;
             case CommandType::CIRCLE:
-                InitCircle(arguments.value(), colorsParsed.value());
+                InitCircle(arguments.value(), colorsParsed);
                 break;
             case CommandType::LINE_SEGMENT:
-                InitLineSegment(arguments.value(), colorsParsed.value());
+                InitLineSegment(arguments.value(), colorsParsed);
                 break;
             case CommandType::PRINT_MAX_AREA:
                 PrintMaxAreaShape();
@@ -50,7 +51,7 @@ void CShapeController::LineExecution(const std::string &line) {
 //            std::cout << i << ' ' << matched[i] << std::endl;
 //        }
 
-void CShapeController::InitRectangle(std::vector<double> arguments, std::optional<std::vector<uint32_t>> colors) {
+void CShapeController::InitRectangle(std::vector<double> arguments, std::vector<uint32_t> colors) {
    double x = arguments[0];
    double y = arguments[1];
    double width = arguments[2];
@@ -60,16 +61,15 @@ void CShapeController::InitRectangle(std::vector<double> arguments, std::optiona
        std::cout << SIDE_CANNOT_BE_ZERO;
        return;
    }
-   CRectangle rectangle(point, width, height, colors.value());
+   CRectangle rectangle(point, width, height, colors);
    std::cout << rectangle.ToString() << std::endl;
-   m_rectangles.push_back(rectangle);
-   m_shape.push_back(new CRectangle(point, width, height, colors.value()));
+   m_shape.push_back(new CRectangle(point, width, height, colors));
 }
 
 std::optional<CommandType> CShapeController::GetCommandType(const std::string &str) {
-    if (command.find(str) != command.end())
-    {
-        return command.at(str);
+    auto it = command.find(str);
+    if (it != command.end()) {
+       return it->second;
     }
     return std::nullopt;
 }
@@ -96,14 +96,14 @@ std::optional<std::vector<double>> CShapeController::ParseArguments(const std::s
 
             numbers.push_back(side);
         }
+
+        return numbers;
     }
-//    else {
-//        std::cout << INCORRECT_COORDINATES_FIGURES;
-//    }
-    return numbers;
+
+    return std::nullopt;
 }
 
-void CShapeController::InitTriangle(std::vector<double> arguments, std::optional<std::vector<uint32_t>> colors) {
+void CShapeController::InitTriangle(std::vector<double> arguments, std::vector<uint32_t> colors) {
     if (arguments.size() < 6) {
         std::cout << INCORRECT_POINTS_TRIANGLE;
         return;
@@ -116,17 +116,16 @@ void CShapeController::InitTriangle(std::vector<double> arguments, std::optional
         CPoint point = {x, y};
         points.push_back(point);
     }
-    CTriangle triangle(points, colors.value());
+    CTriangle triangle(points, colors);
     std::cout << triangle.ToString() << std::endl;
     if (triangle.GetArea() != 0) {
-        m_triangles.push_back(triangle);
-        m_shape.push_back(new CTriangle(points, colors.value()));
+        m_shape.push_back(new CTriangle(points, colors));
     } else {
         std::cout << ITS_LINE;
     }
 }
 
-std::optional<std::vector<uint32_t>> CShapeController::ParseColors(const std::string &line) {
+std::vector<uint32_t> CShapeController::ParseColors(const std::string &line) {
     std::cmatch matched;
     std::regex pattern(R"(^(\w{6})\s?(\w{6})?$)");
     std::vector<std::string> stringColors;
@@ -135,20 +134,20 @@ std::optional<std::vector<uint32_t>> CShapeController::ParseColors(const std::st
             stringColors.push_back(matched[i]);
         }
     }
-
-    if (stringColors.empty()) {
-        return std::nullopt;
-    }
-
-    uint32_t firstColorValue = stoi(stringColors[0], 0, 16);
-    uint32_t secondColorValue = stoi(stringColors[1], 0, 16);
     std::vector<uint32_t> colors;
-    colors.push_back(firstColorValue);
-    colors.push_back(secondColorValue);
+    if (stringColors.empty()) {
+        return colors;
+    }
+    for (int i = 0; i < stringColors.size(); ++i) {
+        if (!stringColors[i].empty()) {
+            uint32_t colorValue = stoi(stringColors[i], 0, 16);
+            colors.push_back(colorValue);
+        }
+    }
     return colors;
 }
 
-void CShapeController::InitLineSegment(std::vector<double> arguments, std::optional<std::vector<uint32_t>> colors) {
+void CShapeController::InitLineSegment(std::vector<double> arguments, std::vector<uint32_t> colors) {
     if (arguments.size() < 4) {
         std::cout << INCORRECT_POINTS_LINE_SEGMENT;
         return;
@@ -162,13 +161,12 @@ void CShapeController::InitLineSegment(std::vector<double> arguments, std::optio
     CPoint startPoint = {x1, y1};
     CPoint endPoint = {x2, y2};
     std::vector<CPoint> points = {startPoint, endPoint};
-    CLineSegment lineSegment(points, colors.value());
+    CLineSegment lineSegment(points, colors);
     std::cout << lineSegment.ToString() << std::endl;
-    m_lineSegment.push_back(lineSegment);
-    m_shape.push_back(new CLineSegment(points, colors.value()));
+    m_shape.push_back(new CLineSegment(points, colors));
 }
 
-void CShapeController::InitCircle(std::vector<double> arguments, std::optional<std::vector<uint32_t>> colors) {
+void CShapeController::InitCircle(std::vector<double> arguments, std::vector<uint32_t> colors) {
     if (arguments.size() < 2) {
         std::cout << INCORRECT_POINTS_CIRCLE;
         return;
@@ -182,10 +180,9 @@ void CShapeController::InitCircle(std::vector<double> arguments, std::optional<s
         return;
     }
     CPoint center = {x, y};
-    CCircle circle(center, radius, colors.value());
+    CCircle circle(center, radius, colors);
     std::cout << circle.ToString();
-    m_circles.push_back(circle);
-    m_shape.push_back(new CCircle(center, radius, colors.value()));
+    m_shape.push_back(new CCircle(center, radius, colors));
 }
 
 void CShapeController::PrintMaxAreaShape() {

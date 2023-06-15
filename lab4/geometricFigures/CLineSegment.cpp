@@ -17,12 +17,18 @@ std::string CLineSegment::GetStringColor(uint32_t color) {
 std::string CLineSegment::ToString() {
     std::string shape = "Shape: LineSegment\n";
     std::string perimeter = "Perimeter: " + std::to_string(GetPerimeter()) + "\n";
-    std::string outlineColor = "Outline color: " + GetStringColor(m_colors[0]) + "\n";
     std::vector<double> startPoint = GetStartPoint().GetPoints();
     std::vector<double> endPoint = GetEndPoint().GetPoints();
     std::string startPont = "Start point: " + std::to_string(startPoint[0]) + DELIMITER + std::to_string(startPoint[1]) + "\n";
     std::string endPont = "Start point: " + std::to_string(endPoint[0]) + DELIMITER + std::to_string(endPoint[1]) + "\n";
-    return shape + perimeter + outlineColor + startPont + endPont;
+    auto outLineColor = GetOutlineColor();
+    std::string message = shape + perimeter + startPont + endPont;
+
+    if (outLineColor != UINT32_T_MAX) {
+        std::string outlineColorString = "Outline color: " + GetStringColor(outLineColor) + "\n";
+        message = message + outlineColorString;
+    }
+    return message;
 }
 
 double CLineSegment::GetPerimeter() {
@@ -33,6 +39,9 @@ double CLineSegment::GetPerimeter() {
 }
 
 uint32_t CLineSegment::GetOutlineColor() {
+    if (m_colors.empty()) {
+        return std::numeric_limits<uint32_t>::max();
+    }
     return m_colors[0];
 }
 

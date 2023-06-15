@@ -56,22 +56,16 @@ namespace {
 class CShapeController {
 public:
     void LineExecution(const std::string &line);
-    void InitRectangle(std::vector<double> arguments, std::optional<std::vector<uint32_t>> colors);
-    void InitTriangle(std::vector<double> arguments, std::optional<std::vector<uint32_t>> colors);
-    void InitCircle(std::vector<double> arguments, std::optional<std::vector<uint32_t>> colors);
-    void InitLineSegment(std::vector<double> arguments, std::optional<std::vector<uint32_t>> colors);
+    void InitRectangle(std::vector<double> arguments, std::vector<uint32_t> colors);
+    void InitTriangle(std::vector<double> arguments, std::vector<uint32_t> colors);
+    void InitCircle(std::vector<double> arguments, std::vector<uint32_t> colors);
+    void InitLineSegment(std::vector<double> arguments, std::vector<uint32_t> colors);
     static std::optional<CommandType> GetCommandType(const std::string& str);
     static std::optional<std::vector<double>> ParseArguments(const std::string& arguments);
-    static std::optional<std::vector<uint32_t>> ParseColors(const std::string& colors);
+    static std::vector<uint32_t> ParseColors(const std::string& colors);
     void PrintMaxAreaShape();
     void PrintMinPerimeterShape();
 private:
-    // хранить отдельный вектор для каждой фигуры
-    // нужен индекс для сохранения порядка создания
-    std::vector<CRectangle> m_rectangles;
-    std::vector<CTriangle> m_triangles;
-    std::vector<CCircle> m_circles;
-    std::vector<CLineSegment> m_lineSegment;
     std::vector<IShape *> m_shape;
 };
 

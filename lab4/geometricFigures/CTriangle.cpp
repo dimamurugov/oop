@@ -38,22 +38,37 @@ std::string CTriangle::ToString() {
     std::string shape = "Shape: Triangle\n";
     std::string perimeter = "Perimeter: " + std::to_string(GetPerimeter()) + "\n";
     std::string area = "Area: "  + std::to_string(GetArea()) + "\n";
-    std::string outlineColor = "Outline color: " + GetStringColor(m_colors[0]) + "\n";
-    std::string fillColor = "Fill color: " + GetStringColor(m_colors[1]) + "\n";
     auto vertex1 = GetVertex1().GetPoints();
     auto vertex2 = GetVertex2().GetPoints();
     auto vertex3 = GetVertex3().GetPoints();
     std::string vertexA = "vertex A: " + std::to_string(vertex1[0]) + DELIMITER + std::to_string(vertex1[1]) + "\n";
     std::string vertexB = "vertex B: " + std::to_string(vertex2[0]) + DELIMITER + std::to_string(vertex2[1]) + "\n";
     std::string vertexC = "vertex C: " + std::to_string(vertex3[0]) + DELIMITER + std::to_string(vertex3[1]) + "\n";
-    return shape + perimeter + area + outlineColor + fillColor + vertexA + vertexB + vertexC;
+    std::string message = shape + perimeter + area + vertexA + vertexB + vertexC;
+    auto outLineColor = GetOutlineColor();
+    auto fillColor = GetFillColor();
+    if (outLineColor != UINT32_T_MAX) {
+        std::string outlineColorString = "Outline color: " + GetStringColor(outLineColor) + "\n";
+        message += outlineColorString;
+    }
+    if (fillColor != UINT32_T_MAX) {
+        std::string fillColorString = "Fill color: " +  GetStringColor(fillColor) + "\n";
+        message += fillColorString;
+    }
+    return message;
 }
 
 uint32_t CTriangle::GetOutlineColor() {
+    if (m_colors.empty()) {
+        return std::numeric_limits<uint32_t>::max();
+    }
     return m_colors[0];
 }
 
 uint32_t CTriangle::GetFillColor() {
+    if (m_colors.size() < 2) {
+        return std::numeric_limits<uint32_t>::max();
+    }
     return m_colors[1];
 }
 

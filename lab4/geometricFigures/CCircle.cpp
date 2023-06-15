@@ -8,6 +8,9 @@ CCircle::CCircle(CPoint point, double radius, std::vector<uint32_t> colors) :
     m_colors(std::move(colors)) {}
 
 uint32_t CCircle::GetFillColor() {
+    if (m_colors.size() < 2) {
+        return std::numeric_limits<uint32_t>::max();
+    }
     return m_colors[1];
 }
 
@@ -31,15 +34,28 @@ std::string CCircle::ToString() {
     std::string shape = "Shape: Circle\n";
     std::string perimeter = "Perimeter: " + std::to_string(GetPerimeter()) + "\n";
     std::string area = "Area: "  + std::to_string(GetArea()) + "\n";
-    std::string outlineColor = "Outline color: " + GetStringColor(m_colors[0]) + "\n";
-    std::string fillColor = "Fill color: " + GetStringColor(m_colors[1]) + "\n";
     std::string radius = "Radius: " + std::to_string(GetRadius()) + "\n";
     auto centerPoint = GetCenter().GetPoints();
     std::string center = "Center X:" + std::to_string(centerPoint[0]) + " " + std::to_string(centerPoint[1]) + "\n";
-    return shape + perimeter + area + outlineColor + fillColor + radius + center;
+    std::string message = shape + perimeter + area + radius + center;
+    auto outLineColor = GetOutlineColor();
+    auto fillColor = GetFillColor();
+
+    if (outLineColor != UINT32_T_MAX) {
+        std::string outlineColorString = "Outline color: " + GetStringColor(outLineColor) + "\n";
+        message += outlineColorString;
+    }
+    if (fillColor != UINT32_T_MAX) {
+        std::string fillColorString = "Fill color: " +  GetStringColor(fillColor) + "\n";
+        message += fillColorString;
+    }
+    return message;
 }
 
 uint32_t CCircle::GetOutlineColor() {
+    if (m_colors.empty()) {
+        return std::numeric_limits<uint32_t>::max();
+    }
     return m_colors[0];
 }
 
