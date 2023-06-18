@@ -1,5 +1,4 @@
 #include <optional>
-#include <limits>
 #include "CRectangle.h"
 
 
@@ -10,11 +9,11 @@ CRectangle::CRectangle(CPoint pointLeftTop, double width, double height, std::ve
     m_pointLeftTop(pointLeftTop)
 {}
 
-double CRectangle::GetArea() {
+const double CRectangle::GetArea() {
     return m_width * m_height;
 }
 
-double CRectangle::GetPerimeter() {
+const double CRectangle::GetPerimeter() {
     return 2 * (m_width + m_height);
 }
 
@@ -26,57 +25,64 @@ std::string CRectangle::GetStringColor(uint32_t color) {
     return stream.str();
 }
 
-std::string CRectangle::ToString() {
+std::string CRectangle::Format(double f) {
+    std::ostringstream ss;
+    ss.precision(4);
+    ss << f;
+    return ss.str();
+}
+
+const std::string CRectangle::ToString() {
     std::string shape = "Shape: Rectangle\n";
-    std::string perimeter = "Perimeter: " + std::to_string(GetPerimeter()) + "\n";
-    std::string area = "Area: "  + std::to_string(GetArea()) + "\n";
-    std::vector points = m_pointLeftTop.GetPoints();
-    std::string point = "Left Top: " + std::to_string(points[0]) + DELIMITER + std::to_string(points[1]) + "\n";
+    std::string perimeter = "Perimeter: " + Format(GetPerimeter()) + "\n";
+    std::string area = "Area: "  + Format(GetArea()) + "\n";
+    std::vector points = m_pointLeftTop.GetPoint();
+    std::string point = "Left Top: " + Format(points[0]) + DELIMITER + Format(points[1]) + "\n";
     auto outLineColor = GetOutlineColor();
     auto fillColor = GetFillColor();
     std::string message = shape + perimeter + area + point;
 
-    if (outLineColor != UINT32_T_MAX) {
-        std::string outlineColorString = "Outline color: " + GetStringColor(outLineColor) + "\n";
+    if (outLineColor.has_value()) {
+        std::string outlineColorString = "Outline color: " + GetStringColor(outLineColor.value()) + "\n";
         message += outlineColorString;
     }
-    if (fillColor != UINT32_T_MAX) {
-        std::string fillColorString = "Fill color: " +  GetStringColor(fillColor) + "\n";
+    if (fillColor.has_value()) {
+        std::string fillColorString = "Fill color: " +  GetStringColor(fillColor.value()) + "\n";
         message += fillColorString;
     }
     return message;
 }
 
-uint32_t CRectangle::GetOutlineColor() {
+const std::optional<uint32_t> CRectangle::GetOutlineColor() {
     if (m_colors.empty()) {
-        return std::numeric_limits<uint32_t>::max();
+        return std::nullopt;
     }
     return m_colors[0];
 }
 
-uint32_t CRectangle::GetFillColor() {
+const std::optional<uint32_t> CRectangle::GetFillColor() {
     if (m_colors.size() < 2) {
-        return std::numeric_limits<uint32_t>::max();
+        return std::nullopt;
     }
     return m_colors[1];
 }
 
-CPoint CRectangle::GetRightBottom() {
-    auto leftTop = m_pointLeftTop.GetPoints();
+const CPoint CRectangle::GetRightBottom() {
+    auto leftTop = m_pointLeftTop.GetPoint();
     double x = leftTop[0] + m_width;
     double y = leftTop[1] - m_height;
     CPoint rightBottom(x, y);
     return rightBottom;
 }
 
-CPoint CRectangle::GetLeftTop() {
+const CPoint CRectangle::GetLeftTop() {
     return m_pointLeftTop;
 }
 
-double CRectangle::GetWidth() const {
+const double CRectangle::GetWidth() const {
     return m_width;
 }
 
-double CRectangle::GetHeight() const {
+const double CRectangle::GetHeight() const {
     return m_height;
 }

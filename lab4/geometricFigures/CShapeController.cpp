@@ -7,45 +7,45 @@
 
 void CShapeController::LineExecution(const std::string &line) {
     std::cmatch matched;
-    std::regex pattern(R"(^(rectangle|triangle|circle|line|printMaxArea|printMinPerimeter)(\s|$)((([0-9]*(\.[0-9]+)?)(\s?)){0,6})(((\w{6})(\s?)){0,2})$)");
-    if (regex_match(line.c_str(), matched, pattern))
+    std::regex pattern(REGEX_COMMAND_LINE);
+    if (!regex_match(line.c_str(), matched, pattern))
     {
-        Params params = {std::nullopt, std::nullopt, std::nullopt};
-        params.shapeType = GetCommandType(matched[1]);
-        params.peaks = matched[3];
-        params.colors = matched[8];
-        auto arguments = ParseArguments(params.peaks.value());
-        auto colorsParsed = ParseColors(params.colors.value());
-        switch (params.shapeType.value())
-        {
-            case CommandType::RECTANGLE:
-                InitRectangle(arguments.value(), colorsParsed);
-                break;
-            case CommandType::TRIANGLE:
-                InitTriangle(arguments.value(), colorsParsed);
-                break;
-            case CommandType::CIRCLE:
-                InitCircle(arguments.value(), colorsParsed);
-                break;
-            case CommandType::LINE_SEGMENT:
-                InitLineSegment(arguments.value(), colorsParsed);
-                break;
-            case CommandType::PRINT_MAX_AREA:
-                PrintMaxAreaShape();
-                break;
-            case CommandType::PRINT_MIN_PERIMETER:
-                PrintMinPerimeterShape();
-        }
-    } else {
         std::cout << NOT_READ_COMMAND;
+        return;
+    }
+    Params params = {std::nullopt, std::nullopt, std::nullopt};
+    params.commandType = GetCommandType(matched[CONSTANT_COMMAND_TYPE]);
+    params.peaks = matched[CONSTANT_ARGUMENTS];
+    params.colors = matched[CONSTANT_COLOR];
+    auto arguments = ParseArguments(params.peaks.value());
+    auto colorsParsed = ParseColors(params.colors.value());
+    switch (params.commandType.value())
+    {
+        case CommandType::CREATE_RECTANGLE:
+            InitRectangle(arguments.value(), colorsParsed);
+            break;
+        case CommandType::CREATE_TRIANGLE:
+            InitTriangle(arguments.value(), colorsParsed);
+            break;
+        case CommandType::CREATE_CIRCLE:
+            InitCircle(arguments.value(), colorsParsed);
+            break;
+        case CommandType::CREATE_LINE_SEGMENT:
+            InitLineSegment(arguments.value(), colorsParsed);
+            break;
+        case CommandType::PRINT_MAX_AREA:
+            PrintMaxAreaShape();
+            break;
+        case CommandType::PRINT_MIN_PERIMETER:
+            PrintMinPerimeterShape();
     }
 }
 
 void CShapeController::InitRectangle(std::vector<double> arguments, std::vector<uint32_t> colors) {
-   double x = arguments[0];
-   double y = arguments[1];
-   double width = arguments[2];
-   double height = arguments[3];
+   double x = arguments[CONSTANT_RECTANGLE_X];
+   double y = arguments[CONSTANT_RECTANGLE_Y];
+   double width = arguments[CONSTANT_RECTANGLE_WIDTH];
+   double height = arguments[CONSTANT_RECTANGLE_HEIGHT];
    CPoint point(x, y);
    if (width <= 0 || height <= 0) {
        std::cout << SIDE_CANNOT_BE_ZERO;
@@ -53,7 +53,7 @@ void CShapeController::InitRectangle(std::vector<double> arguments, std::vector<
    }
    CRectangle rectangle(point, width, height, colors);
    m_shape.push_back(new CRectangle(point, width, height, colors));
-}
+}//print с 2 числами после запятой
 
 std::optional<CommandType> CShapeController::GetCommandType(const std::string &str) {
     auto it = command.find(str);
@@ -65,26 +65,27 @@ std::optional<CommandType> CShapeController::GetCommandType(const std::string &s
 
 std::optional<std::vector<double>> CShapeController::ParseArguments(const std::string &arguments) {
     std::cmatch matched;
-    std::regex pattern(R"(^([\d\.]+)\s([\d\.]*)\s?([\d\.]*)\s?([\d\.]*)\s?([\d\.]*)\s?([\d\.]*)\s?$)");
+    std::regex pattern(REGEX_VALIDATE_ARGUMENTS);
     std::vector<double> numbers;
-    if (regex_match(arguments.c_str(), matched, pattern))
+    if (!regex_match(arguments.c_str(), matched, pattern))
     {
-        for (int i = 1; i < matched.size(); ++i) {
-            std::stringstream ss(matched[i]);
-            double side;
-            ss >> side;
-            if (matched[i] == "") {
-                break;
-            }
-            if (!ss.eof()) {
-                std::cout << NOT_NUMBER;
-                return std::nullopt;
-            }
-            numbers.push_back(side);
-        }
-        return numbers;
+        return std::nullopt;
     }
-    return std::nullopt;
+
+    for (int i = 1; i < matched.size(); ++i) {
+        std::stringstream ss(matched[i]);
+        double side;
+        ss >> side;
+        if (matched[i] == "") {
+            break;
+        }
+        if (!ss.eof()) {
+            std::cout << NOT_NUMBER;
+            return std::nullopt;
+        }
+        numbers.push_back(side);
+    }
+    return numbers;
 }
 
 void CShapeController::InitTriangle(std::vector<double> arguments, std::vector<uint32_t> colors) {
@@ -96,13 +97,13 @@ void CShapeController::InitTriangle(std::vector<double> arguments, std::vector<u
     for (int i = 0; i < arguments.size(); i=i+2) {
         double x = arguments[i];
         double y = arguments[i + 1];
-
-        CPoint point = {x, y};
+        char x1 = 'c';
+        CPoint point = {x1, y};
         points.push_back(point);
     }
-    CTriangle triangle(points, colors);
-    if (triangle.GetArea() != 0) {
-        m_shape.push_back(new CTriangle(points, colors));
+    auto triangle = new CTriangle(points, colors);
+    if (triangle->GetArea() != 0) {
+        m_shape.push_back(triangle);
     } else {
         std::cout << ITS_LINE;
     }
@@ -110,7 +111,7 @@ void CShapeController::InitTriangle(std::vector<double> arguments, std::vector<u
 
 std::vector<uint32_t> CShapeController::ParseColors(const std::string &line) {
     std::cmatch matched;
-    std::regex pattern(R"(^(\w{6})\s?(\w{6})?$)");
+    std::regex pattern(REGEX_VALIDATE_COLOR);
     std::vector<std::string> stringColors;
     if (regex_match(line.c_str(), matched, pattern)) {
         for (int i = 1; i < matched.size(); ++i) {
@@ -136,15 +137,14 @@ void CShapeController::InitLineSegment(std::vector<double> arguments, std::vecto
         return;
     }
 
-    double x1 = arguments[0];
-    double y1 = arguments[1];
-    double x2 = arguments[2];
-    double y2 = arguments[3];
+    double x1 = arguments[CONSTANT_LINE_SEGMENT_X1];
+    double y1 = arguments[CONSTANT_LINE_SEGMENT_Y1];
+    double x2 = arguments[CONSTANT_LINE_SEGMENT_X2];
+    double y2 = arguments[CONSTANT_LINE_SEGMENT_Y2];
 
     CPoint startPoint = {x1, y1};
     CPoint endPoint = {x2, y2};
     std::vector<CPoint> points = {startPoint, endPoint};
-    CLineSegment lineSegment(points, colors);
     m_shape.push_back(new CLineSegment(points, colors));
 }
 
@@ -154,15 +154,14 @@ void CShapeController::InitCircle(std::vector<double> arguments, std::vector<uin
         return;
     }
 
-    double x = arguments[0];
-    double y = arguments[1];
-    double radius = arguments[2];
+    double x = arguments[CONSTANT_CIRCLE_X];
+    double y = arguments[CONSTANT_CIRCLE_Y];
+    double radius = arguments[CONSTANT_CIRCLE_RADIUS];
     if (radius <= 0) {
         std::cout << NOT_RADIUS_ZERO;
         return;
     }
     CPoint center = {x, y};
-    CCircle circle(center, radius, colors);
     m_shape.push_back(new CCircle(center, radius, colors));
 }
 

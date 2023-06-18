@@ -1,3 +1,4 @@
+#include <iostream>
 #include "CTriangle.h"
 
 CTriangle::CTriangle(std::vector<CPoint> points, std::vector<uint32_t> colors) :
@@ -5,19 +6,19 @@ CTriangle::CTriangle(std::vector<CPoint> points, std::vector<uint32_t> colors) :
     m_colors(std::move(colors)) {
 }
 
-double CTriangle::GetArea() {
-    auto vertex1 = GetVertex1().GetPoints();
-    auto vertex2 = GetVertex2().GetPoints();
-    auto vertex3 = GetVertex3().GetPoints();
+const double CTriangle::GetArea() {
+    auto vertex1 = GetVertex1().GetPoint();
+    auto vertex2 = GetVertex2().GetPoint();
+    auto vertex3 = GetVertex3().GetPoint();
 
     auto square = 0.5*fabs((vertex2[0]-vertex1[0])*(vertex3[1]-vertex1[1])-(vertex3[0]-vertex1[0])*(vertex2[1]-vertex1[1]));
     return square;
 }
 
-double CTriangle::GetPerimeter() {
-    auto vertex1 = GetVertex1().GetPoints();
-    auto vertex2 = GetVertex2().GetPoints();
-    auto vertex3 = GetVertex3().GetPoints();
+const double CTriangle::GetPerimeter() {
+    auto vertex1 = GetVertex1().GetPoint();
+    auto vertex2 = GetVertex2().GetPoint();
+    auto vertex3 = GetVertex3().GetPoint();
 
     auto firstSide = sqrt(pow(vertex2[0]-vertex1[0], 2)+pow(vertex2[1]-vertex1[1], 2));
     auto secondSide = sqrt(pow(vertex3[0]-vertex1[0], 2)+pow(vertex3[1]-vertex1[1], 2));
@@ -34,52 +35,59 @@ std::string CTriangle::GetStringColor(uint32_t color) {
     return stream.str();
 }
 
-std::string CTriangle::ToString() {
+std::string CTriangle::Format(double f) {
+    std::ostringstream ss;
+    ss.precision(4);
+    ss << f;
+    return ss.str();
+}
+
+const std::string CTriangle::ToString() {
     std::string shape = "Shape: Triangle\n";
-    std::string perimeter = "Perimeter: " + std::to_string(GetPerimeter()) + "\n";
-    std::string area = "Area: "  + std::to_string(GetArea()) + "\n";
-    auto vertex1 = GetVertex1().GetPoints();
-    auto vertex2 = GetVertex2().GetPoints();
-    auto vertex3 = GetVertex3().GetPoints();
-    std::string vertexA = "vertex A: " + std::to_string(vertex1[0]) + DELIMITER + std::to_string(vertex1[1]) + "\n";
-    std::string vertexB = "vertex B: " + std::to_string(vertex2[0]) + DELIMITER + std::to_string(vertex2[1]) + "\n";
-    std::string vertexC = "vertex C: " + std::to_string(vertex3[0]) + DELIMITER + std::to_string(vertex3[1]) + "\n";
+    std::string perimeter = "Perimeter: " + Format(GetPerimeter()) + "\n";
+    std::string area = "Area: " + Format(GetArea()) + "\n";
+    auto vertex1 = GetVertex1().GetPoint();
+    auto vertex2 = GetVertex2().GetPoint();
+    auto vertex3 = GetVertex3().GetPoint();
+    std::string vertexA = "vertex A: " + Format(vertex1[0]) + DELIMITER + Format(vertex1[1]) + "\n";
+    std::string vertexB = "vertex B: " + Format(vertex2[0]) + DELIMITER + Format(vertex2[1]) + "\n";
+    std::string vertexC = "vertex C: " + Format(vertex3[0]) + DELIMITER + Format(vertex3[1]) + "\n";
     std::string message = shape + perimeter + area + vertexA + vertexB + vertexC;
     auto outLineColor = GetOutlineColor();
     auto fillColor = GetFillColor();
-    if (outLineColor != UINT32_T_MAX) {
-        std::string outlineColorString = "Outline color: " + GetStringColor(outLineColor) + "\n";
+    if (outLineColor.has_value()) {
+        std::string outlineColorString = "Outline color: " + GetStringColor(outLineColor.value()) + "\n";
         message += outlineColorString;
     }
-    if (fillColor != UINT32_T_MAX) {
-        std::string fillColorString = "Fill color: " +  GetStringColor(fillColor) + "\n";
+    if (fillColor.has_value()) {
+        std::string fillColorString = "Fill color: " +  GetStringColor(fillColor.value()) + "\n";
         message += fillColorString;
     }
     return message;
 }
 
-uint32_t CTriangle::GetOutlineColor() {
+const std::optional<uint32_t> CTriangle::GetOutlineColor() {
     if (m_colors.empty()) {
-        return std::numeric_limits<uint32_t>::max();
+        return std::nullopt;
     }
     return m_colors[0];
 }
 
-uint32_t CTriangle::GetFillColor() {
+const std::optional<uint32_t> CTriangle::GetFillColor() {
     if (m_colors.size() < 2) {
-        return std::numeric_limits<uint32_t>::max();
+        return std::nullopt;
     }
     return m_colors[1];
 }
 
-CPoint CTriangle::GetVertex1() {
+const CPoint CTriangle::GetVertex1() {
     return m_points[0];
 }
 
-CPoint CTriangle::GetVertex2() {
+const CPoint CTriangle::GetVertex2() {
     return m_points[1];
 }
 
-CPoint CTriangle::GetVertex3() {
+const CPoint CTriangle::GetVertex3() {
     return m_points[2];
 }

@@ -10,21 +10,23 @@
 class CRectangle : public ISolidShape {
 public:
     explicit CRectangle(CPoint point, double width, double height, std::vector<uint32_t> colors);
-    uint32_t GetFillColor() override;
-    double GetArea() override;
-    double GetPerimeter() override;
-    std::string ToString() override;
-    double GetWidth() const;
-    double GetHeight() const;
-    CPoint GetLeftTop();
-    CPoint GetRightBottom();
-    uint32_t GetOutlineColor() override;
+    const std::optional<uint32_t> GetFillColor() override;
+    const double GetArea() override;
+    const double GetPerimeter() override;
+    const std::string ToString() override;
+    const double GetWidth() const;
+    const double GetHeight() const;
+    const CPoint GetLeftTop();
+    const CPoint GetRightBottom();
+    const std::optional<uint32_t> GetOutlineColor() override;
 private:
     CPoint m_pointLeftTop;
     double m_width;
     double m_height;
     std::vector<uint32_t> m_colors;
     static std::string GetStringColor(uint32_t color);
+
+    static std::string Format(double f);
 };
 
 #endif //GEOMETRICFIGURES_CRECTANGLE_H

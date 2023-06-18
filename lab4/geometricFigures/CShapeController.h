@@ -11,22 +11,42 @@
 
 enum class CommandType
 {
-    RECTANGLE,
-    TRIANGLE,
-    CIRCLE,
-    LINE_SEGMENT,
+    CREATE_RECTANGLE,
+    CREATE_TRIANGLE,
+    CREATE_CIRCLE,
+    CREATE_LINE_SEGMENT,
     PRINT_MAX_AREA,
     PRINT_MIN_PERIMETER
 };
 
 struct Params {
-    std::optional<CommandType> shapeType;
+    std::optional<CommandType> commandType;
     std::optional<std::string> peaks;
     std::optional<std::string> colors;
 };
 
 namespace
 {
+    // перенести в cpp файл
+    const int CONSTANT_COLOR = 8;
+    const int CONSTANT_ARGUMENTS = 3;
+    const int CONSTANT_COMMAND_TYPE = 1;
+    const int CONSTANT_RECTANGLE_X = 0;
+    const int CONSTANT_RECTANGLE_Y = 1;
+    const int CONSTANT_RECTANGLE_WIDTH = 2;
+    const int CONSTANT_RECTANGLE_HEIGHT = 3;
+    const int CONSTANT_LINE_SEGMENT_X1 = 0;
+    const int CONSTANT_LINE_SEGMENT_Y1 = 1;
+    const int CONSTANT_LINE_SEGMENT_X2 = 2;
+    const int CONSTANT_LINE_SEGMENT_Y2 = 3;
+    const int CONSTANT_CIRCLE_X = 0;
+    const int CONSTANT_CIRCLE_Y = 1;
+    const int CONSTANT_CIRCLE_RADIUS = 2;
+    const std::string REGEX_VALIDATE_ARGUMENTS = R"(^([\d\.]+)\s([\d\.]*)\s?([\d\.]*)\s?([\d\.]*)\s?([\d\.]*)\s?([\d\.]*)\s?$)";
+    const std::string REGEX_COMMAND_LINE = R"(^(rectangle|triangle|circle|line|printMaxArea|printMinPerimeter)(\s|$)((([0-9]*(\.[0-9]+)?)(\s?)){0,6})(((\w{6})(\s?)){0,2})$)";
+    // R"(^(rectangle|triangle|circle|line|printMaxArea|printMinPerimeter)(\s|$)((([0-9]*(\.[0-9]+)?)(\s?)){0,6})(((\w{6})(\s?)){0,2})$)";
+    // new R"(^(rectangle|triangle|circle|line|printMaxArea|printMinPerimeter)(\s|$)((([-0-9]*(\.[0-9]+)?)(\s?)){0,6})(((\w{6})(\s?)){0,2})$)"
+    const std::string REGEX_VALIDATE_COLOR = "^([1,2,3,4,5,6,7,8,9,0,a,b,c,d,e,f]{6})\\s?([1,2,3,4,5,6,7,8,9,0,a,b,c,d,e,f]{6})?$";
     const std::string NOT_NUMBER = "It's not a number!\n";
     const std::string NOT_COLOR = "It's not a color!\n";
     const std::string INCORRECT_POINTS_TRIANGLE = "Incorrect coordinates for Triangle!\n";
@@ -44,10 +64,10 @@ namespace
 
 namespace {
     const std::map<std::string, CommandType> command = {
-            { "rectangle", CommandType::RECTANGLE },
-            { "triangle", CommandType::TRIANGLE },
-            { "circle", CommandType::CIRCLE },
-            { "line", CommandType::LINE_SEGMENT },
+            { "rectangle", CommandType::CREATE_RECTANGLE },
+            { "triangle", CommandType::CREATE_TRIANGLE },
+            { "circle", CommandType::CREATE_CIRCLE },
+            { "line", CommandType::CREATE_LINE_SEGMENT },
             { "printMaxArea", CommandType::PRINT_MAX_AREA },
             { "printMinPerimeter", CommandType::PRINT_MIN_PERIMETER },
     };
