@@ -10,7 +10,7 @@
 
 class CLineSegment : public IShape {
 public:
-    CLineSegment(std::vector<CPoint> points, std::vector<uint32_t> colors);
+    CLineSegment(std::vector<CPoint> points, ColorTypes colors);
     const double GetPerimeter() override;
     const double GetArea() override;
     const std::string ToString() override;
@@ -18,10 +18,9 @@ public:
     const CPoint GetStartPoint();
     const CPoint GetEndPoint();
 private:
-    std::vector<CPoint> m_points;//opt можно хранить в разных
-    std::vector<uint32_t> m_colors;
+    std::vector<CPoint> m_points;
+    ColorTypes m_colors;
     const static std::string GetStringColor(uint32_t color);
-
     static std::string Format(double f);
 };
 

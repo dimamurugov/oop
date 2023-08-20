@@ -2,16 +2,22 @@
 
 #define M_PI 3.14159265358979323846
 
-CCircle::CCircle(CPoint point, double radius, std::vector<uint32_t> colors) :
+CCircle::CCircle(CPoint point, double radius, ColorTypes colors) :
     m_center(point),
     m_radius(radius),
-    m_colors(std::move(colors)) {}
+    m_colors(colors) {
+    if (!ValidatePoint()) {
+        // Следует выбрасывать наследники исключений
+        // Данная реализация - мало информации что произошло и это не обработать
+        throw "Coordinate must not be less than zero!\n";
+    }
+    if (m_radius <= 0) {
+        throw "Radius cannot be less than zero!\n";
+    }
+}
 
 const std::optional<uint32_t> CCircle::GetFillColor() {
-    if (m_colors.size() < 2) {
-        return std::nullopt;
-    }
-    return m_colors[1];
+    return m_colors.fillColor;
 }
 
 const double CCircle::GetArea() {
@@ -60,10 +66,7 @@ const std::string CCircle::ToString() {
 }
 
 const std::optional<uint32_t> CCircle::GetOutlineColor() {
-    if (m_colors.empty()) {
-        return std::nullopt;
-    }
-    return m_colors[0];
+    return m_colors.outlineColor;
 }
 
 const CPoint CCircle::GetCenter() {
@@ -72,4 +75,15 @@ const CPoint CCircle::GetCenter() {
 
 const double CCircle::GetRadius() const {
     return m_radius;
+}
+
+const bool CCircle::ValidatePoint() {
+    auto point = GetCenter().GetPoint();
+    bool result = true;
+
+    if (point[0] < 0 || point[1] < 0) {
+        result = false;
+    }
+
+    return result;
 }

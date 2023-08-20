@@ -2,9 +2,10 @@
 
 #include <valarray>
 
-CLineSegment::CLineSegment(std::vector<CPoint> points, std::vector<uint32_t> colors) :
-    m_colors(std::move(colors)),
-    m_points(std::move(points)) {}
+CLineSegment::CLineSegment(std::vector<CPoint> points, ColorTypes colors) :
+    m_colors(colors),
+    m_points(std::move(points)) {
+}
 
 const std::string CLineSegment::GetStringColor(uint32_t color) {
     std::stringstream stream;
@@ -37,19 +38,17 @@ const std::string CLineSegment::ToString() {
     }
     return message;
 }
-// избивиться от дублирование кода
+
 const double CLineSegment::GetPerimeter() {
     auto startPoint = GetStartPoint().GetPoint();
     auto endPoint = GetEndPoint().GetPoint();
-    double length = sqrt(pow(endPoint[0] - startPoint[0], 2)+pow(endPoint[1] - startPoint[1], 2));
+    // Вынести в функцию между двумя точками
+     double length = sqrt(pow(endPoint[0] - startPoint[0], 2)+pow(endPoint[1] - startPoint[1], 2));
     return length;
 }
 
 const std::optional<uint32_t> CLineSegment::GetOutlineColor() {
-    if (m_colors.empty()) {
-        return std::nullopt;
-    }
-    return m_colors[0];
+    return m_colors.outlineColor;
 }
 
 const CPoint CLineSegment::GetStartPoint() {

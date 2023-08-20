@@ -2,12 +2,16 @@
 #include "CRectangle.h"
 
 
-CRectangle::CRectangle(CPoint pointLeftTop, double width, double height, std::vector<uint32_t> colors) :
+CRectangle::CRectangle(CPoint pointLeftTop, double width, double height, ColorTypes colors) :
     m_width(width),
     m_height(height),
-    m_colors{colors},
+    m_colors(colors),
     m_pointLeftTop(pointLeftTop)
-{}
+{
+    if (width <= 0 || height <= 0) {
+        throw "Length and height cannot be less than or equal to zero!\n";
+    }
+}
 
 const double CRectangle::GetArea() {
     return m_width * m_height;
@@ -36,11 +40,13 @@ const std::string CRectangle::ToString() {
     std::string shape = "Shape: Rectangle\n";
     std::string perimeter = "Perimeter: " + Format(GetPerimeter()) + "\n";
     std::string area = "Area: "  + Format(GetArea()) + "\n";
-    std::vector points = m_pointLeftTop.GetPoint();
-    std::string point = "Left Top: " + Format(points[0]) + DELIMITER + Format(points[1]) + "\n";
+    std::vector leftPoints = m_pointLeftTop.GetPoint();
+    std::vector rightPoints = GetRightBottom().GetPoint();
+    std::string leftPoint = "Left Top: " + Format(leftPoints[0]) + DELIMITER + Format(leftPoints[1]) + "\n";
+    std::string rightPoint = "Right Top: " + Format(rightPoints[0]) + DELIMITER + Format(rightPoints[1]) + "\n";
     auto outLineColor = GetOutlineColor();
     auto fillColor = GetFillColor();
-    std::string message = shape + perimeter + area + point;
+    std::string message = shape + perimeter + area + leftPoint + rightPoint;
 
     if (outLineColor.has_value()) {
         std::string outlineColorString = "Outline color: " + GetStringColor(outLineColor.value()) + "\n";
@@ -54,17 +60,11 @@ const std::string CRectangle::ToString() {
 }
 
 const std::optional<uint32_t> CRectangle::GetOutlineColor() {
-    if (m_colors.empty()) {
-        return std::nullopt;
-    }
-    return m_colors[0];
+    return m_colors.outlineColor;
 }
 
 const std::optional<uint32_t> CRectangle::GetFillColor() {
-    if (m_colors.size() < 2) {
-        return std::nullopt;
-    }
-    return m_colors[1];
+    return m_colors.outlineColor;
 }
 
 const CPoint CRectangle::GetRightBottom() {

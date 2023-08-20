@@ -9,7 +9,7 @@
 
 class CRectangle : public ISolidShape {
 public:
-    explicit CRectangle(CPoint point, double width, double height, std::vector<uint32_t> colors);
+    explicit CRectangle(CPoint point, double width, double height, ColorTypes colors);
     const std::optional<uint32_t> GetFillColor() override;
     const double GetArea() override;
     const double GetPerimeter() override;
@@ -23,9 +23,8 @@ private:
     CPoint m_pointLeftTop;
     double m_width;
     double m_height;
-    std::vector<uint32_t> m_colors;
+    ColorTypes m_colors;
     static std::string GetStringColor(uint32_t color);
-
     static std::string Format(double f);
 };
 

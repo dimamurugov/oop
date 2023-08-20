@@ -12,7 +12,7 @@
 
 class CCircle : public ISolidShape {
 public:
-    explicit CCircle(CPoint point, double radius, std::vector<uint32_t> colors);
+    explicit CCircle(CPoint point, double radius, ColorTypes colors);
     const std::optional<uint32_t> GetFillColor() override;
     const double GetArea() override;
     const double GetPerimeter() override;
@@ -21,9 +21,10 @@ public:
     const CPoint GetCenter();
     const double GetRadius() const;
 private:
+    const bool ValidatePoint();
     CPoint m_center;
     double m_radius;
-    std::vector<uint32_t> m_colors;
+    ColorTypes m_colors;
     static const std::string GetStringColor(uint32_t color);
     static std::string Format(double f);
 };
