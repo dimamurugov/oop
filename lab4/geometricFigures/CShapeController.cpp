@@ -88,7 +88,10 @@ void CShapeController::InitRectangle(std::vector<double> arguments, ColorTypes c
    CPoint point(x, y);
 
     try {
-        // утечка памяти
+        // утечка памяти? Какая ещё утечка памяти?... а что тут происходит?
+        // todo: хм.... помню что мне говорили,
+        // todo: что new вообще не понадобиться? или не говорили)
+        // todo: не вызывается деструктор
         auto rectangle = new CRectangle(point, width, height, colors);
         m_shape.push_back(rectangle);
     } catch (const char* e) {
@@ -143,7 +146,7 @@ void CShapeController::InitTriangle(std::vector<double> arguments, ColorTypes co
     }
     try {
         auto triangle = new CTriangle(points, colors);
-        // использовать умные указатели -
+        // использовать умные указатели - todo: чоооооооооо это такое?
         m_shape.push_back(triangle);
     } catch (const char* e) {
         std::cout << e << std::endl;

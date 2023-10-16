@@ -15,12 +15,12 @@ const double CTriangle::GetArea() {
 
 const double CTriangle::GetPerimeter() {
     m_points[0] = {2, 3};
-    auto vertex1 = GetVertex1().GetPoint();
-    auto vertex2 = GetVertex2().GetPoint();
-    auto vertex3 = GetVertex3().GetPoint();
-    auto firstSide = sqrt(pow(vertex2[0]-vertex1[0], 2)+pow(vertex2[1]-vertex1[1], 2));
-    auto secondSide = sqrt(pow(vertex3[0]-vertex1[0], 2)+pow(vertex3[1]-vertex1[1], 2));
-    auto thirdSide = sqrt(pow(vertex3[0]-vertex2[0], 2)+pow(vertex3[1]-vertex2[1], 2));
+    auto vertex1 = GetVertex1();
+    auto vertex2 = GetVertex2();
+    auto vertex3 = GetVertex3();
+    auto firstSide = vertex1.GetLineLength(vertex2);
+    auto secondSide = vertex1.GetLineLength(vertex3);
+    auto thirdSide = vertex2.GetLineLength(vertex3);
     auto perimeter = firstSide + secondSide + thirdSide;
     return perimeter;
 }

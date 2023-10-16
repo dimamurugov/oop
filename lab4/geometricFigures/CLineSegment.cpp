@@ -1,7 +1,5 @@
 #include "CLineSegment.h"
 
-#include <valarray>
-
 CLineSegment::CLineSegment(std::vector<CPoint> points, ColorTypes colors) :
     m_colors(colors),
     m_points(std::move(points)) {
@@ -40,10 +38,9 @@ const std::string CLineSegment::ToString() {
 }
 
 const double CLineSegment::GetPerimeter() {
-    auto startPoint = GetStartPoint().GetPoint();
-    auto endPoint = GetEndPoint().GetPoint();
-    // Вынести в функцию между двумя точками
-     double length = sqrt(pow(endPoint[0] - startPoint[0], 2)+pow(endPoint[1] - startPoint[1], 2));
+    auto startPoint = GetStartPoint();
+    auto endPoint = GetEndPoint();
+    double length = startPoint.GetLineLength(endPoint);
     return length;
 }
 

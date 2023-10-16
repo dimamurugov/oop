@@ -6,14 +6,7 @@ CCircle::CCircle(CPoint point, double radius, ColorTypes colors) :
     m_center(point),
     m_radius(radius),
     m_colors(colors) {
-    if (!ValidatePoint()) {
-        // Следует выбрасывать наследники исключений
-        // Данная реализация - мало информации что произошло и это не обработать
-        throw "Coordinate must not be less than zero!\n";
-    }
-    if (m_radius <= 0) {
-        throw "Radius cannot be less than zero!\n";
-    }
+    ValidateParams();
 }
 
 const std::optional<uint32_t> CCircle::GetFillColor() {
@@ -77,13 +70,14 @@ const double CCircle::GetRadius() const {
     return m_radius;
 }
 
-const bool CCircle::ValidatePoint() {
+const void CCircle::ValidateParams() {
     auto point = GetCenter().GetPoint();
-    bool result = true;
 
     if (point[0] < 0 || point[1] < 0) {
-        result = false;
+        throw "Coordinate must not be less than zero!";
     }
 
-    return result;
+    if (m_radius <= 0) {
+        throw "Radius cannot be less than zero!\n";
+    }
 }

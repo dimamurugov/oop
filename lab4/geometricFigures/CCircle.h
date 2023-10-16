@@ -21,7 +21,7 @@ public:
     const CPoint GetCenter();
     const double GetRadius() const;
 private:
-    const bool ValidatePoint();
+    const void ValidateParams();
     CPoint m_center;
     double m_radius;
     ColorTypes m_colors;

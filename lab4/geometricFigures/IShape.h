@@ -17,8 +17,8 @@ struct ColorTypes {
 
 class IShape {
 public:
-    // const необхоидмо справа после круглых скобочек
-    virtual const double GetArea() = 0;// что означает =0 у виртуального метода
+    // const необхоидмо справа после круглых скобочек - для чего?
+    virtual const double GetArea() = 0;// что означает =0 у виртуального метода?
     virtual const double GetPerimeter() = 0;
     virtual const std::string ToString() = 0;
     virtual const std::optional<uint32_t> GetOutlineColor() = 0;
