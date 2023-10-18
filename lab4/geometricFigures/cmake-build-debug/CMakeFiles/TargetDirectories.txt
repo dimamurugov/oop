@@ -1,0 +1,3 @@
+C:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab4/geometricFigures/cmake-build-debug/CMakeFiles/geometricFigures.dir
+C:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab4/geometricFigures/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab4/geometricFigures/cmake-build-debug/CMakeFiles/rebuild_cache.dir

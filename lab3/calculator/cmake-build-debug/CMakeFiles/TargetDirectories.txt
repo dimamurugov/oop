@@ -1,6 +1,0 @@
-D:/C++/my_labs/oop/lab3/calculator/cmake-build-debug/CMakeFiles/Calculator.dir
-D:/C++/my_labs/oop/lab3/calculator/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/C++/my_labs/oop/lab3/calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/C++/my_labs/oop/lab3/calculator/cmake-build-debug/tests/CMakeFiles/tests.dir
-D:/C++/my_labs/oop/lab3/calculator/cmake-build-debug/tests/CMakeFiles/edit_cache.dir
-D:/C++/my_labs/oop/lab3/calculator/cmake-build-debug/tests/CMakeFiles/rebuild_cache.dir

@@ -3,32 +3,23 @@
 #include "Calculator.h"
 
 Calculator::Calculator() = default;
-// логика должна лежать в калькуляторе (Функции, переменные)
 
 void Calculator::InitVariable(const std::string &identifier) {
-    //validation first
-//    if (CheckNameIdentifier(identifier))//rename
-//    {
-//        std::cout << NAME_NOT_START_WITH_NUMBER;
-//        return;
-//    }
+    if (!ValidateIdentifier(identifier))
+    {
+        std::cout << NAME_NOT_START_WITH_NUMBER;
+        return;
+    }
 
-//    if (!CheckBusyIdentifier(identifier))
-//    {
-//        std::cout << FUNCTION_ALREADY_EXISTS;//rename
-//        return;
-//    }
-
+    if (!CheckBusyIdentifier(identifier))
+    {
+        std::cout << IDENTIFICATOR_ALREADY_TAKEN;
+        return;
+    }
     AddVariables(identifier, std::numeric_limits<double>::quiet_NaN());
 }
 
 void Calculator::AddVariables(const std::string &identifier, double value) {
-//    if (CheckNameIdentifier(identifier))// снова вызывается
-//    {
-//        std::cout << NAME_NOT_START_WITH_NUMBER;
-//        return;
-//    }
-
     m_variables[identifier] = value;
 }
 
@@ -53,7 +44,7 @@ double Calculator::Multiplication(double firstOperator, double secondOperator) {
 }
 
 void Calculator::AssignValue(const std::string &identifier, const std::string &value) {
-    if (getValue(identifier) != std::numeric_limits<double>::quiet_NaN()) {
+    if (CheckBusyIdentifier(identifier)) {
         InitVariable(identifier);
     }
 
@@ -66,44 +57,47 @@ void Calculator::AssignValue(const std::string &identifier, const std::string &v
         return;
     }
 
-    if (getValue(value) != std::numeric_limits<double>::quiet_NaN()) {
-        AddVariables(identifier, getValue(value));
+    if (GetValue(value) != std::numeric_limits<double>::quiet_NaN()) {
+        AddVariables(identifier, GetValue(value));
     }
 }
 
-double Calculator::getValue(const std::string &identifier) {
+double Calculator::GetValue(const std::string &identifier) {
+    // использовать итератор если необходимо несколько раз обратися к одному элементу
     if (m_variables.count(identifier)) {
         return m_variables[identifier];
     }
 
     if (m_functions.count(identifier)) {
-        std::string firstArgument = m_functions[identifier]->m_firstArgument;
-        std::string secondArgument = m_functions[identifier]->m_secondArgument;
+        std::string firstArgument = m_functions[identifier]->firstArgument;
+        std::string secondArgument = m_functions[identifier]->secondArgument;
 
-        double firstValue = getValue(firstArgument);
-        double secondValue = getValue(secondArgument);
+        double firstValue = GetValue(firstArgument);
+        double secondValue = GetValue(secondArgument);
         m_functions[identifier]->value = CalculateExpression(firstValue, secondValue, m_functions[identifier]->functionOperator);
         return m_functions[identifier]->value;
     }
     return std::numeric_limits<double>::quiet_NaN();
 }
 
-std::map<std::string, double> Calculator::getVariables() {
+std::map<std::string, double> Calculator::GetVariables() {
     return m_variables;
 }
-
+// парсинг строк не должен быть в калькуляторе
 void Calculator::InitFunction(const std::string &identifier, const std::string &value) {
+    // если объявить функцию с символ(-) показывается сообщение о рекурсивности
     if (!ValidateIdentifier(identifier))
     {
+        std::cout << NAME_NOT_START_WITH_NUMBER;
         return;
     }
 
-//    if (!CheckBusyIdentifier(identifier))
-//    {
-//        std::cout << FUNCTION_ALREADY_EXISTS;
-//        return;
-//    }
-
+    if (!CheckBusyIdentifier(identifier))
+    {
+        std::cout << IDENTIFICATOR_ALREADY_TAKEN;
+        return;
+    }
+    // упростить
     std::string stringCommand;
     std::string firstArgument;
     std::string secondArgument;
@@ -122,7 +116,7 @@ void Calculator::InitFunction(const std::string &identifier, const std::string &
         stringCommand.push_back(symbol);
 
     }
-    if (stringCommand != "")
+    if (!stringCommand.empty())
     {
         secondArgument = stringCommand;
     }
@@ -135,6 +129,7 @@ void Calculator::InitFunction(const std::string &identifier, const std::string &
 
     if (!functionOperator.has_value())
     {
+        // в этом задании не нужно использовать new и delete
         m_functions[identifier] = new function {
             "",
             secondArgument,
@@ -151,8 +146,9 @@ void Calculator::InitFunction(const std::string &identifier, const std::string &
     }
 
 }
-
+// 0.6
 std::optional<Operator> Calculator::GetOperator(char symbol) {
+    // возвращать итератор
     if (operators.find(symbol) != operators.end())
     {
         return operators.at(symbol);
@@ -178,22 +174,21 @@ double Calculator::CalculateExpression(double firstArgument, double secondArgume
     return secondArgument;
 }
 
-std::map<std::string, double> Calculator::getFunctions() {
+std::map<std::string, double> Calculator::GetFunctions() {
     std::map<std::string, double> calculatedFunction;
     for(auto iter{m_functions.begin()}; iter != m_functions.end(); iter++)
     {
-        calculatedFunction[iter->first] = getValue(iter->first);
+        calculatedFunction[iter->first] = GetValue(iter->first);
     }
 
     return calculatedFunction;
 }
 
 bool Calculator::ValidateIdentifier(const std::string &identifier) {
-    if (isdigit(identifier[0]))
-    {
-        std::cout << NAME_NOT_START_WITH_NUMBER;
-        return false;
-    }
+    // если пустая строка
+    return !isdigit(identifier[0]);
+}
 
-    return true;
+bool Calculator::CheckBusyIdentifier(const std::string &identifier) {
+    return !(m_variables.count(identifier) | m_functions.count(identifier));
 }
