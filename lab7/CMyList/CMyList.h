@@ -195,7 +195,7 @@ typename CMyList<T>::CMyListIterator CMyList<T>::Insert(CMyListIterator iter, T 
 
     return CMyList<T>::CMyListIterator(newNode);
 }
-// операцию "operator=" нужно перегрузить что бы присвоить лист листу
+
 template <class T>
 bool CMyList<T>::operator==(const CMyList<T>& obj)
 {
