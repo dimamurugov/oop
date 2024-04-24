@@ -2,13 +2,37 @@
 #include <stdexcept>
 #include <string>
 #include <iostream>
+#include <new>
+#include <memory>
+
+template <typename T>
+struct Node
+{
+    template <typename TT>
+    void Construct(TT&& value)
+    {
+        std::construct_at(Get(), std::forward<TT>(value));
+    }
+
+    void Destroy()
+    {
+        std::destroy_at(Get());
+    }
+
+    T* Get()
+    {
+        return reinterpret_cast<T*>(raw);
+    }
+
+    alignas(T) char raw[sizeof(T)];
+};
 
 template <class T>
 struct Element
 {
-    T data;
-    Element<T>* next;
     Element<T>* prev;
+    Element<T>* next;
+    Node<T> data;
 };
 
 template <class T>
@@ -17,138 +41,89 @@ class CMyList
 public:
     CMyList();
     CMyList(const CMyList& other);
-    // Реализовать конструктор перемещения и перемещающий оператор присваивания
-    CMyList(CMyList&& other) noexcept;
 
-    CMyList<T>& operator=(const CMyList& other);
     ~CMyList() = default;
-
-    T GetElement(size_t index);
-
-    void AddEnd(T data);
-    void AddBegin(T data);
-    // void Insert(T data, int index);
-    // void Del(int index);
-    void Clear();
-
-    bool operator==(const CMyList& obj);
 
     class CMyListIterator : public std::iterator<std::bidirectional_iterator_tag, T, ptrdiff_t>
     {
     public:
-        CMyListIterator(int index, CMyList<T>& list, bool isReverse);
-        ~CMyListIterator() = default;
+        explicit CMyListIterator(Element<T>* el);
 
         CMyListIterator& operator++();
+        CMyListIterator& operator--();
+        CMyListIterator operator--(int);
+        bool operator==(CMyListIterator other) const;
+        Element<T>* GetNode() const;
 
-        bool operator==(const CMyListIterator& other) const;
-        bool operator!=(const CMyListIterator& other) const;
-        bool operator<(const CMyListIterator& other) const;
+        CMyListIterator operator++(int);
 
-        T operator*();
-        T operator*() const;
+        T& operator*() const;
 
     private:
-        CMyList<T>& m_head;
-        // указатель на элемент
-        int m_index; // Не нужен индекс!!!
-        bool m_isReverse;
+        Element<T>* m_el;
     };
-    // НЕ НУЖЕН ИНДЕКС
-    // да это норм что мы не можем добраться резко до конкретного элемента это список)
+
+    bool operator==(const CMyList& obj);
+    CMyList& operator=(CMyList const& list);
+
+    void AddEnd(T const& data);
+    void AddBegin(T const& data);
+    CMyListIterator Insert(CMyListIterator iter, T const& value);
+    void Del(CMyListIterator iter);
 
     CMyListIterator begin();
     CMyListIterator end();
 
-    CMyListIterator rbegin();
-    CMyListIterator rend();
+    std::reverse_iterator<CMyListIterator> rbegin();
+    std::reverse_iterator<CMyListIterator> rend();
     size_t GetSize() const;
 
 private:
-    // поля класса с подчёркиванием
-    Element<T>* m_lastElement;
+    Element<T>* m_Sentinel;
     Element<T>* m_firstElement;
-    // разобраться зачем указатель на лист?
-    // T* m_list; //
     size_t m_size;
 
     void Copy(const CMyList<T>& obj);
-
-    bool CorrectIndex(int index);
-
-    Element<T>* Move(int index);
 };
 
 template <class T>
 CMyList<T>::CMyList()
-    : m_firstElement(nullptr)
-    , m_lastElement(nullptr)
+    : m_Sentinel()
+    , m_firstElement()
     , m_size(0)
 {
-    m_firstElement = m_lastElement = nullptr;
+    m_Sentinel = new Element<T>{ m_Sentinel, m_Sentinel };
+    m_firstElement = m_Sentinel;
 }
 
 template <class T>
 CMyList<T>::CMyList(const CMyList& other)
-        : m_firstElement(nullptr)
-        , m_lastElement(nullptr)
-        , m_size(0)
+    : m_Sentinel()
+    , m_firstElement()
+    , m_size(0)
 {
+    m_Sentinel = new Element<T>{ m_Sentinel, m_Sentinel };
+    m_firstElement = m_Sentinel;
+
     Copy(other);
 }
 
-//template <class T>
-//CMyList<T>::CMyList(CMyList&& other) noexcept
-//        : CMyList()
-//{
-//    Clear();
-//    m_list = other.m_list;
-//    m_size = other.m_size;
-//    other.m_array = nullptr;
-//    other.m_size = 0;
-//}
-
 template <class T>
-CMyList<T>& CMyList<T>::operator=(const CMyList<T>& other)
+void CMyList<T>::AddEnd(T const& data)
 {
-    if (&other == this)
+    if (m_size == 0)
     {
-        return *this;
-    }// мы ничего не присволил :)
-    return *this;
-}
-
-template <class T>
-void CMyList<T>::AddEnd(T data)
-{
-    Element<T>* t = new Element<T>;
-    t->next = nullptr;
-    t->prev = m_lastElement;
-
-    try
-    {
-        t->data = data; // это T - может выбросить исключение/ и T утечет
-    }
-    // прочитать про срезку
-    catch (const std::bad_alloc* e) // +++ исключение ловят по константной ссылке или по ссылки
-    {
-        // вывод в cout не обязанность класса
-        std::cout << e->what() << std::endl;
-        delete t;
+        AddBegin(data);
         return;
     }
 
-    if (m_lastElement != nullptr)
-        m_lastElement->next = t;
+    auto* t = new Element<T>;
+    t->prev = m_Sentinel->prev;
+    t->next = m_Sentinel;
+    t->data.Construct(data);
 
-    if (m_size == 0)
-    {
-        m_firstElement = m_lastElement = t;
-    }
-    else
-    {
-        m_lastElement = t;
-    }
+    m_Sentinel->prev->next = t;
+    m_Sentinel->prev = t;
 
     m_size++;
 }
@@ -162,132 +137,65 @@ size_t CMyList<T>::GetSize() const
 template <class T>
 void CMyList<T>::Copy(const CMyList<T>& obj)
 {
-    Clear();
-    // + не происходит Строгая гарантия исключений(прежнее\хранить копию)
-    try
-    {
-        Element<T>* t = obj.m_firstElement;
+    Element<T>* t = obj.m_firstElement;
+    auto size = obj.GetSize();
 
-        while (t != nullptr)
-        {
-            AddEnd(t->data);
-            t = t->next;
-        }
-    }
-    catch (const std::bad_alloc* e)
-    {
-        // вывод в cout не обязанность класса
-        std::cout << e->what() << std::endl;
-
-        return;
-    }
-}
-
-template <class T>
-Element<T>* CMyList<T>::Move(int index)
-{
-    Element<T>* t = m_firstElement;
-
-    for (int i = 0; i < index; i++)
+    for (int i = 0; i < size; ++i) {
+        AddEnd(*(t->data.Get()));
         t = t->next;
-
-    return t;
-}
-
-//template <class T>
-//void CMyList<T>::Clear()
-//{
-//    int n = m_size;
-//    for (int i = 0; i < n; i++) {
-//        Del(0);
-//    }
-//}
-
-//template <class T>
-//void CMyList<T>::Del(int index)
-//{
-//    if (m_size == 0) return;
-//
-//    if (!CorrectIndex(index)) // не должно быть, должно работать по итератору
-//        return;
-//
-//    Element<T>* item = Move(index);
-//    Element<T>* itemPrev = item->prev;
-//    Element<T>* itemNext = item->next;
-//
-//    if ((m_size > 1) && (itemPrev != nullptr))
-//        itemPrev->next = itemNext;
-//
-//    if ((itemNext != nullptr) && (m_size > 1))
-//        itemNext->prev = itemPrev;
-//
-//    if (index == 0)
-//        m_firstElement = itemNext;
-//
-//    if (index == m_size - 1)
-//        m_lastElement = itemPrev;
-//
-//    delete item;
-//    m_size--;
-//}
-
-//template <class T>
-//void CMyList<T>::Insert(T data, int index)
-//{
-//
-//    if (index == m_size)
-//    {
-//        AddEnd(data);
-//        return;
-//    }
-//
-//    if (!CorrectIndex(index)) {
-//        return;
-//    }
-//
-//    if (index == 0)
-//    {
-//        AddBegin(data);
-//        return;
-//    }
-//
-//    try
-//    {
-//        Element<T>* itemPrev = Move(index - 1);
-//        Element<T>* item = Move(index);
-//        // добавлять данные в рамках конструктора (оббработается что T создался и не выбросил исключение)
-//        auto* t = new Element<T>;
-//
-//        t->data = data;
-//        t->next = item;
-//        t->prev = itemPrev;
-//        itemPrev->next = t;
-//        item->prev = t;
-//
-//        m_size++;
-//    }
-//    catch (std::bad_alloc e)
-//    {
-//        std::cout << e.what() << std::endl;
-//    }
-//}
-
-template <class T>
-T CMyList<T>::GetElement(size_t index)
-{
-    if (!CorrectIndex(index))
-        throw std::out_of_range("Incorrect index.");
-
-    Element<T>* t = Move(index);
-    return t->data;
+    }
 }
 
 template <class T>
-bool CMyList<T>::CorrectIndex(int index)
+void CMyList<T>::Del(CMyListIterator iter)
 {
-    return (index >= 0) && (index < m_size);
+    if (m_size == 0) return;
+
+    Element<T>* node = iter.GetNode();
+    Element<T>* nextNode = node->next;
+    Element<T>* prevNode = node->prev;
+
+    if (prevNode != nullptr)
+    {
+        prevNode->next = nextNode;
+        nextNode->prev = prevNode;
+    }
+    else
+    {
+        m_firstElement = nextNode;
+        nextNode->prev = nullptr;
+    }
+
+    node->data.Destroy();
+    delete node;
+    m_size--;
 }
 
+template <class T>
+typename CMyList<T>::CMyListIterator CMyList<T>::Insert(CMyListIterator iter, T const& value)
+{
+    if (iter == end())
+    {
+        AddEnd(value);
+        return --end();
+    }
+    if (iter == begin())
+    {
+        AddBegin(value);
+        return begin();
+    }
+    Element<T>* node = iter.GetNode();
+    Element<T>* newNode = new Element<T>;
+    newNode->prev = node->prev;
+    newNode->next = node;
+    newNode->data.Construct(value);
+    node->prev->next = newNode;
+    node->prev = newNode;
+    m_size++;
+
+    return CMyList<T>::CMyListIterator(newNode);
+}
+// операцию "operator=" нужно перегрузить что бы присвоить лист листу
 template <class T>
 bool CMyList<T>::operator==(const CMyList<T>& obj)
 {
@@ -309,115 +217,97 @@ bool CMyList<T>::operator==(const CMyList<T>& obj)
     return true;
 }
 
-// index - не нужно хранить
-// можно использовать make_reverce_iterator - котоорая создаёт реверс итератор и можно не делать последний элемент
-//template <class T>
-//CMyList<T>::CMyListIterator::CMyListIterator(int index, CMyList<T>& list, bool isReverse)
-//        : m_index(index)
-//        , m_l(list)
-//        , m_isReverse(isReverse)
-//{
-//}
-
-//template <class T>
-//typename CMyList<T>::CMyListIterator& CMyList<T>::CMyListIterator::operator++()
-//{
-//    if (!m_isReverse && *this == m_l.end())
-//    {
-//        throw std::out_of_range("Incrementing last iterator");
-//    }
-//    if (m_isReverse && *this == m_l.rend())
-//    {
-//        throw std::out_of_range("Incrementing last iterator");
-//    }
-//    !m_isReverse ? m_index++ : m_index--;
-//
-//    return *this;
-//}
-
 template <class T>
-bool CMyList<T>::CMyListIterator::operator==(const CMyListIterator& other) const
-{
-    return m_index == other.m_index;
+CMyList<T>::CMyListIterator::CMyListIterator(Element<T>* el)
+        : m_el(el)
+{}
+
+template<class T>
+typename CMyList<T>::CMyListIterator &CMyList<T>::CMyListIterator::operator--() {
+    m_el = m_el->prev;
+    return *this;
 }
 
 template <class T>
-bool CMyList<T>::CMyListIterator::operator!=(const CMyListIterator& other) const
+typename CMyList<T>::CMyListIterator& CMyList<T>::CMyListIterator::operator++()
 {
-    return m_index != other.m_index;
+    m_el = m_el->next;
+    return *this;
 }
 
 template <class T>
-bool CMyList<T>::CMyListIterator::operator<(const CMyListIterator& other) const
+T& CMyList<T>::CMyListIterator::operator*() const
 {
-    if (other.m_isReverse != m_isReverse)
-    {
-        throw std::exception();
-    }
-    return m_isReverse ? m_index > other.m_index : m_index < other.m_index;
+    return *m_el->data.Get();
 }
 
-//template <class T>
-//T CMyList<T>::CMyListIterator::operator*()
-//{
-//    return m_l.GetElement(size_t(m_index));
-//}
-// Так же списко должен хранить хотя бы один элемнт - для итератора иначе не воспроизвел end
-//template <class T>
-//T CMyList<T>::CMyListIterator::operator*() const
-//{
-//    // итератор - должен хранить указатель на узел, а не его index
-//    return m_l.GetElement(size_t(m_index));
-//}
+template<class T>
+Element<T> *CMyList<T>::CMyListIterator::GetNode() const {
+    return m_el;
+}
+
+template<class T>
+bool CMyList<T>::CMyListIterator::operator==(CMyList::CMyListIterator other) const {
+    return m_el == other.m_el;
+}
+
+template<class T>
+typename CMyList<T>::CMyListIterator CMyList<T>::CMyListIterator::operator--(int) {
+    CMyListIterator retval = *this;
+    --(*this);
+    return retval;
+}
+
+template<class T>
+typename CMyList<T>::CMyListIterator CMyList<T>::CMyListIterator::operator++(int) {
+    CMyListIterator retval = *this;
+    ++(*this);
+    return retval;
+}
 
 template <class T>
 typename CMyList<T>::CMyListIterator CMyList<T>::begin()
 {
-    return CMyList<T>::CMyListIterator(0, *this, false);
+    return CMyList<T>::CMyListIterator(m_firstElement);
 }
 
 template <class T>
 typename CMyList<T>::CMyListIterator CMyList<T>::end()
 {
-    return CMyList<T>::CMyListIterator(m_size, *this, false);
+    return CMyList<T>::CMyListIterator(m_Sentinel);
 }
 
 template <class T>
-typename CMyList<T>::CMyListIterator CMyList<T>::rbegin()
+std::reverse_iterator<typename CMyList<T>::CMyListIterator> CMyList<T>::rbegin()
 {
-    return CMyList<T>::CMyListIterator(m_size - 1, *this, true);
+    return std::reverse_iterator<CMyListIterator>(end());
 }
 
 template <class T>
-typename CMyList<T>::CMyListIterator CMyList<T>::rend()
+std::reverse_iterator<typename CMyList<T>::CMyListIterator> CMyList<T>::rend()
 {
-    return CMyList<T>::CMyListIterator(-1, *this, true);
+    return std::reverse_iterator<CMyListIterator>(begin());
 }
 
 template <class T>
-void CMyList<T>::AddBegin(T data)
+void CMyList<T>::AddBegin(T const& data)
 {
-    try
-    {
-        Element<T>* t = new Element<T>;
-        t->data = data;
-        t->prev = nullptr;
-        t->next = m_firstElement;
+    Element<T>* t = new Element<T>;
+    t->prev = nullptr;
+    t->next = m_firstElement;
+    t->data.Construct(data);
 
-        if (m_size > 0)
-        {
-            m_firstElement->prev = t;
-            m_firstElement = t;
-        }
-        else
-        {
-            m_firstElement = m_lastElement = t;
-        }
+    m_firstElement = t;
+    m_firstElement->next->prev = m_firstElement;
 
-        m_size++;
+    m_size++;
+}
+
+template<class T>
+CMyList<T> &CMyList<T>::operator=(const CMyList &list) {
+    if (&list != this) {
+        CMyList Copy(list);
     }
-    catch (std::bad_alloc e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+
+    return *this;
 }
