@@ -33,7 +33,7 @@ TEST_CASE("CMyListTests")
         list1.AddEnd("3");
         list1.AddEnd("4");
         REQUIRE(list1.GetSize() == 4);
-        auto it = list1.rend();
+        auto it = list1.rend();// как можно больше разбить тесты
         REQUIRE(*(--it) == "1");
 
     }
@@ -55,7 +55,8 @@ TEST_CASE("Insert element in list")
         REQUIRE(list.GetSize() == 2);
         auto it3 = list.end();
         REQUIRE(*(--it3) == "C");
-        list.AddEnd("D");
+
+        list.AddEnd("D"); // приведу в порядок тесты
 
         auto it4 = list.begin();
         list.Insert((++it4), "B");

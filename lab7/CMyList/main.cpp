@@ -8,10 +8,8 @@ int main()
     list.AddEnd(2);
     list.AddEnd(3);
     std::cout << list.GetSize() << std::endl;
-    CMyList<int> list2 = list;
+    auto iter = list.GetSize();
     std::cout << list2.GetSize() << std::endl;
-//    auto it = list.Insert(list.begin(), "A");
-//    std::cout << *it << std::endl;
 
     return 0;
 }

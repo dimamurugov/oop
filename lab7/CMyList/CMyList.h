@@ -12,6 +12,7 @@ struct Node
     void Construct(TT&& value)
     {
         std::construct_at(Get(), std::forward<TT>(value));
+        // что будет если здесь будет ошибка(для всех мест)
     }
 
     void Destroy()
@@ -32,7 +33,7 @@ struct Element
 {
     Element<T>* prev;
     Element<T>* next;
-    Node<T> data;
+    Node<T> data; // current
 };
 
 template <class T>
@@ -41,13 +42,17 @@ class CMyList
 public:
     CMyList();
     CMyList(const CMyList& other);
+    // конструктор перемещения
+    // перемещающий оператор присваивания
 
     ~CMyList() = default;
+    // Есть указатель, нужен деструктор пользовательский деструктор
 
     class CMyListIterator : public std::iterator<std::bidirectional_iterator_tag, T, ptrdiff_t>
     {
     public:
         explicit CMyListIterator(Element<T>* el);
+        // Константный итератор нужен ещё
 
         CMyListIterator& operator++();
         CMyListIterator& operator--();
@@ -79,7 +84,7 @@ public:
     size_t GetSize() const;
 
 private:
-    Element<T>* m_Sentinel;
+    Element<T>* m_sentinel;
     Element<T>* m_firstElement;
     size_t m_size;
 
@@ -88,22 +93,22 @@ private:
 
 template <class T>
 CMyList<T>::CMyList()
-    : m_Sentinel()
+    : m_sentinel()
     , m_firstElement()
     , m_size(0)
 {
-    m_Sentinel = new Element<T>{ m_Sentinel, m_Sentinel };
-    m_firstElement = m_Sentinel;
+    m_sentinel = new Element<T>{ m_sentinel, m_sentinel };
+    m_firstElement = m_sentinel;
 }
 
 template <class T>
 CMyList<T>::CMyList(const CMyList& other)
-    : m_Sentinel()
+    : m_sentinel()
     , m_firstElement()
     , m_size(0)
 {
-    m_Sentinel = new Element<T>{ m_Sentinel, m_Sentinel };
-    m_firstElement = m_Sentinel;
+    m_sentinel = new Element<T>{ m_sentinel, m_sentinel };
+    m_firstElement = m_sentinel;
 
     Copy(other);
 }
@@ -118,12 +123,12 @@ void CMyList<T>::AddEnd(T const& data)
     }
 
     auto* t = new Element<T>;
-    t->prev = m_Sentinel->prev;
-    t->next = m_Sentinel;
+    t->prev = m_sentinel->prev;
+    t->next = m_sentinel;
     t->data.Construct(data);
 
-    m_Sentinel->prev->next = t;
-    m_Sentinel->prev = t;
+    m_sentinel->prev->next = t;
+    m_sentinel->prev = t;
 
     m_size++;
 }
@@ -150,7 +155,7 @@ template <class T>
 void CMyList<T>::Del(CMyListIterator iter)
 {
     if (m_size == 0) return;
-
+    // если сюда передать стража
     Element<T>* node = iter.GetNode();
     Element<T>* nextNode = node->next;
     Element<T>* prevNode = node->prev;
@@ -224,6 +229,7 @@ CMyList<T>::CMyListIterator::CMyListIterator(Element<T>* el)
 
 template<class T>
 typename CMyList<T>::CMyListIterator &CMyList<T>::CMyListIterator::operator--() {
+    // выкидывать ошибку что мы вышли за пределы списка (если скинул первый элемент)
     m_el = m_el->prev;
     return *this;
 }
@@ -231,6 +237,7 @@ typename CMyList<T>::CMyListIterator &CMyList<T>::CMyListIterator::operator--() 
 template <class T>
 typename CMyList<T>::CMyListIterator& CMyList<T>::CMyListIterator::operator++()
 {
+    // выкидывать ошибку что мы вышли за пределы списка (если скинул первый элемент)
     m_el = m_el->next;
     return *this;
 }
@@ -238,6 +245,7 @@ typename CMyList<T>::CMyListIterator& CMyList<T>::CMyListIterator::operator++()
 template <class T>
 T& CMyList<T>::CMyListIterator::operator*() const
 {
+    // кейс со стражом (0.5)
     return *m_el->data.Get();
 }
 
@@ -252,14 +260,15 @@ bool CMyList<T>::CMyListIterator::operator==(CMyList::CMyListIterator other) con
 }
 
 template<class T>
-typename CMyList<T>::CMyListIterator CMyList<T>::CMyListIterator::operator--(int) {
+typename CMyList<T>::CMyListIterator CMyList<T>::CMyListIterator::operator--(int) { // разобраться с варнингов
     CMyListIterator retval = *this;
     --(*this);
     return retval;
 }
 
 template<class T>
-typename CMyList<T>::CMyListIterator CMyList<T>::CMyListIterator::operator++(int) {
+typename CMyList<T>::CMyListIterator CMyList<T>::CMyListIterator::operator++(int) { // разобраться с варнингов
+    // выход за пределы(кейс)
     CMyListIterator retval = *this;
     ++(*this);
     return retval;
@@ -274,7 +283,7 @@ typename CMyList<T>::CMyListIterator CMyList<T>::begin()
 template <class T>
 typename CMyList<T>::CMyListIterator CMyList<T>::end()
 {
-    return CMyList<T>::CMyListIterator(m_Sentinel);
+    return CMyList<T>::CMyListIterator(m_sentinel);
 }
 
 template <class T>
@@ -293,7 +302,7 @@ template <class T>
 void CMyList<T>::AddBegin(T const& data)
 {
     Element<T>* t = new Element<T>;
-    t->prev = nullptr;
+    t->prev = nullptr; // Нужен ли страж в начале -- добавил страж
     t->next = m_firstElement;
     t->data.Construct(data);
 
