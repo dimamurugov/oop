@@ -2,66 +2,245 @@
 #include "../../../../../catch2/catch.hpp"
 #include "../CMyList.cpp"
 
-TEST_CASE("CMyListTests")
+TEST_CASE("Init list")
 {
-    SECTION("Init Empty List")
+    SECTION("Init int empty List")
     {
         const CMyList<int> list;
         REQUIRE(list.GetSize() == 0);
     }
 
-    SECTION("Init List Constructor with iterators")
-    {
-        CMyList<std::string> list1;
-        list1.AddEnd("1");
-        list1.AddEnd("2");
-        list1.AddEnd("3");
-        list1.AddEnd("4");
-        REQUIRE(list1.GetSize() == 4);
-        auto it = list1.begin();
-        REQUIRE(*it == "1");
-        REQUIRE(*(++it) == "2");
-        REQUIRE(*(++it) == "3");
-        REQUIRE(*(++it) == "4");
-    }
-
-    SECTION("Init List Constructor with reverse iterators")
-    {
-        CMyList<std::string> list1;
-        list1.AddEnd("1");
-        list1.AddEnd("2");
-        list1.AddEnd("3");
-        list1.AddEnd("4");
-        REQUIRE(list1.GetSize() == 4);
-        auto it = list1.rend();// как можно больше разбить тесты
-        REQUIRE(*(--it) == "1");
-
-    }
-}
-
-TEST_CASE("Insert element in list")
-{
-    SECTION("Init List Constructor with reverse iterators")
+    SECTION("Init string empty List")
     {
         CMyList<std::string> list;
         REQUIRE(list.GetSize() == 0);
-        list.Insert(list.begin(), "A");
-        REQUIRE(list.GetSize() == 1);
-        auto it = list.begin();
-        REQUIRE(*it == "A");
+    }
 
-        list.Insert(list.end(), "C");
-        auto it2 = list.end();
-        REQUIRE(list.GetSize() == 2);
-        auto it3 = list.end();
-        REQUIRE(*(--it3) == "C");
+    SECTION("Constructor copy")
+    {
+        CMyList<int> list;
+        list.AddEnd(1);
+        list.AddEnd(2);
+        list.AddEnd(3);
+        CMyList<int> list2;
+        list2 = list;
+        REQUIRE(list2.GetSize() == 3);
+    }
 
-        list.AddEnd("D"); // приведу в порядок тесты
+    SECTION("Constructor move")
+    {
+        CMyList<int> list;
+        list.AddEnd(1);
+        list.AddEnd(2);
+        list.AddEnd(3);
+        CMyList<int> list2;
+        list2 = std::move(list);
+        REQUIRE(list2.GetSize() == 3);
+    }
+}
 
-        auto it4 = list.begin();
-        list.Insert((++it4), "B");
-        REQUIRE(list.GetSize() == 4);
-        REQUIRE(*(++(list.begin())) == "B");
+TEST_CASE("AddEnd")
+{
+    SECTION("Add end in empty list")
+    {
+        CMyList<std::string> list1;
+        list1.AddEnd("1");
+        REQUIRE(list1.GetSize() == 1);
+    }
+
+    SECTION("Add end 3 element in empty list")
+    {
+        CMyList<std::string> list1;
+        list1.AddEnd("1");
+        list1.AddEnd("2");
+        list1.AddEnd("3");
+        REQUIRE(list1.GetSize() == 3);
+    }
+}
+
+TEST_CASE("AddBegin")
+{
+    SECTION("Add begin in empty list")
+    {
+        CMyList<std::string> list1;
+        list1.AddBegin("1");
+        REQUIRE(list1.GetSize() == 1);
+    }
+
+    SECTION("Add begin 3 element in empty list")
+    {
+        CMyList<std::string> list1;
+        list1.AddBegin("1");
+        list1.AddBegin("2");
+        list1.AddBegin("3");
+        REQUIRE(list1.GetSize() == 3);
+    }
+}
+
+TEST_CASE("Node")
+{
+    SECTION("Constructor")
+    {
+        Node<std::string> node{};
+        node.Construct("1");
+        REQUIRE(*(node.Get()) == "1");
+    }
+
+    SECTION("Get")
+    {
+        Node<std::string> node{};
+        node.Construct("1");
+        REQUIRE(*(node.Get()) == "1");
+    }
+
+    SECTION("Destroy")
+    {
+        Node<std::string> node{};
+        node.Construct("1");
+        REQUIRE(*node.Get() == "1");
+        node.Destroy();
+        REQUIRE(*node.Get() == "1");
+    }
+}
+
+TEST_CASE("iterator")
+{
+    SECTION("get begin element")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        list.AddEnd("2");
+        list.AddEnd("3");
+        auto iter = list.begin();
+        REQUIRE(*iter == "1");
+    }
+
+    SECTION("rbegin")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        list.AddEnd("2");
+        list.AddEnd("3");
+        auto iter = list.rbegin();
+        REQUIRE(*(iter) == "3");
+    }
+
+    SECTION("rend")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        list.AddEnd("2");
+        list.AddEnd("3");
+        auto iter = list.rend();
+        REQUIRE(*(--iter) == "1");
+    }
+
+    SECTION("get end element")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        list.AddEnd("2");
+        list.AddEnd("3");
+        auto iter = list.end();
+        REQUIRE(*(--iter) == "3");
+    }
+
+    SECTION("operator++")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        list.AddEnd("2");
+        list.AddEnd("3");
+        auto iter = list.begin();
+        REQUIRE(*iter == "1");
+        REQUIRE(*(++iter) == "2");
+    }
+
+    SECTION("operator++ with sentinel")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        auto iter = list.begin();
+        REQUIRE_THROWS(*(++iter));
+    }
+
+    SECTION("operator--")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        list.AddEnd("2");
+        list.AddEnd("3");
+        auto iter = list.end();
+        REQUIRE(*(--iter) == "3");
+    }
+
+    SECTION("operator-- with sentinel")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        auto iter = list.begin();
+        REQUIRE_THROWS(*(--iter));
+    }
+
+    SECTION("++operator (pre)")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        list.AddEnd("2");
+        auto iter = list.begin();
+        REQUIRE(*iter == "1");
+        REQUIRE(*(iter++) == "1");
+
+        REQUIRE(*iter == "2");
+    }
+
+    SECTION("++operator (pre) with sentinel")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        list.AddEnd("2");
+        auto iter = list.end();
+        REQUIRE_THROWS(*(iter++) == "1");
+    }
+
+    SECTION("operator-- (pre)")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        list.AddEnd("2");
+        list.AddEnd("3");
+        auto iter = list.end();
+        auto iter2 = iter--;
+        REQUIRE(*(--iter2) == "3");
+    }
+
+    SECTION("operator-- (pre) with sentinel")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("1");
+        list.AddEnd("2");
+        list.AddEnd("3");
+        auto iter = list.begin();
+        REQUIRE_THROWS(*(iter--));
+    }
+}
+
+TEST_CASE("begin")
+{
+    SECTION("Add begin in empty list")
+    {
+        CMyList<std::string> list1;
+        list1.AddBegin("1");
+        REQUIRE(list1.GetSize() == 1);
+    }
+
+    SECTION("Add begin 3 element in empty list")
+    {
+        CMyList<std::string> list1;
+        list1.AddBegin("1");
+        list1.AddBegin("2");
+        list1.AddBegin("3");
+        REQUIRE(list1.GetSize() == 3);
     }
 }
 
@@ -73,11 +252,10 @@ TEST_CASE("Delete")
         list.AddEnd("A");
         list.AddEnd("B");
         list.AddEnd("D");
-        REQUIRE(list.GetSize() == 3);
         auto it = list.begin();
         list.Del(it);
-        REQUIRE(list.GetSize() == 2);
         auto it2 = list.begin();
+        REQUIRE(list.GetSize() == 2);
         REQUIRE(*it2 == "B");
     }
 
@@ -87,27 +265,48 @@ TEST_CASE("Delete")
         list.AddEnd("A");
         list.AddEnd("B");
         list.AddEnd("D");
-        REQUIRE(list.GetSize() == 3);
         auto it = list.end();
         list.Del((--it));
-        REQUIRE(list.GetSize() == 2);
         auto it2 = list.end();
+        REQUIRE(list.GetSize() == 2);
         REQUIRE(*(--it2) == "B");
     }
 
-    SECTION("Delete B")
+    SECTION("try Delete sentinel")
     {
         CMyList<std::string> list;
         list.AddEnd("A");
         list.AddEnd("B");
         list.AddEnd("D");
-        REQUIRE(list.GetSize() == 3);
-        auto it = list.begin();
-        list.Del(++it);
-        REQUIRE(list.GetSize() == 2);
-        auto itBegin = list.begin();
-        auto itEnd = list.end();
-        REQUIRE(*itBegin == "A");
-        REQUIRE(*(--itEnd) == "D");
+        auto it = list.end();
+        REQUIRE_THROWS(list.Del(it));
+    }
+}
+
+TEST_CASE("Insert")
+{
+    SECTION("Insert in begin")
+    {
+        CMyList<std::string> list;
+        REQUIRE(list.GetSize() == 0);
+        list.Insert(list.begin(), "A");
+        REQUIRE(list.GetSize() == 1);
+    }
+
+    SECTION("Insert in end")
+    {
+        CMyList<std::string> list;
+        list.AddBegin("A");
+        list.Insert(list.end(), "C");
+        REQUIRE(*(++list.begin()) == "C");
+    }
+
+    SECTION("Insert in middle")
+    {
+        CMyList<std::string> list;
+        list.AddEnd("A");
+        list.AddEnd("C");
+        list.Insert(++list.begin(), "B");
+        REQUIRE(*(++list.begin()) == "B");
     }
 }

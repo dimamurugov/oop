@@ -13,6 +13,7 @@ struct Node
     {
         std::construct_at(Get(), std::forward<TT>(value));
         // что будет если здесь будет ошибка (для всех мест)
+        // я пока хз!)
     }
 
     void Destroy()

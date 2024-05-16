@@ -12,7 +12,7 @@ struct Node
     void Construct(TT&& value)
     {
         std::construct_at(Get(), std::forward<TT>(value));
-        // что будет если здесь будет ошибка(для всех мест)
+        // что будет если здесь будет ошибка (для всех мест)
     }
 
     void Destroy()
@@ -33,7 +33,8 @@ struct Element
 {
     Element<T>* prev;
     Element<T>* next;
-    Node<T> data; // current
+    Node<T> current;
+    bool isEmpty;
 };
 
 template <class T>
@@ -42,25 +43,28 @@ class CMyList
 public:
     CMyList();
     CMyList(const CMyList& other);
-    // конструктор перемещения
-    // перемещающий оператор присваивания
+    CMyList(CMyList&& other) noexcept;
 
-    ~CMyList() = default;
-    // Есть указатель, нужен деструктор пользовательский деструктор
+    CMyList& operator=(CMyList const& list);
+    CMyList<T>& operator=(CMyList<T>&& other) noexcept;
+
+    ~CMyList();
 
     class CMyListIterator : public std::iterator<std::bidirectional_iterator_tag, T, ptrdiff_t>
     {
     public:
         explicit CMyListIterator(Element<T>* el);
-        // Константный итератор нужен ещё
+        // Константный итератор ???
 
         CMyListIterator& operator++();
+        CMyListIterator operator++(int);
+
         CMyListIterator& operator--();
+
         CMyListIterator operator--(int);
+
         bool operator==(CMyListIterator other) const;
         Element<T>* GetNode() const;
-
-        CMyListIterator operator++(int);
 
         T& operator*() const;
 
@@ -69,10 +73,9 @@ public:
     };
 
     bool operator==(const CMyList& obj);
-    CMyList& operator=(CMyList const& list);
 
-    void AddEnd(T const& data);
-    void AddBegin(T const& data);
+    void AddEnd(T const& current);
+    void AddBegin(T const& current);
     CMyListIterator Insert(CMyListIterator iter, T const& value);
     void Del(CMyListIterator iter);
 
@@ -89,46 +92,78 @@ private:
     size_t m_size;
 
     void Copy(const CMyList<T>& obj);
+    void Clear();
 };
 
 template <class T>
-CMyList<T>::CMyList()
-    : m_sentinel()
-    , m_firstElement()
-    , m_size(0)
+CMyList<T>::~CMyList()
 {
-    m_sentinel = new Element<T>{ m_sentinel, m_sentinel };
+    m_firstElement = nullptr;
+    m_sentinel = nullptr;
+}
+
+template <class T>
+CMyList<T>::CMyList()
+        : m_sentinel()
+        , m_firstElement()
+        , m_size(0)
+{
+    m_sentinel = new Element<T>;
+    m_sentinel->next = m_sentinel;
+    m_sentinel->prev = m_sentinel;
+    m_sentinel->isEmpty = true;
     m_firstElement = m_sentinel;
 }
 
 template <class T>
 CMyList<T>::CMyList(const CMyList& other)
-    : m_sentinel()
-    , m_firstElement()
-    , m_size(0)
+        : m_sentinel()
+        , m_firstElement()
+        , m_size(0)
 {
-    m_sentinel = new Element<T>{ m_sentinel, m_sentinel };
+    m_sentinel = new Element<T>;
+    m_sentinel->next = m_sentinel;
+    m_sentinel->prev = m_sentinel;
+    m_sentinel->isEmpty = true;
     m_firstElement = m_sentinel;
 
     Copy(other);
 }
 
+template<class T>
+CMyList<T>::CMyList(CMyList<T>&& other) noexcept
+        : m_sentinel(other.m_sentinel)
+        , m_firstElement(other.m_firstElement)
+        , m_size(other.GetSize())
+{
+    other.m_size = 0;
+    other.m_sentinel = {other.m_sentinel, other.m_sentinel};
+    other.m_firstElement = other.m_sentinel;
+}
+
 template <class T>
-void CMyList<T>::AddEnd(T const& data)
+void CMyList<T>::AddEnd(T const& current)
 {
     if (m_size == 0)
     {
-        AddBegin(data);
+        AddBegin(current);
         return;
     }
 
-    auto* t = new Element<T>;
-    t->prev = m_sentinel->prev;
-    t->next = m_sentinel;
-    t->data.Construct(data);
+    auto* newElement = new Element<T>;
 
-    m_sentinel->prev->next = t;
-    m_sentinel->prev = t;
+    try {
+        newElement->current.Construct(current);
+    }
+    catch (const std::exception& ex) {
+        throw ex;
+    }
+
+    newElement->prev = m_sentinel->prev;
+    newElement->next = m_sentinel;
+    newElement->isEmpty = false;
+    m_sentinel->prev->next = newElement;
+    m_sentinel->prev = newElement;
 
     m_size++;
 }
@@ -146,7 +181,7 @@ void CMyList<T>::Copy(const CMyList<T>& obj)
     auto size = obj.GetSize();
 
     for (int i = 0; i < size; ++i) {
-        AddEnd(*(t->data.Get()));
+        AddEnd(*(t->current.Get()));
         t = t->next;
     }
 }
@@ -154,24 +189,25 @@ void CMyList<T>::Copy(const CMyList<T>& obj)
 template <class T>
 void CMyList<T>::Del(CMyListIterator iter)
 {
-    if (m_size == 0) return;
-    // если сюда передать стража
+    if (m_size == 0) throw std::out_of_range("empty list");
+    if (iter.GetNode() == m_sentinel) throw std::out_of_range("out of range");
+    // если сюда передать стража TODO сверху добавил проверку
     Element<T>* node = iter.GetNode();
     Element<T>* nextNode = node->next;
     Element<T>* prevNode = node->prev;
 
-    if (prevNode != nullptr)
+    if (node == m_firstElement)
+    {
+        m_firstElement = nextNode;
+        nextNode->prev = m_sentinel;
+    }
+    else
     {
         prevNode->next = nextNode;
         nextNode->prev = prevNode;
     }
-    else
-    {
-        m_firstElement = nextNode;
-        nextNode->prev = nullptr;
-    }
 
-    node->data.Destroy();
+    node->current.Destroy();
     delete node;
     m_size--;
 }
@@ -190,29 +226,36 @@ typename CMyList<T>::CMyListIterator CMyList<T>::Insert(CMyListIterator iter, T 
         return begin();
     }
     Element<T>* node = iter.GetNode();
-    Element<T>* newNode = new Element<T>;
-    newNode->prev = node->prev;
-    newNode->next = node;
-    newNode->data.Construct(value);
-    node->prev->next = newNode;
-    node->prev = newNode;
+    auto* newElement = new Element<T>;
+    try {
+        newElement->current.Construct(value);
+    }
+    catch (const std::exception& ex) {
+        throw ex;
+    }
+
+    newElement->prev = node->prev;
+    newElement->next = node;
+    newElement->isEmpty = false;
+
+    node->prev->next = newElement;
+    node->prev = newElement;
     m_size++;
 
-    return CMyList<T>::CMyListIterator(newNode);
+    return CMyList<T>::CMyListIterator(newElement);
 }
 
 template <class T>
 bool CMyList<T>::operator==(const CMyList<T>& obj)
 {
-    if (m_size != obj.m_size)
-        return false;
+    if (m_size != obj.m_size) return false;
 
     Element<T>* t1 = m_firstElement;
     Element<T>* t2 = obj.m_firstElement;
 
-    while (t1 != nullptr)
+    while (t1 != m_sentinel) // тут тоже переделать на проверку первого элемента TODO достаточно m_sentinel
     {
-        if (t1->data != t2->data)
+        if (t1->current != t2->current)
             return false;
 
         t1 = t1->next;
@@ -229,7 +272,10 @@ CMyList<T>::CMyListIterator::CMyListIterator(Element<T>* el)
 
 template<class T>
 typename CMyList<T>::CMyListIterator &CMyList<T>::CMyListIterator::operator--() {
-    // выкидывать ошибку что мы вышли за пределы списка (если скинул первый элемент)
+    // выкидывать ошибку, что мы вышли за пределы списка (если скинул первый элемент)
+    // у стража - по сути нет даты (есть сырая память)
+    // TODO я гарантирую что список останется в валидном состоянии, но ИТЕРАТОР может выкинуть ошибку, но не попртить состояние
+    if (m_el->prev->isEmpty) throw std::out_of_range("iterator is out of range");
     m_el = m_el->prev;
     return *this;
 }
@@ -237,7 +283,7 @@ typename CMyList<T>::CMyListIterator &CMyList<T>::CMyListIterator::operator--() 
 template <class T>
 typename CMyList<T>::CMyListIterator& CMyList<T>::CMyListIterator::operator++()
 {
-    // выкидывать ошибку что мы вышли за пределы списка (если скинул первый элемент)
+    if (m_el->next->isEmpty) throw std::out_of_range("iterator is out of range");
     m_el = m_el->next;
     return *this;
 }
@@ -245,8 +291,9 @@ typename CMyList<T>::CMyListIterator& CMyList<T>::CMyListIterator::operator++()
 template <class T>
 T& CMyList<T>::CMyListIterator::operator*() const
 {
-    // кейс со стражом (0.5)
-    return *m_el->data.Get();
+    // кейс со стражом (0.5) TODO - пусть будет Done
+    if (m_el->isEmpty) throw std::out_of_range("iterator is out of range");
+    return *m_el->current.Get();
 }
 
 template<class T>
@@ -260,15 +307,17 @@ bool CMyList<T>::CMyListIterator::operator==(CMyList::CMyListIterator other) con
 }
 
 template<class T>
-typename CMyList<T>::CMyListIterator CMyList<T>::CMyListIterator::operator--(int) { // разобраться с варнингов
+typename CMyList<T>::CMyListIterator CMyList<T>::CMyListIterator::operator--(int) { // разобраться с варнингов TODO (Clang-Tidy) утверждает что постфиксная форма должна возразать константу
+    if (this->m_el->prev->isEmpty) throw std::out_of_range("iterator is out of range");
     CMyListIterator retval = *this;
     --(*this);
     return retval;
 }
 
 template<class T>
-typename CMyList<T>::CMyListIterator CMyList<T>::CMyListIterator::operator++(int) { // разобраться с варнингов
-    // выход за пределы(кейс)
+typename CMyList<T>::CMyListIterator CMyList<T>::CMyListIterator::operator++(int) { // разобраться с варнингов TODO (Clang-Tidy) утверждает что постфиксная форма должна возразать константу
+    // выход за пределы(кейс) TODO поддержал
+    if (this->m_el->next->isEmpty) throw std::out_of_range("iterator is out of range");
     CMyListIterator retval = *this;
     ++(*this);
     return retval;
@@ -299,14 +348,20 @@ std::reverse_iterator<typename CMyList<T>::CMyListIterator> CMyList<T>::rend()
 }
 
 template <class T>
-void CMyList<T>::AddBegin(T const& data)
+void CMyList<T>::AddBegin(T const& current)
 {
-    Element<T>* t = new Element<T>;
-    t->prev = nullptr; // Нужен ли страж в начале -- добавил страж
-    t->next = m_firstElement;
-    t->data.Construct(data);
+    auto* newElement = new Element<T>;
+    try {
+        newElement->current.Construct(current);
+    }
+    catch (const std::exception& ex) {
+        throw ex;
+    }
+    newElement->isEmpty = false;
+    newElement->prev = m_sentinel; // Нужен ли страж в начале добавил страж TODO добавил и надо ПРОВЕРИТЬ
+    newElement->next = m_firstElement;
 
-    m_firstElement = t;
+    m_firstElement = newElement;
     m_firstElement->next->prev = m_firstElement;
 
     m_size++;
@@ -315,8 +370,29 @@ void CMyList<T>::AddBegin(T const& data)
 template<class T>
 CMyList<T> &CMyList<T>::operator=(const CMyList &list) {
     if (&list != this) {
-        CMyList Copy(list);
+        Copy(list);
     }
 
     return *this;
+}
+
+template<class T>
+CMyList<T> &CMyList<T>::operator=(CMyList<T>&& other) noexcept {
+    if (&other != this)
+    {
+        Clear();
+        m_sentinel = other.m_sentinel;
+        m_firstElement = other.m_firstElement;
+        m_size = other.GetSize();
+    }
+    return *this;
+}
+
+template<class T>
+void CMyList<T>::Clear() {
+    auto deleteElement = begin();
+    for (int i = 0; i < this->GetSize(); ++i) {
+        Del(deleteElement);
+        ++deleteElement;
+    }
 }
