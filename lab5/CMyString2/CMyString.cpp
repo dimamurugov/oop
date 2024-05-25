@@ -6,6 +6,7 @@
 CMyString::CMyString()
         : m_chars(new char[1])
         , m_length(0)
+        , m_capacity(1)
 {
     m_chars[0] = '\0';
 }
@@ -23,6 +24,7 @@ CMyString::CMyString(CMyString const& other)
 CMyString::CMyString(const char* pString, size_t length)
         : m_chars(new char[length + 1])
         , m_length(length)
+        , m_capacity(length * 2)
 {
     std::copy(pString, pString + length, m_chars);
     m_chars[m_length] = '\0';
@@ -31,6 +33,7 @@ CMyString::CMyString(const char* pString, size_t length)
 CMyString::CMyString(char* pString, size_t length, int)
         : m_chars(pString)
         , m_length(length)
+        , m_capacity(length * 2)
 {
 }
 
@@ -42,9 +45,11 @@ CMyString::CMyString(std::string const& stlString)
 CMyString::CMyString(CMyString&& other) noexcept
         : m_chars(other.m_chars)
         , m_length(other.m_length)
+        , m_capacity(other.m_length * 2)
 {
     other.m_chars = nullptr;
     other.m_length = 0;
+    other.m_capacity = 0;
 }
 
 CMyString::~CMyString()
@@ -55,6 +60,11 @@ CMyString::~CMyString()
 size_t CMyString::GetLength() const noexcept
 {
     return m_length;
+}
+
+size_t CMyString::GetCapacity() const noexcept
+{
+    return m_capacity;
 }
 
 CMyString& CMyString::operator=(CMyString const& rhs)
@@ -84,7 +94,15 @@ CMyString& CMyString::operator=(CMyString&& rhs) noexcept
 
 CMyString& CMyString::operator+=(CMyString const& rhs)
 {
-    *this = *this + rhs;
+    size_t otherLength = rhs.GetLength();
+    if (m_capacity <= m_length + otherLength)
+    {
+        *this = *this + rhs; // выделить память в 2 раза
+        return *this;
+    }
+
+    std::copy(rhs.GetStringData(), rhs.GetStringData() + rhs.GetLength(), m_chars + m_length);
+    m_length += rhs.GetLength();
     return *this;
 }
 
@@ -123,8 +141,9 @@ CMyString operator+(CMyString const& lhs, CMyString const& rhs)
     }
 
     size_t length = lhs.GetLength() + rhs.GetLength();
-    char* chars = new char[length + 1];
-    // std::copy -
+    // char* chars = new char[length + 1];
+    char* chars = new char[length * 2];
+    // std::copy - добавляет элементы из контейнера A в контейнер B.
     std::copy(lhs.GetStringData(), lhs.GetStringData() + lhs.GetLength(), chars);
     std::copy(rhs.GetStringData(), rhs.GetStringData() + rhs.GetLength(), chars + lhs.GetLength());
     chars[length] = '\0';
@@ -166,7 +185,9 @@ std::strong_ordering CMyString::operator<=>(CMyString const& rhs) const noexcept
 {
     auto lArr = GetStringData();
     auto rArr = rhs.GetStringData();
-
+    // Лексикографически сравнивает два диапазона[первый1, последний1)и[первый2, последний2)
+    // использует трехстороннее сравнение и дает результат наиболее сильного применимого типа категории сравнения.
+    // Возвращаемое значение - Значение типа категории сравнения, указанного выше.
     return std::lexicographical_compare_three_way(lArr, lArr + m_length, rArr, rArr + rhs.m_length);
 }
 
