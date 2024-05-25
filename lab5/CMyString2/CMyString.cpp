@@ -97,12 +97,12 @@ CMyString& CMyString::operator+=(CMyString const& rhs)
     size_t otherLength = rhs.GetLength();
     if (m_capacity <= m_length + otherLength)
     {
-        *this = *this + rhs; // выделить память в 2 раза
+        *this = *this + rhs;
         return *this;
     }
 
     std::copy(rhs.GetStringData(), rhs.GetStringData() + rhs.GetLength(), m_chars + m_length);
-    m_length += rhs.GetLength();
+    m_length += otherLength;
     return *this;
 }
 
@@ -123,7 +123,7 @@ CMyString CMyString::SubString(size_t start, size_t length) const
         throw std::out_of_range("Start index of substring can not be greater than string length");
     }
 
-    return {m_chars + start, std::min(m_length - start, length)};
+    return CMyString(m_chars + start, std::min(m_length - start, length));
 }
 
 void CMyString::Clear() noexcept
@@ -141,9 +141,7 @@ CMyString operator+(CMyString const& lhs, CMyString const& rhs)
     }
 
     size_t length = lhs.GetLength() + rhs.GetLength();
-    // char* chars = new char[length + 1];
     char* chars = new char[length * 2];
-    // std::copy - добавляет элементы из контейнера A в контейнер B.
     std::copy(lhs.GetStringData(), lhs.GetStringData() + lhs.GetLength(), chars);
     std::copy(rhs.GetStringData(), rhs.GetStringData() + rhs.GetLength(), chars + lhs.GetLength());
     chars[length] = '\0';
@@ -159,7 +157,7 @@ bool operator==(CMyString const& lhs, CMyString const& rhs) noexcept
     }
     auto lArr = lhs.GetStringData();
     auto rArr = rhs.GetStringData();
-    // std::equal - сравнение в диапозоне std::equal(начальное позиция 1, конечная позиция 1, начальная позиция второго)
+
     return std::equal(lArr, lArr + lhs.GetLength(), rArr);
 }
 
@@ -185,9 +183,7 @@ std::strong_ordering CMyString::operator<=>(CMyString const& rhs) const noexcept
 {
     auto lArr = GetStringData();
     auto rArr = rhs.GetStringData();
-    // Лексикографически сравнивает два диапазона[первый1, последний1)и[первый2, последний2)
-    // использует трехстороннее сравнение и дает результат наиболее сильного применимого типа категории сравнения.
-    // Возвращаемое значение - Значение типа категории сравнения, указанного выше.
+
     return std::lexicographical_compare_three_way(lArr, lArr + m_length, rArr, rArr + rhs.m_length);
 }
 

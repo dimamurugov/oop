@@ -6,11 +6,11 @@
 class CMyString {
 public:
     CMyString();
-    CMyString(const char* pString); // строку с завершающим нулевым символом
-    CMyString(const char* pString, size_t length); // строку данными из символьного массива заданной длины
+    CMyString(const char* pString);
+    CMyString(const char* pString, size_t length);
     CMyString(CMyString const& other);
     CMyString(CMyString&& other) noexcept;
-    CMyString(std::string const& stlString); // строку данными из строки стандартной библиотеки C++
+    CMyString(std::string const& stlString);
     CMyString(char* pString, size_t length, int);
     ~CMyString();
 
