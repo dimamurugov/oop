@@ -30,13 +30,6 @@ CMyString::CMyString(const char* pString, size_t length)
     m_chars[m_length] = '\0';
 }
 
-CMyString::CMyString(char* pString, size_t length, int)
-        : m_chars(pString)
-        , m_length(length)
-        , m_capacity(length * 2)
-{
-}
-
 CMyString::CMyString(std::string const& stlString)
         : CMyString(stlString.c_str(), stlString.size())
 {
@@ -45,7 +38,7 @@ CMyString::CMyString(std::string const& stlString)
 CMyString::CMyString(CMyString&& other) noexcept
         : m_chars(other.m_chars)
         , m_length(other.m_length)
-        , m_capacity(other.m_length * 2)
+        , m_capacity(other.m_capacity)
 {
     other.m_chars = nullptr;
     other.m_length = 0;
@@ -74,6 +67,7 @@ CMyString& CMyString::operator=(CMyString const& rhs)
         CMyString copyStr(rhs);
         std::swap(m_chars, copyStr.m_chars);
         std::swap(m_length, copyStr.m_length);
+        std::swap(m_capacity, copyStr.m_capacity);
     }
 
     return *this;
@@ -86,7 +80,9 @@ CMyString& CMyString::operator=(CMyString&& rhs) noexcept
         delete[] m_chars;
         m_length = rhs.GetLength();
         m_chars = rhs.m_chars;
+        m_capacity = rhs.m_capacity;
         rhs.m_chars = nullptr;
+        rhs.m_capacity = 0;
         rhs.m_length = 0;
     }
     return *this;
@@ -146,7 +142,7 @@ CMyString operator+(CMyString const& lhs, CMyString const& rhs)
     std::copy(rhs.GetStringData(), rhs.GetStringData() + rhs.GetLength(), chars + lhs.GetLength());
     chars[length] = '\0';
 
-    return CMyString(chars, length, int{});
+    return CMyString(chars, length);
 }
 
 bool operator==(CMyString const& lhs, CMyString const& rhs) noexcept
@@ -209,7 +205,6 @@ std::istream& operator>>(std::istream& stream, CMyString& str)
     std::copy(chars.begin(), chars.end(), copyChars);
     copyChars[chars.size()] = '\0';
     str = std::move(copyChars);
-    delete[] copyChars;
 
     return stream;
 }

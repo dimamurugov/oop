@@ -11,7 +11,6 @@ public:
     CMyString(CMyString const& other);
     CMyString(CMyString&& other) noexcept;
     CMyString(std::string const& stlString);
-    CMyString(char* pString, size_t length, int);
     ~CMyString();
 
     CMyString& operator=(CMyString const& rhs);

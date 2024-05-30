@@ -8,7 +8,6 @@ TEST_CASE("My string constructing")
     {
         CMyString str;
         REQUIRE(str.GetLength() == 0);
-        // strcmp Эта функция сравнивает символы двух строк
         REQUIRE(strcmp(str.GetStringData(), "") == 0);
     }
 
@@ -30,7 +29,6 @@ TEST_CASE("My string constructing")
     {
         CMyString zeroCodeStr("Hello\0World", 11);
         REQUIRE(zeroCodeStr.GetLength() == 11);
-        // std::equal - сравнение в диапозоне std::equal(начальное позиция 1, конечная позиция 1, начальная позиция второго)
         REQUIRE(std::equal(zeroCodeStr.GetStringData(), zeroCodeStr.GetStringData() + zeroCodeStr.GetLength(), "Hello\0World"));
     }
 
@@ -70,8 +68,11 @@ TEST_CASE("My string constructing")
 
     SECTION("Constructing my string by move constructor")
     {
-        CMyString str(std::move(CMyString("Hello")));
+        CMyString tempStr("Hello");
+        CMyString str(std::move(tempStr));
 
+        REQUIRE(tempStr.GetLength() == 0);
+        REQUIRE(tempStr.GetCapacity() == 0);
         REQUIRE(str.GetLength() == 5);
         REQUIRE(strcmp(str.GetStringData(), "Hello") == 0);
     }
@@ -234,3 +235,5 @@ TEST_CASE("Check operator >> and <<")
     stream >> strIn;
     REQUIRE(strcmp(strIn.GetStringData(), "My") == 0);
 }
+
+// 0.7
