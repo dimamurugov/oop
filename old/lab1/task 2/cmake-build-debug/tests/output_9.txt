@@ -1,0 +1,1 @@
+number should >= 0 and number <= 255

@@ -1,0 +1,6 @@
+var x
+print x
+let x=42
+print x
+let x=1.234
+print x

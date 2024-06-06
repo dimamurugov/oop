@@ -1,0 +1,3331 @@
+        -:    0:Source:D:/C++/lab3/task1/tests/tests.cpp
+        -:    0:Graph:D:\C++\lab3\task1\cmake-build-debug-coverage\tests\CMakeFiles\tests.dir\tests.cpp.gcno
+        -:    0:Data:D:\C++\lab3\task1\cmake-build-debug-coverage\tests\CMakeFiles\tests.dir\tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#define CATCH_CONFIG_MAIN
+        -:    2:#include "../../../catch2/catch.hpp"
+        -:    3:
+        -:    4:#include "../Car.h"
+        -:    5:#include "../CarController.h"
+        -:    6:
+function _ZL19C_A_T_C_H_T_E_S_T_0v called 13 returned 100% blocks executed 46%
+       13:    7:TEST_CASE("Testing class Car")
+        -:    8:{
+       13:    9:    std::cout << "Function: IsTurnedOn" << std::endl;
+       13:    9-block  0
+call    0 returned 13
+call    1 returned 13
+       13:   10:    SECTION("Engine is working after TurnOnEngine")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:   10-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:   10-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:   10-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:   10-block  3
+call   17 never executed
+    $$$$$:   10-block  4
+    $$$$$:   10-block  5
+    $$$$$:   10-block  6
+call   18 never executed
+    $$$$$:   10-block  7
+    $$$$$:   10-block  8
+call   19 never executed
+    $$$$$:   10-block  9
+        -:   11:     {
+        1:   12:        Car car;
+        1:   12-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   13:        car.TurnOnEngine();
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   14:        REQUIRE(car.IsTurnedOn() == true);
+        1:   14-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   14-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   14-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   14-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   14-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   14-block  5
+call   18 returned 1
+        1:   14-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   14-block  7
+call   22 returned 1
+    $$$$$:   14-block  8
+    $$$$$:   14-block  9
+    $$$$$:   14-block 10
+    $$$$$:   14-block 11
+call   23 never executed
+    $$$$$:   14-block 12
+    $$$$$:   14-block 13
+    $$$$$:   14-block 14
+    $$$$$:   14-block 15
+    $$$$$:   14-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   14-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   14-block 18
+call   31 never executed
+    $$$$$:   14-block 19
+call   32 never executed
+       14:   15:    }
+        1:   15-block  0
+call    0 returned 1
+       13:   15-block  1
+call    1 returned 13
+    $$$$$:   15-block  2
+call    2 never executed
+    $$$$$:   15-block  3
+call    3 never executed
+        -:   16:
+       13:   17:    std::cout << "Function: TurnOnEngine" << std::endl;
+call    0 returned 13
+call    1 returned 13
+       13:   18:    SECTION("Engine turning on failed if was already turned on")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:   18-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:   18-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:   18-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:   18-block  3
+call   17 never executed
+    $$$$$:   18-block  4
+    $$$$$:   18-block  5
+    $$$$$:   18-block  6
+call   18 never executed
+    $$$$$:   18-block  7
+    $$$$$:   18-block  8
+call   19 never executed
+    $$$$$:   18-block  9
+        -:   19:    {
+        1:   20:        Car car;
+        1:   20-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   21:        car.TurnOnEngine();
+        1:   21-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   22:        REQUIRE(car.TurnOnEngine() == false);
+        1:   22-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   22-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   22-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   22-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   22-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   22-block  5
+call   18 returned 1
+        1:   22-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   22-block  7
+call   22 returned 1
+    $$$$$:   22-block  8
+    $$$$$:   22-block  9
+    $$$$$:   22-block 10
+    $$$$$:   22-block 11
+call   23 never executed
+    $$$$$:   22-block 12
+    $$$$$:   22-block 13
+    $$$$$:   22-block 14
+    $$$$$:   22-block 15
+    $$$$$:   22-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   22-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   22-block 18
+call   31 never executed
+    $$$$$:   22-block 19
+call   32 never executed
+       14:   23:    }
+        1:   23-block  0
+call    0 returned 1
+       13:   23-block  1
+call    1 returned 13
+    $$$$$:   23-block  2
+call    2 never executed
+    $$$$$:   23-block  3
+call    3 never executed
+        -:   24:
+       13:   25:    std::cout << "Function: TurnOffEngine" << std::endl;
+call    0 returned 13
+call    1 returned 13
+       13:   26:    SECTION("Engine is not turned off when car is moving on neutral gear")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:   26-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:   26-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:   26-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:   26-block  3
+call   17 never executed
+    $$$$$:   26-block  4
+    $$$$$:   26-block  5
+    $$$$$:   26-block  6
+call   18 never executed
+    $$$$$:   26-block  7
+    $$$$$:   26-block  8
+call   19 never executed
+    $$$$$:   26-block  9
+        -:   27:    {
+        1:   28:        Car car;
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   29:        car.TurnOnEngine();
+        1:   29-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30:        car.SetGear(1);
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   31:        car.SetSpeed(10);
+        1:   31-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   32:        car.SetGear(0);
+        1:   32-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   33:        REQUIRE(car.TurnOffEngine() == false);
+        1:   33-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   33-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   33-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   33-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   33-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   33-block  5
+call   18 returned 1
+        1:   33-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   33-block  7
+call   22 returned 1
+    $$$$$:   33-block  8
+    $$$$$:   33-block  9
+    $$$$$:   33-block 10
+    $$$$$:   33-block 11
+call   23 never executed
+    $$$$$:   33-block 12
+    $$$$$:   33-block 13
+    $$$$$:   33-block 14
+    $$$$$:   33-block 15
+    $$$$$:   33-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   33-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   33-block 18
+call   31 never executed
+    $$$$$:   33-block 19
+call   32 never executed
+       14:   34:    }
+        1:   34-block  0
+call    0 returned 1
+       13:   34-block  1
+call    1 returned 13
+    $$$$$:   34-block  2
+call    2 never executed
+    $$$$$:   34-block  3
+call    3 never executed
+        -:   35:
+       13:   36:    SECTION("Engine is not turned off when car is on neutral gear")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:   36-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:   36-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:   36-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:   36-block  3
+call   17 never executed
+    $$$$$:   36-block  4
+    $$$$$:   36-block  5
+    $$$$$:   36-block  6
+call   18 never executed
+    $$$$$:   36-block  7
+    $$$$$:   36-block  8
+call   19 never executed
+    $$$$$:   36-block  9
+        -:   37:    {
+        1:   38:        Car car;
+        1:   38-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   39:        car.TurnOnEngine();
+        1:   39-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   40:        car.SetGear(1);
+        1:   40-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   41:        REQUIRE(car.TurnOffEngine() == false);
+        1:   41-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   41-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   41-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   41-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   41-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   41-block  5
+call   18 returned 1
+        1:   41-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   41-block  7
+call   22 returned 1
+    $$$$$:   41-block  8
+    $$$$$:   41-block  9
+    $$$$$:   41-block 10
+    $$$$$:   41-block 11
+call   23 never executed
+    $$$$$:   41-block 12
+    $$$$$:   41-block 13
+    $$$$$:   41-block 14
+    $$$$$:   41-block 15
+    $$$$$:   41-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   41-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   41-block 18
+call   31 never executed
+    $$$$$:   41-block 19
+call   32 never executed
+       14:   42:    }
+        1:   42-block  0
+call    0 returned 1
+       13:   42-block  1
+call    1 returned 13
+    $$$$$:   42-block  2
+call    2 never executed
+    $$$$$:   42-block  3
+call    3 never executed
+        -:   43:
+       13:   44:    SECTION("Engine is turned off when car is not moving and on neutral gear")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:   44-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:   44-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:   44-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:   44-block  3
+call   17 never executed
+    $$$$$:   44-block  4
+    $$$$$:   44-block  5
+    $$$$$:   44-block  6
+call   18 never executed
+    $$$$$:   44-block  7
+    $$$$$:   44-block  8
+call   19 never executed
+    $$$$$:   44-block  9
+        -:   45:    {
+        1:   46:        Car car;
+        1:   46-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   47:        car.TurnOnEngine();
+        1:   47-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   48:        REQUIRE(car.TurnOffEngine() == true);
+        1:   48-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   48-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   48-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   48-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   48-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   48-block  5
+call   18 returned 1
+        1:   48-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   48-block  7
+call   22 returned 1
+    $$$$$:   48-block  8
+    $$$$$:   48-block  9
+    $$$$$:   48-block 10
+    $$$$$:   48-block 11
+call   23 never executed
+    $$$$$:   48-block 12
+    $$$$$:   48-block 13
+    $$$$$:   48-block 14
+    $$$$$:   48-block 15
+    $$$$$:   48-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   48-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   48-block 18
+call   31 never executed
+    $$$$$:   48-block 19
+call   32 never executed
+       14:   49:    }
+        1:   49-block  0
+call    0 returned 1
+       13:   49-block  1
+call    1 returned 13
+    $$$$$:   49-block  2
+call    2 never executed
+    $$$$$:   49-block  3
+call    3 never executed
+        -:   50:
+       13:   51:    std::cout << "Function: GetDirection" << std::endl;
+call    0 returned 13
+call    1 returned 13
+       13:   52:    SECTION("Direction -1 after start moving backward")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:   52-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:   52-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:   52-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:   52-block  3
+call   17 never executed
+    $$$$$:   52-block  4
+    $$$$$:   52-block  5
+    $$$$$:   52-block  6
+call   18 never executed
+    $$$$$:   52-block  7
+    $$$$$:   52-block  8
+call   19 never executed
+    $$$$$:   52-block  9
+        -:   53:    {
+        1:   54:        Car car;
+        1:   54-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   55:        car.TurnOnEngine();
+        1:   55-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   56:        car.SetGear(-1);
+        1:   56-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   57:        car.SetSpeed(11);
+        1:   57-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   58:        REQUIRE(car.GetDirection() == -1);
+        1:   58-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   58-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   58-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   58-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   58-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   58-block  5
+call   18 returned 1
+        1:   58-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   58-block  7
+call   22 returned 1
+    $$$$$:   58-block  8
+    $$$$$:   58-block  9
+    $$$$$:   58-block 10
+    $$$$$:   58-block 11
+call   23 never executed
+    $$$$$:   58-block 12
+    $$$$$:   58-block 13
+    $$$$$:   58-block 14
+    $$$$$:   58-block 15
+    $$$$$:   58-block 16
+    $$$$$:   58-block 17
+    $$$$$:   58-block 18
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   58-block 19
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   58-block 20
+call   31 never executed
+    $$$$$:   58-block 21
+call   32 never executed
+       14:   59:    }
+        1:   59-block  0
+call    0 returned 1
+       13:   59-block  1
+call    1 returned 13
+    $$$$$:   59-block  2
+call    2 never executed
+    $$$$$:   59-block  3
+call    3 never executed
+        -:   60:
+       13:   61:    std::cout << "Function: SetSpeed" << std::endl;
+call    0 returned 13
+call    1 returned 13
+       13:   62:    SECTION("Setting Speed up failed on neutral gear when car is not moving")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:   62-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:   62-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:   62-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:   62-block  3
+call   17 never executed
+    $$$$$:   62-block  4
+    $$$$$:   62-block  5
+    $$$$$:   62-block  6
+call   18 never executed
+    $$$$$:   62-block  7
+    $$$$$:   62-block  8
+call   19 never executed
+    $$$$$:   62-block  9
+        -:   63:    {
+        1:   64:        Car car;
+        1:   64-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   65:        car.TurnOnEngine();
+        1:   65-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   66:        REQUIRE(car.SetSpeed(10) == false);
+        1:   66-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   66-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   66-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   66-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   66-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   66-block  5
+call   18 returned 1
+        1:   66-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   66-block  7
+call   22 returned 1
+    $$$$$:   66-block  8
+    $$$$$:   66-block  9
+    $$$$$:   66-block 10
+    $$$$$:   66-block 11
+call   23 never executed
+    $$$$$:   66-block 12
+    $$$$$:   66-block 13
+    $$$$$:   66-block 14
+    $$$$$:   66-block 15
+    $$$$$:   66-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   66-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   66-block 18
+call   31 never executed
+    $$$$$:   66-block 19
+call   32 never executed
+       14:   67:    }
+        1:   67-block  0
+call    0 returned 1
+       13:   67-block  1
+call    1 returned 13
+    $$$$$:   67-block  2
+call    2 never executed
+    $$$$$:   67-block  3
+call    3 never executed
+        -:   68:
+       13:   69:    SECTION("Setting Speed up failed on neutral gear when car is moving")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:   69-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:   69-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:   69-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:   69-block  3
+call   17 never executed
+    $$$$$:   69-block  4
+    $$$$$:   69-block  5
+    $$$$$:   69-block  6
+call   18 never executed
+    $$$$$:   69-block  7
+    $$$$$:   69-block  8
+call   19 never executed
+    $$$$$:   69-block  9
+        -:   70:    {
+        1:   71:        Car car;
+        1:   71-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   72:        car.TurnOnEngine();
+        1:   72-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   73:        car.SetGear(1);
+        1:   73-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   74:        car.SetSpeed(10);
+        1:   74-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   75:        car.SetGear(0);
+        1:   75-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   76:        REQUIRE(car.SetSpeed(11) == false);
+        1:   76-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   76-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   76-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   76-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   76-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   76-block  5
+call   18 returned 1
+        1:   76-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   76-block  7
+call   22 returned 1
+    $$$$$:   76-block  8
+    $$$$$:   76-block  9
+    $$$$$:   76-block 10
+    $$$$$:   76-block 11
+call   23 never executed
+    $$$$$:   76-block 12
+    $$$$$:   76-block 13
+    $$$$$:   76-block 14
+    $$$$$:   76-block 15
+    $$$$$:   76-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   76-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   76-block 18
+call   31 never executed
+    $$$$$:   76-block 19
+call   32 never executed
+       14:   77:    }
+        1:   77-block  0
+call    0 returned 1
+       13:   77-block  1
+call    1 returned 13
+    $$$$$:   77-block  2
+call    2 never executed
+    $$$$$:   77-block  3
+call    3 never executed
+        -:   78:
+       13:   79:    SECTION("Setting Speed failed when speed not in range of gear")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:   79-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:   79-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:   79-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:   79-block  3
+call   17 never executed
+    $$$$$:   79-block  4
+    $$$$$:   79-block  5
+    $$$$$:   79-block  6
+call   18 never executed
+    $$$$$:   79-block  7
+    $$$$$:   79-block  8
+call   19 never executed
+    $$$$$:   79-block  9
+        -:   80:    {
+        1:   81:        Car car;
+        1:   81-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   82:        car.TurnOnEngine();
+        1:   82-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   83:        car.SetGear(1);
+        1:   83-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   84:        REQUIRE(car.SetSpeed(500) == false);
+        1:   84-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   84-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   84-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   84-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   84-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   84-block  5
+call   18 returned 1
+        1:   84-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   84-block  7
+call   22 returned 1
+    $$$$$:   84-block  8
+    $$$$$:   84-block  9
+    $$$$$:   84-block 10
+    $$$$$:   84-block 11
+call   23 never executed
+    $$$$$:   84-block 12
+    $$$$$:   84-block 13
+    $$$$$:   84-block 14
+    $$$$$:   84-block 15
+    $$$$$:   84-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   84-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   84-block 18
+call   31 never executed
+    $$$$$:   84-block 19
+call   32 never executed
+       14:   85:    }
+        1:   85-block  0
+call    0 returned 1
+       13:   85-block  1
+call    1 returned 13
+    $$$$$:   85-block  2
+call    2 never executed
+    $$$$$:   85-block  3
+call    3 never executed
+        -:   86:
+       13:   87:    SECTION("Setting Speed success when speed in range of gear")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:   87-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:   87-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:   87-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:   87-block  3
+call   17 never executed
+    $$$$$:   87-block  4
+    $$$$$:   87-block  5
+    $$$$$:   87-block  6
+call   18 never executed
+    $$$$$:   87-block  7
+    $$$$$:   87-block  8
+call   19 never executed
+    $$$$$:   87-block  9
+        -:   88:    {
+        1:   89:        Car car;
+        1:   89-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   90:        car.TurnOnEngine();
+        1:   90-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   91:        car.SetGear(1);
+        1:   91-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   92:        REQUIRE(car.SetSpeed(10) == true);
+        1:   92-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   92-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   92-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   92-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   92-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   92-block  5
+call   18 returned 1
+        1:   92-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   92-block  7
+call   22 returned 1
+    $$$$$:   92-block  8
+    $$$$$:   92-block  9
+    $$$$$:   92-block 10
+    $$$$$:   92-block 11
+call   23 never executed
+    $$$$$:   92-block 12
+    $$$$$:   92-block 13
+    $$$$$:   92-block 14
+    $$$$$:   92-block 15
+    $$$$$:   92-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   92-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   92-block 18
+call   31 never executed
+    $$$$$:   92-block 19
+call   32 never executed
+       14:   93:    }
+        1:   93-block  0
+call    0 returned 1
+       13:   93-block  1
+call    1 returned 13
+    $$$$$:   93-block  2
+call    2 never executed
+    $$$$$:   93-block  3
+call    3 never executed
+        -:   94:
+       13:   95:    std::cout << "Function: SetGear" << std::endl;
+call    0 returned 13
+call    1 returned 13
+       13:   96:    SECTION("Setting gear failing after creating car")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:   96-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:   96-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:   96-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:   96-block  3
+call   17 never executed
+    $$$$$:   96-block  4
+    $$$$$:   96-block  5
+    $$$$$:   96-block  6
+call   18 never executed
+    $$$$$:   96-block  7
+    $$$$$:   96-block  8
+call   19 never executed
+    $$$$$:   96-block  9
+        -:   97:    {
+        1:   98:        Car car;
+        1:   98-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   99:        REQUIRE(car.SetGear(-1) == false);
+        1:   99-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   99-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   99-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   99-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   99-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   99-block  5
+call   18 returned 1
+        1:   99-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   99-block  7
+call   22 returned 1
+    $$$$$:   99-block  8
+    $$$$$:   99-block  9
+    $$$$$:   99-block 10
+    $$$$$:   99-block 11
+call   23 never executed
+    $$$$$:   99-block 12
+    $$$$$:   99-block 13
+    $$$$$:   99-block 14
+    $$$$$:   99-block 15
+    $$$$$:   99-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   99-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   99-block 18
+call   31 never executed
+    $$$$$:   99-block 19
+call   32 never executed
+       14:  100:    }
+        1:  100-block  0
+call    0 returned 1
+       13:  100-block  1
+call    1 returned 13
+    $$$$$:  100-block  2
+call    2 never executed
+    $$$$$:  100-block  3
+call    3 never executed
+        -:  101:
+       13:  102:    SECTION("Setting gear success when speed is in range of gear")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:  102-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:  102-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:  102-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:  102-block  3
+call   17 never executed
+    $$$$$:  102-block  4
+    $$$$$:  102-block  5
+    $$$$$:  102-block  6
+call   18 never executed
+    $$$$$:  102-block  7
+    $$$$$:  102-block  8
+call   19 never executed
+    $$$$$:  102-block  9
+        -:  103:    {
+        1:  104:        Car car;
+        1:  104-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  105:        car.TurnOnEngine();
+        1:  105-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  106:        car.SetGear(1);
+        1:  106-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  107:        car.SetSpeed(30);
+        1:  107-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  108:        REQUIRE(car.SetGear(2) == true);
+        1:  108-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  108-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  108-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  108-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  108-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  108-block  5
+call   18 returned 1
+        1:  108-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  108-block  7
+call   22 returned 1
+    $$$$$:  108-block  8
+    $$$$$:  108-block  9
+    $$$$$:  108-block 10
+    $$$$$:  108-block 11
+call   23 never executed
+    $$$$$:  108-block 12
+    $$$$$:  108-block 13
+    $$$$$:  108-block 14
+    $$$$$:  108-block 15
+    $$$$$:  108-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  108-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  108-block 18
+call   31 never executed
+    $$$$$:  108-block 19
+call   32 never executed
+       14:  109:    }
+        1:  109-block  0
+call    0 returned 1
+       13:  109-block  1
+call    1 returned 13
+    $$$$$:  109-block  2
+call    2 never executed
+    $$$$$:  109-block  3
+call    3 never executed
+        -:  110:
+       13:  111:    SECTION("Setting gear failed when speed is not in range of gear")
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:  111-block  0
+call    4 returned 13
+call    5 returned 13
+branch  6 taken 13 (fallthrough)
+branch  7 taken 0 (throw)
+       13:  111-block  1
+call    8 returned 13
+branch  9 taken 13 (fallthrough)
+branch 10 taken 0 (throw)
+       13:  111-block  2
+call   11 returned 13
+call   12 returned 13
+call   13 returned 13
+call   14 returned 13
+branch 15 taken 1 (fallthrough)
+branch 16 taken 12
+    $$$$$:  111-block  3
+call   17 never executed
+    $$$$$:  111-block  4
+    $$$$$:  111-block  5
+    $$$$$:  111-block  6
+call   18 never executed
+    $$$$$:  111-block  7
+    $$$$$:  111-block  8
+call   19 never executed
+    $$$$$:  111-block  9
+        -:  112:    {
+        1:  113:        Car car;
+        1:  113-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  114:        car.TurnOnEngine();
+        1:  114-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  115:        car.SetGear(1);
+        1:  115-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  116:        car.SetSpeed(10);
+        1:  116-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  117:        REQUIRE(car.SetGear(2) == false);
+        1:  117-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  117-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  117-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  117-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  117-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  117-block  5
+call   18 returned 1
+        1:  117-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  117-block  7
+call   22 returned 1
+    $$$$$:  117-block  8
+    $$$$$:  117-block  9
+    $$$$$:  117-block 10
+    $$$$$:  117-block 11
+call   23 never executed
+    $$$$$:  117-block 12
+    $$$$$:  117-block 13
+    $$$$$:  117-block 14
+    $$$$$:  117-block 15
+    $$$$$:  117-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  117-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  117-block 18
+call   31 never executed
+    $$$$$:  117-block 19
+call   32 never executed
+       14:  118:    }
+        1:  118-block  0
+call    0 returned 1
+       13:  118-block  1
+call    1 returned 13
+    $$$$$:  118-block  2
+call    2 never executed
+    $$$$$:  118-block  3
+call    3 never executed
+       13:  119:}
+        -:  120:
+function _ZL20C_A_T_C_H_T_E_S_T_15v called 15 returned 100% blocks executed 45%
+       15:  121:TEST_CASE("Testing class CarController")
+        -:  122:{
+       15:  123:    std::cout << "Function: GetCommand" << std::endl;
+       15:  123-block  0
+call    0 returned 15
+call    1 returned 15
+       15:  124:    SECTION("Command = Info")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  124-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  124-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  124-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  124-block  3
+call   17 never executed
+    $$$$$:  124-block  4
+    $$$$$:  124-block  5
+    $$$$$:  124-block  6
+call   18 never executed
+    $$$$$:  124-block  7
+    $$$$$:  124-block  8
+call   19 never executed
+    $$$$$:  124-block  9
+        -:  125:    {
+        1:  126:        CarController controller;
+        1:  126-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  127:        std::stringstream stringCommand("Info");
+        1:  127-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  127-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+    $$$$$:  127-block  2
+    $$$$$:  127-block  3
+        -:  128:        Commands command;
+        1:  129:        REQUIRE(controller.GetCommand(stringCommand, command) == true);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  129-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  129-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  129-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  129-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  129-block  4
+call   18 returned 1
+        1:  129-block  5
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  129-block  6
+call   22 returned 1
+    $$$$$:  129-block  7
+    $$$$$:  129-block  8
+    $$$$$:  129-block  9
+    $$$$$:  129-block 10
+call   23 never executed
+    $$$$$:  129-block 11
+    $$$$$:  129-block 12
+    $$$$$:  129-block 13
+    $$$$$:  129-block 14
+    $$$$$:  129-block 15
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  129-block 16
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  129-block 17
+call   31 never executed
+    $$$$$:  129-block 18
+call   32 never executed
+        1:  130:        REQUIRE(command == Commands::INFO);
+        1:  130-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  130-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  130-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  130-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  130-block  4
+call   15 returned 1
+        1:  130-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  130-block  6
+call   19 returned 1
+    $$$$$:  130-block  7
+    $$$$$:  130-block  8
+    $$$$$:  130-block  9
+    $$$$$:  130-block 10
+call   20 never executed
+    $$$$$:  130-block 11
+    $$$$$:  130-block 12
+    $$$$$:  130-block 13
+    $$$$$:  130-block 14
+    $$$$$:  130-block 15
+    $$$$$:  130-block 16
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:  130-block 17
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  130-block 18
+call   28 never executed
+    $$$$$:  130-block 19
+call   29 never executed
+       16:  131:    }
+        1:  131-block  0
+call    0 returned 1
+       15:  131-block  1
+call    1 returned 15
+    $$$$$:  131-block  2
+call    2 never executed
+    $$$$$:  131-block  3
+call    3 never executed
+        -:  132:
+       15:  133:    SECTION("Incorrect command = SetGear1")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  133-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  133-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  133-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  133-block  3
+call   17 never executed
+    $$$$$:  133-block  4
+    $$$$$:  133-block  5
+    $$$$$:  133-block  6
+call   18 never executed
+    $$$$$:  133-block  7
+    $$$$$:  133-block  8
+call   19 never executed
+    $$$$$:  133-block  9
+        -:  134:    {
+        1:  135:        CarController controller;
+        1:  135-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  136:        std::stringstream stringCommand("SetGear1");
+        1:  136-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  136-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+    $$$$$:  136-block  2
+    $$$$$:  136-block  3
+        -:  137:        Commands command;
+        1:  138:        REQUIRE(controller.GetCommand(stringCommand, command) == false);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  138-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  138-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  138-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  138-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  138-block  4
+call   18 returned 1
+        1:  138-block  5
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  138-block  6
+call   22 returned 1
+    $$$$$:  138-block  7
+    $$$$$:  138-block  8
+    $$$$$:  138-block  9
+    $$$$$:  138-block 10
+call   23 never executed
+    $$$$$:  138-block 11
+    $$$$$:  138-block 12
+    $$$$$:  138-block 13
+    $$$$$:  138-block 14
+    $$$$$:  138-block 15
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  138-block 16
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  138-block 17
+call   31 never executed
+    $$$$$:  138-block 18
+call   32 never executed
+       16:  139:    }
+        1:  139-block  0
+call    0 returned 1
+       15:  139-block  1
+call    1 returned 15
+    $$$$$:  139-block  2
+call    2 never executed
+    $$$$$:  139-block  3
+call    3 never executed
+        -:  140:
+       15:  141:    SECTION("Correct command = SetGear 1")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  141-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  141-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  141-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  141-block  3
+call   17 never executed
+    $$$$$:  141-block  4
+    $$$$$:  141-block  5
+    $$$$$:  141-block  6
+call   18 never executed
+    $$$$$:  141-block  7
+    $$$$$:  141-block  8
+call   19 never executed
+    $$$$$:  141-block  9
+        -:  142:    {
+        1:  143:        CarController controller;
+        1:  143-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  144:        std::stringstream stringCommand("SetGear 1");
+        1:  144-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  144-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+    $$$$$:  144-block  2
+    $$$$$:  144-block  3
+        -:  145:        Commands command;
+        1:  146:        REQUIRE(controller.GetCommand(stringCommand, command) == true);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  146-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  146-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  146-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  146-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  146-block  4
+call   18 returned 1
+        1:  146-block  5
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  146-block  6
+call   22 returned 1
+    $$$$$:  146-block  7
+    $$$$$:  146-block  8
+    $$$$$:  146-block  9
+    $$$$$:  146-block 10
+call   23 never executed
+    $$$$$:  146-block 11
+    $$$$$:  146-block 12
+    $$$$$:  146-block 13
+    $$$$$:  146-block 14
+    $$$$$:  146-block 15
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  146-block 16
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  146-block 17
+call   31 never executed
+    $$$$$:  146-block 18
+call   32 never executed
+        1:  147:        REQUIRE(command == Commands::SET_GEAR);
+        1:  147-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  147-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  147-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  147-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  147-block  4
+call   15 returned 1
+        1:  147-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  147-block  6
+call   19 returned 1
+    $$$$$:  147-block  7
+    $$$$$:  147-block  8
+    $$$$$:  147-block  9
+    $$$$$:  147-block 10
+call   20 never executed
+    $$$$$:  147-block 11
+    $$$$$:  147-block 12
+    $$$$$:  147-block 13
+    $$$$$:  147-block 14
+    $$$$$:  147-block 15
+    $$$$$:  147-block 16
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:  147-block 17
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  147-block 18
+call   28 never executed
+    $$$$$:  147-block 19
+call   29 never executed
+       16:  148:    }
+        1:  148-block  0
+call    0 returned 1
+       15:  148-block  1
+call    1 returned 15
+    $$$$$:  148-block  2
+call    2 never executed
+    $$$$$:  148-block  3
+call    3 never executed
+        -:  149:
+       15:  150:    std::cout << "Function: TurnOnEngine" << std::endl;
+call    0 returned 15
+call    1 returned 15
+       15:  151:    SECTION("Engine turn on if was turned off")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  151-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  151-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  151-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  151-block  3
+call   17 never executed
+    $$$$$:  151-block  4
+    $$$$$:  151-block  5
+    $$$$$:  151-block  6
+call   18 never executed
+    $$$$$:  151-block  7
+    $$$$$:  151-block  8
+call   19 never executed
+    $$$$$:  151-block  9
+        -:  152:    {
+        1:  153:        CarController controller;
+        1:  153-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  154:        Car car;
+        1:  154-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  155:        REQUIRE(controller.TurnOnEngine(car) == true);
+        1:  155-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  155-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  155-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  155-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  155-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  155-block  5
+call   18 returned 1
+        1:  155-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  155-block  7
+call   22 returned 1
+    $$$$$:  155-block  8
+    $$$$$:  155-block  9
+    $$$$$:  155-block 10
+    $$$$$:  155-block 11
+call   23 never executed
+    $$$$$:  155-block 12
+    $$$$$:  155-block 13
+    $$$$$:  155-block 14
+    $$$$$:  155-block 15
+    $$$$$:  155-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  155-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  155-block 18
+call   31 never executed
+    $$$$$:  155-block 19
+call   32 never executed
+       16:  156:    }
+        1:  156-block  0
+call    0 returned 1
+       15:  156-block  1
+call    1 returned 15
+    $$$$$:  156-block  2
+call    2 never executed
+    $$$$$:  156-block  3
+call    3 never executed
+        -:  157:
+       15:  158:    std::cout << "Function: TurnOffEngine" << std::endl;
+call    0 returned 15
+call    1 returned 15
+       15:  159:    SECTION("Engine is turned off when car is not moving and on neutral gear")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  159-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  159-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  159-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  159-block  3
+call   17 never executed
+    $$$$$:  159-block  4
+    $$$$$:  159-block  5
+    $$$$$:  159-block  6
+call   18 never executed
+    $$$$$:  159-block  7
+    $$$$$:  159-block  8
+call   19 never executed
+    $$$$$:  159-block  9
+        -:  160:    {
+        1:  161:        CarController controller;
+        1:  161-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  162:        Car car;
+        1:  162-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  163:        car.TurnOnEngine();
+        1:  163-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  164:        car.SetGear(1);
+        1:  164-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  165:        car.SetSpeed(10);
+        1:  165-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  166:        car.SetGear(0);
+        1:  166-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  167:        REQUIRE(controller.TurnOffEngine(car) == false);
+        1:  167-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  167-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  167-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  167-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  167-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  167-block  5
+call   18 returned 1
+        1:  167-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  167-block  7
+call   22 returned 1
+    $$$$$:  167-block  8
+    $$$$$:  167-block  9
+    $$$$$:  167-block 10
+    $$$$$:  167-block 11
+call   23 never executed
+    $$$$$:  167-block 12
+    $$$$$:  167-block 13
+    $$$$$:  167-block 14
+    $$$$$:  167-block 15
+    $$$$$:  167-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  167-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  167-block 18
+call   31 never executed
+    $$$$$:  167-block 19
+call   32 never executed
+       16:  168:    }
+        1:  168-block  0
+call    0 returned 1
+       15:  168-block  1
+call    1 returned 15
+    $$$$$:  168-block  2
+call    2 never executed
+    $$$$$:  168-block  3
+call    3 never executed
+        -:  169:
+       15:  170:    SECTION("Engine is not turned off when car is not on neutral gear")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  170-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  170-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  170-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  170-block  3
+call   17 never executed
+    $$$$$:  170-block  4
+    $$$$$:  170-block  5
+    $$$$$:  170-block  6
+call   18 never executed
+    $$$$$:  170-block  7
+    $$$$$:  170-block  8
+call   19 never executed
+    $$$$$:  170-block  9
+        -:  171:    {
+        1:  172:        CarController controller;
+        1:  172-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  173:        Car car;
+        1:  173-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  174:        car.TurnOnEngine();
+        1:  174-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  175:        car.SetGear(1);
+        1:  175-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  176:        REQUIRE(controller.TurnOffEngine(car) == false);
+        1:  176-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  176-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  176-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  176-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  176-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  176-block  5
+call   18 returned 1
+        1:  176-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  176-block  7
+call   22 returned 1
+    $$$$$:  176-block  8
+    $$$$$:  176-block  9
+    $$$$$:  176-block 10
+    $$$$$:  176-block 11
+call   23 never executed
+    $$$$$:  176-block 12
+    $$$$$:  176-block 13
+    $$$$$:  176-block 14
+    $$$$$:  176-block 15
+    $$$$$:  176-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  176-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  176-block 18
+call   31 never executed
+    $$$$$:  176-block 19
+call   32 never executed
+       16:  177:    }
+        1:  177-block  0
+call    0 returned 1
+       15:  177-block  1
+call    1 returned 15
+    $$$$$:  177-block  2
+call    2 never executed
+    $$$$$:  177-block  3
+call    3 never executed
+        -:  178:
+       15:  179:    SECTION("Engine is turned off when car is not moving and on neutral gear")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  179-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  179-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  179-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  179-block  3
+call   17 never executed
+    $$$$$:  179-block  4
+    $$$$$:  179-block  5
+    $$$$$:  179-block  6
+call   18 never executed
+    $$$$$:  179-block  7
+    $$$$$:  179-block  8
+call   19 never executed
+    $$$$$:  179-block  9
+        -:  180:    {
+        1:  181:        CarController controller;
+        1:  181-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  182:        Car car;
+        1:  182-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  183:        car.TurnOnEngine();
+        1:  183-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  184:        REQUIRE(controller.TurnOffEngine(car) == true);
+        1:  184-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  184-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  184-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  184-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  184-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  184-block  5
+call   18 returned 1
+        1:  184-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  184-block  7
+call   22 returned 1
+    $$$$$:  184-block  8
+    $$$$$:  184-block  9
+    $$$$$:  184-block 10
+    $$$$$:  184-block 11
+call   23 never executed
+    $$$$$:  184-block 12
+    $$$$$:  184-block 13
+    $$$$$:  184-block 14
+    $$$$$:  184-block 15
+    $$$$$:  184-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  184-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  184-block 18
+call   31 never executed
+    $$$$$:  184-block 19
+call   32 never executed
+       16:  185:    }
+        1:  185-block  0
+call    0 returned 1
+       15:  185-block  1
+call    1 returned 15
+    $$$$$:  185-block  2
+call    2 never executed
+    $$$$$:  185-block  3
+call    3 never executed
+        -:  186:
+       15:  187:    SECTION("Engine turning off success if was already turned off")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  187-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  187-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  187-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  187-block  3
+call   17 never executed
+    $$$$$:  187-block  4
+    $$$$$:  187-block  5
+    $$$$$:  187-block  6
+call   18 never executed
+    $$$$$:  187-block  7
+    $$$$$:  187-block  8
+call   19 never executed
+    $$$$$:  187-block  9
+        -:  188:    {
+        1:  189:        CarController controller;
+        1:  189-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  190:        Car car;
+        1:  190-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  191:        REQUIRE(controller.TurnOffEngine(car) == true);
+        1:  191-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  191-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  191-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  191-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  191-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  191-block  5
+call   18 returned 1
+        1:  191-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  191-block  7
+call   22 returned 1
+    $$$$$:  191-block  8
+    $$$$$:  191-block  9
+    $$$$$:  191-block 10
+    $$$$$:  191-block 11
+call   23 never executed
+    $$$$$:  191-block 12
+    $$$$$:  191-block 13
+    $$$$$:  191-block 14
+    $$$$$:  191-block 15
+    $$$$$:  191-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  191-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  191-block 18
+call   31 never executed
+    $$$$$:  191-block 19
+call   32 never executed
+       16:  192:    }
+        1:  192-block  0
+call    0 returned 1
+       15:  192-block  1
+call    1 returned 15
+    $$$$$:  192-block  2
+call    2 never executed
+    $$$$$:  192-block  3
+call    3 never executed
+        -:  193:
+       15:  194:    std::cout << "Function: SetSpeed" << std::endl;
+call    0 returned 15
+call    1 returned 15
+       15:  195:    SECTION("Setting Speed up failed on neutral gear when car is not moving")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  195-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  195-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  195-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  195-block  3
+call   17 never executed
+    $$$$$:  195-block  4
+    $$$$$:  195-block  5
+    $$$$$:  195-block  6
+call   18 never executed
+    $$$$$:  195-block  7
+    $$$$$:  195-block  8
+call   19 never executed
+    $$$$$:  195-block  9
+        -:  196:    {
+        1:  197:        CarController controller;
+        1:  197-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  198:        Car car;
+        1:  198-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  199:        car.TurnOnEngine();
+        1:  199-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  200:        REQUIRE(controller.SetSpeed(car, 10) == false);
+        1:  200-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  200-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  200-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  200-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  200-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  200-block  5
+call   18 returned 1
+        1:  200-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  200-block  7
+call   22 returned 1
+    $$$$$:  200-block  8
+    $$$$$:  200-block  9
+    $$$$$:  200-block 10
+    $$$$$:  200-block 11
+call   23 never executed
+    $$$$$:  200-block 12
+    $$$$$:  200-block 13
+    $$$$$:  200-block 14
+    $$$$$:  200-block 15
+    $$$$$:  200-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  200-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  200-block 18
+call   31 never executed
+    $$$$$:  200-block 19
+call   32 never executed
+       16:  201:    }
+        1:  201-block  0
+call    0 returned 1
+       15:  201-block  1
+call    1 returned 15
+    $$$$$:  201-block  2
+call    2 never executed
+    $$$$$:  201-block  3
+call    3 never executed
+        -:  202:
+       15:  203:    SECTION("Setting Speed up failed on neutral gear when car is moving")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  203-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  203-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  203-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  203-block  3
+call   17 never executed
+    $$$$$:  203-block  4
+    $$$$$:  203-block  5
+    $$$$$:  203-block  6
+call   18 never executed
+    $$$$$:  203-block  7
+    $$$$$:  203-block  8
+call   19 never executed
+    $$$$$:  203-block  9
+        -:  204:    {
+        1:  205:        CarController controller;
+        1:  205-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  206:        Car car;
+        1:  206-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  207:        car.TurnOnEngine();
+        1:  207-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  208:        car.SetGear(1);
+        1:  208-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  209:        car.SetSpeed(10);
+        1:  209-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  210:        car.SetGear(0);
+        1:  210-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  211:        REQUIRE(controller.SetSpeed(car, 11) == false);
+        1:  211-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  211-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  211-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  211-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  211-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  211-block  5
+call   18 returned 1
+        1:  211-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  211-block  7
+call   22 returned 1
+    $$$$$:  211-block  8
+    $$$$$:  211-block  9
+    $$$$$:  211-block 10
+    $$$$$:  211-block 11
+call   23 never executed
+    $$$$$:  211-block 12
+    $$$$$:  211-block 13
+    $$$$$:  211-block 14
+    $$$$$:  211-block 15
+    $$$$$:  211-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  211-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  211-block 18
+call   31 never executed
+    $$$$$:  211-block 19
+call   32 never executed
+       16:  212:    }
+        1:  212-block  0
+call    0 returned 1
+       15:  212-block  1
+call    1 returned 15
+    $$$$$:  212-block  2
+call    2 never executed
+    $$$$$:  212-block  3
+call    3 never executed
+        -:  213:
+       15:  214:    SECTION("Setting Speed failed when speed not in range of gear")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  214-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  214-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  214-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  214-block  3
+call   17 never executed
+    $$$$$:  214-block  4
+    $$$$$:  214-block  5
+    $$$$$:  214-block  6
+call   18 never executed
+    $$$$$:  214-block  7
+    $$$$$:  214-block  8
+call   19 never executed
+    $$$$$:  214-block  9
+        -:  215:    {
+        1:  216:        CarController controller;
+        1:  216-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  217:        Car car;
+        1:  217-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  218:        car.TurnOnEngine();
+        1:  218-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  219:        car.SetGear(1);
+        1:  219-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  220:        REQUIRE(controller.SetSpeed(car, 500) == false);
+        1:  220-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  220-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  220-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  220-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  220-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  220-block  5
+call   18 returned 1
+        1:  220-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  220-block  7
+call   22 returned 1
+    $$$$$:  220-block  8
+    $$$$$:  220-block  9
+    $$$$$:  220-block 10
+    $$$$$:  220-block 11
+call   23 never executed
+    $$$$$:  220-block 12
+    $$$$$:  220-block 13
+    $$$$$:  220-block 14
+    $$$$$:  220-block 15
+    $$$$$:  220-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  220-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  220-block 18
+call   31 never executed
+    $$$$$:  220-block 19
+call   32 never executed
+       16:  221:    }
+        1:  221-block  0
+call    0 returned 1
+       15:  221-block  1
+call    1 returned 15
+    $$$$$:  221-block  2
+call    2 never executed
+    $$$$$:  221-block  3
+call    3 never executed
+        -:  222:
+       15:  223:    SECTION("Setting Speed success when speed in range of gear")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  223-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  223-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  223-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  223-block  3
+call   17 never executed
+    $$$$$:  223-block  4
+    $$$$$:  223-block  5
+    $$$$$:  223-block  6
+call   18 never executed
+    $$$$$:  223-block  7
+    $$$$$:  223-block  8
+call   19 never executed
+    $$$$$:  223-block  9
+        -:  224:    {
+        1:  225:        CarController controller;
+        1:  225-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  226:        Car car;
+        1:  226-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  227:        car.TurnOnEngine();
+        1:  227-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  228:        car.SetGear(1);
+        1:  228-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  229:        REQUIRE(controller.SetSpeed(car, 10) == true);
+        1:  229-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  229-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  229-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  229-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  229-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  229-block  5
+call   18 returned 1
+        1:  229-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  229-block  7
+call   22 returned 1
+    $$$$$:  229-block  8
+    $$$$$:  229-block  9
+    $$$$$:  229-block 10
+    $$$$$:  229-block 11
+call   23 never executed
+    $$$$$:  229-block 12
+    $$$$$:  229-block 13
+    $$$$$:  229-block 14
+    $$$$$:  229-block 15
+    $$$$$:  229-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  229-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  229-block 18
+call   31 never executed
+    $$$$$:  229-block 19
+call   32 never executed
+       16:  230:    }
+        1:  230-block  0
+call    0 returned 1
+       15:  230-block  1
+call    1 returned 15
+    $$$$$:  230-block  2
+call    2 never executed
+    $$$$$:  230-block  3
+call    3 never executed
+        -:  231:
+       15:  232:    std::cout << "Function: SetGear" << std::endl;
+call    0 returned 15
+call    1 returned 15
+       15:  233:    SECTION("Setting gear failing after creating car")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  233-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  233-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  233-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  233-block  3
+call   17 never executed
+    $$$$$:  233-block  4
+    $$$$$:  233-block  5
+    $$$$$:  233-block  6
+call   18 never executed
+    $$$$$:  233-block  7
+    $$$$$:  233-block  8
+call   19 never executed
+    $$$$$:  233-block  9
+        -:  234:    {
+        1:  235:        CarController controller;
+        1:  235-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  236:        Car car;
+        1:  236-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  237:        REQUIRE(controller.SetGear(car, -1) == false);
+        1:  237-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  237-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  237-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  237-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  237-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  237-block  5
+call   18 returned 1
+        1:  237-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  237-block  7
+call   22 returned 1
+    $$$$$:  237-block  8
+    $$$$$:  237-block  9
+    $$$$$:  237-block 10
+    $$$$$:  237-block 11
+call   23 never executed
+    $$$$$:  237-block 12
+    $$$$$:  237-block 13
+    $$$$$:  237-block 14
+    $$$$$:  237-block 15
+    $$$$$:  237-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  237-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  237-block 18
+call   31 never executed
+    $$$$$:  237-block 19
+call   32 never executed
+       16:  238:    }
+        1:  238-block  0
+call    0 returned 1
+       15:  238-block  1
+call    1 returned 15
+    $$$$$:  238-block  2
+call    2 never executed
+    $$$$$:  238-block  3
+call    3 never executed
+        -:  239:
+       15:  240:    SECTION("Setting gear success when speed is in range of gear")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  240-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  240-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  240-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  240-block  3
+call   17 never executed
+    $$$$$:  240-block  4
+    $$$$$:  240-block  5
+    $$$$$:  240-block  6
+call   18 never executed
+    $$$$$:  240-block  7
+    $$$$$:  240-block  8
+call   19 never executed
+    $$$$$:  240-block  9
+        -:  241:    {
+        1:  242:        CarController controller;
+        1:  242-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  243:        Car car;
+        1:  243-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  244:        car.TurnOnEngine();
+        1:  244-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  245:        car.SetGear(1);
+        1:  245-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  246:        car.SetSpeed(30);
+        1:  246-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  247:        REQUIRE(controller.SetGear(car, 2) == true);
+        1:  247-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  247-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  247-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  247-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  247-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  247-block  5
+call   18 returned 1
+        1:  247-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  247-block  7
+call   22 returned 1
+    $$$$$:  247-block  8
+    $$$$$:  247-block  9
+    $$$$$:  247-block 10
+    $$$$$:  247-block 11
+call   23 never executed
+    $$$$$:  247-block 12
+    $$$$$:  247-block 13
+    $$$$$:  247-block 14
+    $$$$$:  247-block 15
+    $$$$$:  247-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  247-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  247-block 18
+call   31 never executed
+    $$$$$:  247-block 19
+call   32 never executed
+       16:  248:    }
+        1:  248-block  0
+call    0 returned 1
+       15:  248-block  1
+call    1 returned 15
+    $$$$$:  248-block  2
+call    2 never executed
+    $$$$$:  248-block  3
+call    3 never executed
+        -:  249:
+       15:  250:    SECTION("Setting gear failed when speed is not in range of gear")
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:  250-block  0
+call    4 returned 15
+call    5 returned 15
+branch  6 taken 15 (fallthrough)
+branch  7 taken 0 (throw)
+       15:  250-block  1
+call    8 returned 15
+branch  9 taken 15 (fallthrough)
+branch 10 taken 0 (throw)
+       15:  250-block  2
+call   11 returned 15
+call   12 returned 15
+call   13 returned 15
+call   14 returned 15
+branch 15 taken 1 (fallthrough)
+branch 16 taken 14
+    $$$$$:  250-block  3
+call   17 never executed
+    $$$$$:  250-block  4
+    $$$$$:  250-block  5
+    $$$$$:  250-block  6
+call   18 never executed
+    $$$$$:  250-block  7
+    $$$$$:  250-block  8
+call   19 never executed
+    $$$$$:  250-block  9
+        -:  251:    {
+        1:  252:        CarController controller;
+        1:  252-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  253:        Car car;
+        1:  253-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  254:        car.TurnOnEngine();
+        1:  254-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  255:        car.SetGear(1);
+        1:  255-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  256:        car.SetSpeed(10);
+        1:  256-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  257:        REQUIRE(controller.SetGear(car, 2) == false);
+        1:  257-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  257-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  257-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  257-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  257-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  257-block  5
+call   18 returned 1
+        1:  257-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  257-block  7
+call   22 returned 1
+    $$$$$:  257-block  8
+    $$$$$:  257-block  9
+    $$$$$:  257-block 10
+    $$$$$:  257-block 11
+call   23 never executed
+    $$$$$:  257-block 12
+    $$$$$:  257-block 13
+    $$$$$:  257-block 14
+    $$$$$:  257-block 15
+    $$$$$:  257-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  257-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  257-block 18
+call   31 never executed
+    $$$$$:  257-block 19
+call   32 never executed
+       16:  258:    }
+        1:  258-block  0
+call    0 returned 1
+       15:  258-block  1
+call    1 returned 15
+    $$$$$:  258-block  2
+call    2 never executed
+    $$$$$:  258-block  3
+call    3 never executed
+       15:  259:}

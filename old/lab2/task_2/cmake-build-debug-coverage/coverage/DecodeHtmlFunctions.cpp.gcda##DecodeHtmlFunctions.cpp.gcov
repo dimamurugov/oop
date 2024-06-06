@@ -1,0 +1,249 @@
+        -:    0:Source:D:/C++/lab2/task_2/DecodeHtmlFunctions.cpp
+        -:    0:Graph:D:\C++\lab2\task_2\cmake-build-debug-coverage\tests\CMakeFiles\tests.dir\__\DecodeHtmlFunctions.cpp.gcno
+        -:    0:Data:D:\C++\lab2\task_2\cmake-build-debug-coverage\tests\CMakeFiles\tests.dir\__\DecodeHtmlFunctions.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "DecodeHtmlFunctions.h"
+        -:    2:
+function _Z21GetDecodedHtmlElementRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 11 returned 100% blocks executed 62%
+       11:    3:std::optional<char> GetDecodedHtmlElement(const std::string& encodedValue)
+        -:    4:{
+        -:    5:    // объявить в безымянном пространстве имен
+        -:    6:	HTMLElement htmlElements[5] = {
+        -:    7:		{ '"', "&quot;" },
+        -:    8:		{ '\'', "&apos;" },
+        -:    9:		{ '<', "&lt;" },
+        -:   10:		{ '>', "&gt;" },
+        -:   11:		{ '&', "&amp;" },
+       77:   12:	};
+       11:   12-block  0
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0 (throw)
+       11:   12-block  1
+call    4 returned 11
+call    5 returned 11
+call    6 returned 11
+branch  7 taken 11 (fallthrough)
+branch  8 taken 0 (throw)
+       11:   12-block  2
+call    9 returned 11
+call   10 returned 11
+call   11 returned 11
+branch 12 taken 11 (fallthrough)
+branch 13 taken 0 (throw)
+       11:   12-block  3
+call   14 returned 11
+call   15 returned 11
+call   16 returned 11
+branch 17 taken 11 (fallthrough)
+branch 18 taken 0 (throw)
+       11:   12-block  4
+call   19 returned 11
+call   20 returned 11
+call   21 returned 11
+branch 22 taken 11 (fallthrough)
+branch 23 taken 0 (throw)
+       11:   12-block  5
+call   24 returned 11
+       11:   12-block  6
+       55:   12-block  7
+call   25 returned 55
+    $$$$$:   12-block  8
+call   26 never executed
+    $$$$$:   12-block  9
+    $$$$$:   12-block 10
+call   27 never executed
+    $$$$$:   12-block 11
+    $$$$$:   12-block 12
+call   28 never executed
+    $$$$$:   12-block 13
+    $$$$$:   12-block 14
+call   29 never executed
+    $$$$$:   12-block 15
+    $$$$$:   12-block 16
+call   30 never executed
+    $$$$$:   12-block 17
+    $$$$$:   12-block 18
+    $$$$$:   12-block 19
+call   31 never executed
+        -:   13:
+       44:   14:	for (HTMLElement& item : htmlElements)
+       33:   14-block  0
+       44:   14-block  1
+branch  0 taken 42
+branch  1 taken 2 (fallthrough)
+        -:   15:	{
+       42:   16:		if (item.encodedValue == encodedValue)
+       42:   16-block  0
+call    0 returned 42
+branch  1 taken 9 (fallthrough)
+branch  2 taken 33
+        -:   17:		{
+        9:   18:			return item.decodeValue;
+        9:   18-block  0
+call    0 returned 9
+        -:   19:		}
+        -:   20:	}
+        2:   21:	return std::nullopt;
+        2:   21-block  0
+call    0 returned 2
+       66:   22:}
+       66:   22-block  0
+branch  0 taken 55 (fallthrough)
+branch  1 taken 11
+        -:   23:
+function _Z15JoinDecodedHtmlRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKS4_ called 5 returned 100% blocks executed 100%
+        5:   24:void JoinDecodedHtml(std::string& encodedHtml, const std::string& encodedValue)
+        -:   25:{
+        5:   26:	std::optional<char> htmlElement = GetDecodedHtmlElement(encodedValue);
+        5:   26-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   27:
+        5:   28:	if (htmlElement)
+        5:   28-block  0
+call    0 returned 5
+branch  1 taken 4 (fallthrough)
+branch  2 taken 1
+        -:   29:	{
+        4:   30:		encodedHtml += htmlElement.value();
+        4:   30-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   30-block  1
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   31:	}
+        -:   32:	else
+        -:   33:	{
+        1:   34:		encodedHtml += encodedValue;
+        1:   34-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   35:	}
+        5:   36:}
+        5:   36-block  0
+        -:   37:
+function _Z10HtmlDecodeRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 12 returned 100% blocks executed 81%
+       12:   38:std::string HtmlDecode(std::string& html)
+        -:   39:{
+       12:   40:	std::string decodedHtml;
+       12:   40-block  0
+call    0 returned 12
+       12:   41:	size_t startPosition = 0;
+       12:   42:    bool isMnemonic = false;
+        -:   43:
+      129:   44:	for (size_t i = 0; i < html.length(); i++)
+      117:   44-block  0
+      129:   44-block  1
+call    0 returned 129
+branch  1 taken 117
+branch  2 taken 12 (fallthrough)
+        -:   45:	{
+      117:   46:		if (isMnemonic)
+      117:   46-block  0
+branch  0 taken 36 (fallthrough)
+branch  1 taken 81
+        -:   47:		{
+       36:   48:			if (html[i] == '&')
+       36:   48-block  0
+call    0 returned 36
+branch  1 taken 36 (fallthrough)
+branch  2 taken 0 (throw)
+       36:   48-block  1
+branch  3 taken 4 (fallthrough)
+branch  4 taken 32
+        -:   49:			{
+        4:   50:				decodedHtml.append(html, startPosition, i - startPosition);
+        4:   50-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   51:				startPosition = i;
+        4:   52:				continue;
+        4:   52-block  0
+        -:   53:			}
+        -:   54:
+       32:   55:			if (html[i] == ';')
+       32:   55-block  0
+call    0 returned 32
+branch  1 taken 32 (fallthrough)
+branch  2 taken 0 (throw)
+       32:   55-block  1
+branch  3 taken 5 (fallthrough)
+branch  4 taken 27
+        -:   56:			{
+        -:   57:                // избавиться от копирования использовать  string_view
+        5:   58:				std::string encodedValue(&html[startPosition], i - startPosition + 1);
+        5:   58-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:   58-block  1
+call    4 returned 5
+branch  5 taken 5 (fallthrough)
+branch  6 taken 0 (throw)
+    $$$$$:   58-block  2
+        5:   59:				JoinDecodedHtml(decodedHtml, encodedValue);
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   60:                isMnemonic = false;
+        5:   61:			}
+        5:   61-block  0
+call    0 returned 5
+    $$$$$:   61-block  1
+call    1 never executed
+       32:   62:			continue;
+       32:   63:		}
+       32:   63-block  0
+        -:   64:
+       81:   65:		if (html[i] != '&')
+       81:   65-block  0
+call    0 returned 81
+branch  1 taken 81 (fallthrough)
+branch  2 taken 0 (throw)
+       81:   65-block  1
+branch  3 taken 73 (fallthrough)
+branch  4 taken 8
+        -:   66:		{
+       73:   67:			decodedHtml.push_back(html[i]);
+       73:   67-block  0
+call    0 returned 73
+branch  1 taken 73 (fallthrough)
+branch  2 taken 0 (throw)
+       73:   67-block  1
+call    3 returned 73
+branch  4 taken 73 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   68:		} else {
+        8:   69:            isMnemonic = true;
+        8:   70:            startPosition = i;
+        8:   70-block  0
+        -:   71:        }
+        -:   72:	}
+        -:   73:
+       12:   74:	if(isMnemonic)
+       12:   74-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 9
+        -:   75:	{
+        3:   76:		decodedHtml.append(html, startPosition);
+        3:   76-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   77:	}
+        -:   78:
+       12:   79:	return decodedHtml;
+       12:   79-block  0
+       12:   79-block  1
+    =====:   80:}
+    $$$$$:   80-block  0
+call    0 never executed

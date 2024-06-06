@@ -1,0 +1,555 @@
+        -:    0:Source:D:/C++/lab3/task1/CarController.cpp
+        -:    0:Graph:D:\C++\lab3\task1\cmake-build-debug-coverage\tests\CMakeFiles\tests.dir\__\CarController.cpp.gcno
+        -:    0:Data:D:\C++\lab3\task1\cmake-build-debug-coverage\tests\CMakeFiles\tests.dir\__\CarController.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "CarController.h"
+        -:    2:
+        -:    3:static const std::map<std::string, Commands> commands = {
+        -:    4:    { "Info", Commands::INFO },
+        -:    5:    { "EngineOn", Commands::ENGINE_ON },
+        -:    6:    { "EngineOff", Commands::ENGINE_OFF },
+        -:    7:    { "SetGear", Commands::SET_GEAR },
+        -:    8:    { "SetSpeed", Commands::SET_SPEED },
+        -:    9:};
+        -:   10:
+        -:   11:static const int MIN_GEAR = -1;
+        -:   12:static const int MAX_GEAR = 5;
+        -:   13:
+        -:   14:static const int REVERSE_GEAR = -1;
+        -:   15:static const int NEUTRAL_GEAR = 0;
+        -:   16:static const int FIRST_GEAR = 1;
+        -:   17:
+        -:   18:static const int DIRECTION_BACKWARD = -1;
+        -:   19:static const int NO_DIRECTION = 0;
+        -:   20:
+        -:   21:static const std::string ENGINE = "Engine: ";
+        -:   22:static const std::string DIRECTION = "Direction: ";
+        -:   23:static const std::string SPEED = "Speed: ";
+        -:   24:static const std::string GEAR = "GEAR: ";
+        -:   25:static const std::string ON = "On";
+        -:   26:static const std::string OFF = "Off";
+        -:   27:static const std::string BACKWARD = "Backward\n";
+        -:   28:static const std::string WITHOUT_DIRECTION = "Without direction\n";
+        -:   29:static const std::string FORWARD = "Forward\n";
+        -:   30:
+        -:   31:static const std::string SUCCESS_TURNED_ON = "The engine is turned on successfully!\n";
+        -:   32:static const std::string FAILED_TURNED_ON = "The engine is already turned on!\n";
+        -:   33:static const std::string SUCCESS_TURNED_OFF = "The engine is turned off successfully!\n";
+        -:   34:static const std::string ALREADY_TURNED_OFF = "The engine is already off!\n";
+        -:   35:static const std::string SHUTDOWN_ERROR = "shutdown error!\n";
+        -:   36:static const std::string GEAR_CANNOT_SET = " gear can\'t be set\n";
+        -:   37:static const std::string GEAR_SET = " gear set\n";
+        -:   38:static const std::string SPEED_CANNOT_SET = " speed can\'t be set\n";
+        -:   39:static const std::string SPEED_SET = " speed set\n";
+        -:   40:static const std::string ENGINE_OFF = "engine turned off\n";
+        -:   41:
+        -:   42:static const std::string COMMAND_NOT_EXIST= "This command does not exist\n";
+        -:   43:static const std::string INCORRECT_GEAR_FORMAT = "Incorrect gear parameter format\n";
+        -:   44:static const std::string INCORRECT_SPEED_FORMAT = "Incorrect speed parameter format\n";
+        -:   45:static const std::string CANNOT_SHUTDOWN_ENGINE_WHEN_SPEED_GEAR_ZERO = "can\'t shutdown engine when speed or gear are not at 0\n";
+        -:   46:static const std::string GEAR_NOT_EXIST = "this gear does not exist in the car\n";
+        -:   47:static const std::string CANNOT_SET_NON_NEUTRAL_GEAR_WHEN_ENGINE_OFF = "impossible to switch to a non-neutral gear when the engine is off\n";
+        -:   48:static const std::string CANNOT_SET_FORWARD_GEAR_WHEN_DRIVING_BACKWARD = "impossible to switch to forward gear when driving backward\n";
+        -:   49:static const std::string CANNOT_SET_REVERSE_GEAR_WHEN_NOT_REST = "Switch to reverse gear allowed after stop\n";
+        -:   50:static const std::string GEAR_NOT_SUPPORT_SPEED = "the gear doesn\'t support the current speed\n";
+        -:   51:static const std::string CANNOT_INCREASE_SPEED_IN_NEUTRAL_GEAR = "can't increase the speed in neutral gear\n";
+        -:   52:static const std::string SPEED_OUT_OF_RANGE_OF_GEAR = "the speed is out of the range of gear\n";
+        -:   53:
+function _ZN13CarControllerC2Ev called 15 returned 100% blocks executed 100%
+       15:   54:CarController::CarController() = default;
+        -:   55:
+function _ZN13CarController14ExecuteCommandER3CarRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   56:void CarController::ExecuteCommand(Car& car, const std::string& userCommand)
+        -:   57:{
+    #####:   58:    std::stringstream stringCommand(userCommand);
+    %%%%%:   58-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:   59:    Commands command;
+        -:   60:
+    #####:   61:    if (CarController::GetCommand(stringCommand, command))
+    %%%%%:   61-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   61-block  1
+branch  3 never executed
+branch  4 never executed
+        -:   62:    {
+    #####:   63:        switch (command)
+    %%%%%:   63-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   64:        {
+    #####:   65:            case Commands::INFO:
+    #####:   66:                CarController::getCarInfo(car);
+    %%%%%:   66-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   67:                break;
+    %%%%%:   67-block  0
+        -:   68:
+    #####:   69:            case Commands::ENGINE_ON:
+    #####:   70:                CarController::TurnOnEngine(car);
+    %%%%%:   70-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   71:                break;
+    %%%%%:   71-block  0
+        -:   72:
+    #####:   73:            case Commands::ENGINE_OFF:
+    #####:   74:                CarController::TurnOffEngine(car);
+    %%%%%:   74-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   75:                break;
+    %%%%%:   75-block  0
+        -:   76:
+    #####:   77:            case Commands::SET_GEAR:
+        -:   78:                int gear;
+    #####:   79:                if (stringCommand >> gear)
+    %%%%%:   79-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   79-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   79-block  2
+branch  6 never executed
+branch  7 never executed
+        -:   80:                {
+    #####:   81:                    CarController::SetGear(car, gear);
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   82:                    break;
+    %%%%%:   82-block  0
+        -:   83:                }
+    #####:   84:                std::cout << INCORRECT_GEAR_FORMAT;
+    %%%%%:   84-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   85:                break;
+    %%%%%:   85-block  0
+        -:   86:
+    #####:   87:            case Commands::SET_SPEED:
+        -:   88:                int speed;
+    #####:   89:                if (stringCommand >> speed)
+    %%%%%:   89-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   89-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   89-block  2
+branch  6 never executed
+branch  7 never executed
+        -:   90:                {
+    #####:   91:                    CarController::SetSpeed(car, speed);
+    %%%%%:   91-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   92:                    break;
+    %%%%%:   92-block  0
+        -:   93:                }
+    #####:   94:                std::cout << INCORRECT_SPEED_FORMAT;
+    %%%%%:   94-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   95:                break;
+    %%%%%:   95-block  0
+    #####:   96:            default:
+    #####:   97:                break;
+    %%%%%:   97-block  0
+        -:   98:        }
+        -:   99:    }
+        -:  100:    else
+        -:  101:    {
+    #####:  102:        std::cout << COMMAND_NOT_EXIST;
+    %%%%%:  102-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  103:    }
+    #####:  104:}
+    %%%%%:  104-block  0
+call    0 never executed
+    $$$$$:  104-block  1
+call    1 never executed
+        -:  105:
+function _ZN13CarController10GetCommandERNSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEER8Commands called 3 returned 100% blocks executed 81%
+        3:  106:bool CarController::GetCommand(std::stringstream& commandLine, Commands& command)
+        -:  107:{
+        3:  108:    std::string stringCommand;
+        3:  108-block  0
+call    0 returned 3
+        3:  109:    commandLine >> stringCommand;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  110:    if (commands.find(stringCommand) != commands.end())
+        3:  110-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:  110-block  1
+call    4 returned 3
+branch  5 taken 2 (fallthrough)
+branch  6 taken 1
+    $$$$$:  110-block  2
+        -:  111:    {
+        2:  112:        command = commands.at(stringCommand);
+        2:  112-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  113:        return true;
+        2:  113-block  0
+        -:  114:    }
+        1:  115:    return false;
+        1:  115-block  0
+        3:  116:}
+        3:  116-block  0
+call    0 returned 3
+    $$$$$:  116-block  1
+call    1 never executed
+        -:  117:
+function _ZN13CarController15PrintEngineInfoER3Car called 0 returned 0% blocks executed 0%
+    #####:  118:void CarController::PrintEngineInfo(Car& car)
+        -:  119:{
+    #####:  120:    std::cout << ENGINE;
+    %%%%%:  120-block  0
+call    0 never executed
+    #####:  121:    if (car.IsTurnedOn())
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  122:    {
+    #####:  123:        std::cout << ON;
+    %%%%%:  123-block  0
+call    0 never executed
+        -:  124:    }
+        -:  125:    else
+        -:  126:    {
+    #####:  127:        std::cout << OFF;
+    %%%%%:  127-block  0
+call    0 never executed
+        -:  128:    }
+    #####:  129:    std::cout << std::endl;
+    %%%%%:  129-block  0
+call    0 never executed
+    #####:  130:}
+        -:  131:
+function _ZN13CarController18PrintDirectionInfoER3Car called 0 returned 0% blocks executed 0%
+    #####:  132:void CarController::PrintDirectionInfo(Car& car)
+        -:  133:{
+    #####:  134:    std::cout << DIRECTION;
+    %%%%%:  134-block  0
+call    0 never executed
+    #####:  135:    switch (car.GetDirection())
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  136:    {
+    #####:  137:        case -1:
+    #####:  138:            std::cout << BACKWARD;
+    %%%%%:  138-block  0
+call    0 never executed
+    #####:  139:            break;
+    #####:  140:        case 0:
+    #####:  141:            std::cout << WITHOUT_DIRECTION;
+    %%%%%:  141-block  0
+call    0 never executed
+    #####:  142:            break;
+    #####:  143:        case 1:
+    #####:  144:            std::cout << FORWARD;
+    %%%%%:  144-block  0
+call    0 never executed
+    #####:  145:            break;
+    #####:  146:        default:
+    #####:  147:            break;
+    %%%%%:  147-block  0
+        -:  148:    }
+    #####:  149:}
+        -:  150:
+function _ZN13CarController14PrintSpeedInfoER3Car called 0 returned 0% blocks executed 0%
+    #####:  151:void CarController::PrintSpeedInfo(Car& car)
+        -:  152:{
+    #####:  153:    std::cout << SPEED << car.GetSpeed() << std::endl;
+    %%%%%:  153-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    #####:  154:}
+        -:  155:
+function _ZN13CarController13PrintGearInfoER3Car called 0 returned 0% blocks executed 0%
+    #####:  156:void CarController::PrintGearInfo(Car& car)
+        -:  157:{
+    #####:  158:    std::cout << GEAR << car.GetGear() << std::endl;
+    %%%%%:  158-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    #####:  159:}
+        -:  160:
+function _ZN13CarController10getCarInfoER3Car called 0 returned 0% blocks executed 0%
+    #####:  161:void CarController::getCarInfo(Car& car)
+        -:  162:{
+    #####:  163:    CarController::PrintEngineInfo(car);
+    %%%%%:  163-block  0
+call    0 never executed
+    #####:  164:    CarController::PrintDirectionInfo(car);
+call    0 never executed
+    #####:  165:    CarController::PrintSpeedInfo(car);
+call    0 never executed
+    #####:  166:    CarController::PrintGearInfo(car);
+call    0 never executed
+    #####:  167:}
+        -:  168:
+function _ZN13CarController12TurnOnEngineER3Car called 1 returned 100% blocks executed 71%
+        1:  169:bool CarController::TurnOnEngine(Car& car)
+        -:  170:{
+        1:  171:    if (car.TurnOnEngine()) {
+        1:  171-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        1:  172:        std::cout << SUCCESS_TURNED_ON;
+        1:  172-block  0
+call    0 returned 1
+        1:  173:        return true;
+        -:  174:    };
+    #####:  175:    std::cout << FAILED_TURNED_ON;
+    %%%%%:  175-block  0
+call    0 never executed
+    #####:  176:    return false;
+        -:  177:}
+        -:  178:
+function _ZN13CarController13TurnOffEngineER3Car called 4 returned 100% blocks executed 100%
+        4:  179:bool CarController::TurnOffEngine(Car& car)
+        -:  180:{
+        4:  181:    if (!car.IsTurnedOn())
+        4:  181-block  0
+call    0 returned 4
+branch  1 taken 1 (fallthrough)
+branch  2 taken 3
+        -:  182:    {
+        1:  183:        std::cout << ALREADY_TURNED_OFF;
+        1:  183-block  0
+call    0 returned 1
+        1:  184:        return true;
+        -:  185:    }
+        3:  186:    if (car.GetSpeed() == 0 && car.GetGear() == 0)
+        3:  186-block  0
+call    0 returned 3
+branch  1 taken 2 (fallthrough)
+branch  2 taken 1
+        2:  186-block  1
+call    3 returned 2
+branch  4 taken 1 (fallthrough)
+branch  5 taken 1
+        1:  186-block  2
+        2:  186-block  3
+        3:  186-block  4
+branch  6 taken 1 (fallthrough)
+branch  7 taken 2
+        -:  187:    {
+        1:  188:        car.TurnOffEngine();
+        1:  188-block  0
+call    0 returned 1
+        1:  189:        std::cout << SUCCESS_TURNED_OFF;
+call    0 returned 1
+        1:  190:        return true;
+        -:  191:    }
+        2:  192:    std::cout << SHUTDOWN_ERROR << CANNOT_SHUTDOWN_ENGINE_WHEN_SPEED_GEAR_ZERO;
+        2:  192-block  0
+call    0 returned 2
+call    1 returned 2
+        2:  193:    return false;
+        -:  194:}
+        -:  195:
+function _ZN13CarController7SetGearER3Cari called 3 returned 100% blocks executed 61%
+        3:  196:bool CarController::SetGear(Car& car, int gear)
+        -:  197:{
+        3:  198:    if (gear < MIN_GEAR || gear > MAX_GEAR)
+        3:  198-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 0
+        3:  198-block  1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 3
+        -:  199:    {
+    #####:  200:        std::cout << gear << GEAR_CANNOT_SET << GEAR_NOT_EXIST;
+    %%%%%:  200-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  201:        return false;
+        -:  202:    }
+        3:  203:    if (!car.IsTurnedOn() && gear != NEUTRAL_GEAR)
+        3:  203-block  0
+call    0 returned 3
+branch  1 taken 1 (fallthrough)
+branch  2 taken 2
+        1:  203-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        1:  203-block  2
+        2:  203-block  3
+        3:  203-block  4
+branch  5 taken 1 (fallthrough)
+branch  6 taken 2
+        -:  204:    {
+        1:  205:        std::cout << gear << GEAR_CANNOT_SET << CANNOT_SET_NON_NEUTRAL_GEAR_WHEN_ENGINE_OFF;
+        1:  205-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  206:        return false;
+        -:  207:    }
+       2*:  208:    if (gear == FIRST_GEAR && car.GetDirection() == DIRECTION_BACKWARD)
+        2:  208-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    %%%%%:  208-block  1
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  208-block  2
+        2:  208-block  3
+        2:  208-block  4
+branch  5 taken 0 (fallthrough)
+branch  6 taken 2
+        -:  209:    {
+    #####:  210:        std::cout << gear << GEAR_CANNOT_SET << CANNOT_SET_FORWARD_GEAR_WHEN_DRIVING_BACKWARD;
+    %%%%%:  210-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  211:        return false;
+        -:  212:    }
+       2*:  213:    if (gear == REVERSE_GEAR && car.GetDirection() != NO_DIRECTION)
+        2:  213-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    %%%%%:  213-block  1
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  213-block  2
+        2:  213-block  3
+        2:  213-block  4
+branch  5 taken 0 (fallthrough)
+branch  6 taken 2
+        -:  214:    {
+    #####:  215:        std::cout << gear << GEAR_CANNOT_SET << CANNOT_SET_REVERSE_GEAR_WHEN_NOT_REST;
+    %%%%%:  215-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  216:        return false;
+        -:  217:    }
+        -:  218:
+        2:  219:    if (car.SetGear(gear))
+        2:  219-block  0
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1
+        -:  220:    {
+        1:  221:        std::cout << gear << GEAR_SET;
+        1:  221-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  222:        return true;
+        -:  223:    }
+        1:  224:    std::cout << gear << GEAR_CANNOT_SET << GEAR_NOT_SUPPORT_SPEED;
+        1:  224-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  225:    return false;
+        -:  226:}
+        -:  227:
+function _ZN13CarController8SetSpeedER3Cari called 4 returned 100% blocks executed 86%
+        4:  228:bool CarController::SetSpeed(Car& car, int speed)
+        -:  229:{
+        4:  230:    if (!car.IsTurnedOn())
+        4:  230-block  0
+call    0 returned 4
+branch  1 taken 0 (fallthrough)
+branch  2 taken 4
+        -:  231:    {
+    #####:  232:        std::cout << speed << SPEED_CANNOT_SET << ENGINE_OFF;
+    %%%%%:  232-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  233:        return false;
+        -:  234:    }
+        4:  235:    if ((car.GetGear() == NEUTRAL_GEAR && speed > car.GetSpeed()) || speed < 0)
+        4:  235-block  0
+call    0 returned 4
+branch  1 taken 2 (fallthrough)
+branch  2 taken 2
+        2:  235-block  1
+call    3 returned 2
+branch  4 taken 0 (fallthrough)
+branch  5 taken 2
+        2:  235-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 2
+        2:  235-block  3
+        2:  235-block  4
+        4:  235-block  5
+branch  8 taken 2 (fallthrough)
+branch  9 taken 2
+        -:  236:    {
+        2:  237:        std::cout << speed << SPEED_CANNOT_SET << CANNOT_INCREASE_SPEED_IN_NEUTRAL_GEAR;
+        2:  237-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+        2:  238:        return false;
+        -:  239:    }
+        2:  240:    if (car.SetSpeed(speed))
+        2:  240-block  0
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1
+        -:  241:    {
+        1:  242:        std::cout << speed << SPEED_SET;
+        1:  242-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  243:        return true;
+        -:  244:    }
+        -:  245:
+        1:  246:    std::cout << speed << SPEED_CANNOT_SET << SPEED_OUT_OF_RANGE_OF_GEAR;
+        1:  246-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  247:    return false;
+        -:  248:}

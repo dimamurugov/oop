@@ -1,0 +1,22 @@
+# ninja log v5
+14	620	7043239717381779	tests/CMakeFiles/tests.dir/__/Car.cpp.obj	7907d7ab62ff0faf
+1	1060	7043239721782916	tests/CMakeFiles/tests.dir/__/CarController.cpp.obj	342a5238050ee18e
+9	17096	7043239881826841	tests/CMakeFiles/tests.dir/tests.cpp.obj	63a3e2b010713db9
+17098	39594	7043240107027414	tests/tests.exe	6165072a5d35be
+9	669	7043243398724775	CMakeFiles/task1.dir/Car.cpp.obj	2bae30284d306e70
+0	857	7043243400615199	CMakeFiles/task1.dir/main.cpp.obj	dc7537fdb63cd42b
+17	1248	7043243404526072	CMakeFiles/task1.dir/CarController.cpp.obj	807f7df8a5cebfc5
+1248	1800	7043243409987440	task1.exe	602fd20d19fcdbd7
+12	619	7043254262030284	CMakeFiles/task1.dir/Car.cpp.obj	2bae30284d306e70
+4	865	7043254264510918	CMakeFiles/task1.dir/main.cpp.obj	dc7537fdb63cd42b
+3	1134	7043254350362791	CMakeFiles/task1.dir/CarController.cpp.obj	807f7df8a5cebfc5
+1134	1774	7043254356704206	task1.exe	602fd20d19fcdbd7
+6	663	7043264972834978	CMakeFiles/task1.dir/Car.cpp.obj	2bae30284d306e70
+15	1196	7043264978216394	CMakeFiles/task1.dir/CarController.cpp.obj	807f7df8a5cebfc5
+1196	1776	7043264983927864	task1.exe	602fd20d19fcdbd7
+5	559	7043267842348137	CMakeFiles/task1.dir/Car.cpp.obj	2bae30284d306e70
+559	1246	7043267849149654	task1.exe	602fd20d19fcdbd7
+7	401	7048408115883203	CMakeFiles/task1.dir/Car.cpp.obj	2bae30284d306e70
+2	613	7048408117983662	CMakeFiles/task1.dir/main.cpp.obj	dc7537fdb63cd42b
+10	660	7048408118463771	CMakeFiles/task1.dir/CarController.cpp.obj	807f7df8a5cebfc5
+660	1128	7048408123115003	task1.exe	602fd20d19fcdbd7

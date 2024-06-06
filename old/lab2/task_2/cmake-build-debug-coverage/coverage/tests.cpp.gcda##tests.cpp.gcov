@@ -1,0 +1,2015 @@
+        -:    0:Source:D:/C++/lab2/task_2/tests/tests.cpp
+        -:    0:Graph:D:\C++\lab2\task_2\cmake-build-debug-coverage\tests\CMakeFiles\tests.dir\tests.cpp.gcno
+        -:    0:Data:D:\C++\lab2\task_2\cmake-build-debug-coverage\tests\CMakeFiles\tests.dir\tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#define CATCH_CONFIG_MAIN
+        -:    2:#include "../../../catch2/catch.hpp"
+        -:    3:#include "../DecodeHtmlFunctions.h"
+        -:    4:
+function _ZL19C_A_T_C_H_T_E_S_T_0v called 6 returned 100% blocks executed 41%
+        6:    5:TEST_CASE("Test: Get decoded html element")
+        -:    6:{
+        6:    7:    SECTION("Get decoded html element: '<'")
+        6:    7-block  0
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:    7-block  1
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:    7-block  2
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:    7-block  3
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:    7-block  4
+call   17 never executed
+    $$$$$:    7-block  5
+    $$$$$:    7-block  6
+    $$$$$:    7-block  7
+call   18 never executed
+    $$$$$:    7-block  8
+    $$$$$:    7-block  9
+call   19 never executed
+    $$$$$:    7-block 10
+        -:    8:    {
+        1:    9:        auto result = GetDecodedHtmlElement("&lt;");
+        1:    9-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:    9-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:    9-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:    9-block  3
+call    9 never executed
+    $$$$$:    9-block  4
+    $$$$$:    9-block  5
+call   10 never executed
+    $$$$$:    9-block  6
+        1:   10:        REQUIRE(result == '<');
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   10-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   10-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   10-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   10-block  3
+call   15 returned 1
+        1:   10-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   10-block  5
+call   19 returned 1
+    $$$$$:   10-block  6
+    $$$$$:   10-block  7
+    $$$$$:   10-block  8
+    $$$$$:   10-block  9
+call   20 never executed
+    $$$$$:   10-block 10
+    $$$$$:   10-block 11
+    $$$$$:   10-block 12
+    $$$$$:   10-block 13
+    $$$$$:   10-block 14
+    $$$$$:   10-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   10-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   10-block 17
+call   28 never executed
+    $$$$$:   10-block 18
+call   29 never executed
+        6:   11:    }
+        6:   11-block  0
+call    0 returned 6
+    $$$$$:   11-block  1
+call    1 never executed
+        6:   12:    SECTION("Get decoded html element: '>'")
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:   12-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:   12-block  1
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:   12-block  2
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:   12-block  3
+call   17 never executed
+    $$$$$:   12-block  4
+    $$$$$:   12-block  5
+    $$$$$:   12-block  6
+call   18 never executed
+    $$$$$:   12-block  7
+    $$$$$:   12-block  8
+call   19 never executed
+    $$$$$:   12-block  9
+        -:   13:    {
+        1:   14:        auto result = GetDecodedHtmlElement("&gt;");
+        1:   14-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   14-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   14-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   14-block  3
+call    9 never executed
+    $$$$$:   14-block  4
+    $$$$$:   14-block  5
+call   10 never executed
+    $$$$$:   14-block  6
+        1:   15:        REQUIRE(result == '>');
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   15-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   15-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   15-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   15-block  3
+call   15 returned 1
+        1:   15-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   15-block  5
+call   19 returned 1
+    $$$$$:   15-block  6
+    $$$$$:   15-block  7
+    $$$$$:   15-block  8
+    $$$$$:   15-block  9
+call   20 never executed
+    $$$$$:   15-block 10
+    $$$$$:   15-block 11
+    $$$$$:   15-block 12
+    $$$$$:   15-block 13
+    $$$$$:   15-block 14
+    $$$$$:   15-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   15-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   15-block 17
+call   28 never executed
+    $$$$$:   15-block 18
+call   29 never executed
+        6:   16:    }
+        6:   16-block  0
+call    0 returned 6
+    $$$$$:   16-block  1
+call    1 never executed
+        6:   17:    SECTION("Get decoded html element: '&'")
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:   17-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:   17-block  1
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:   17-block  2
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:   17-block  3
+call   17 never executed
+    $$$$$:   17-block  4
+    $$$$$:   17-block  5
+    $$$$$:   17-block  6
+call   18 never executed
+    $$$$$:   17-block  7
+    $$$$$:   17-block  8
+call   19 never executed
+    $$$$$:   17-block  9
+        -:   18:    {
+        1:   19:        auto result = GetDecodedHtmlElement("&amp;");
+        1:   19-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   19-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   19-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   19-block  3
+call    9 never executed
+    $$$$$:   19-block  4
+    $$$$$:   19-block  5
+call   10 never executed
+    $$$$$:   19-block  6
+        1:   20:        REQUIRE(result == '&');
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   20-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   20-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   20-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   20-block  3
+call   15 returned 1
+        1:   20-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   20-block  5
+call   19 returned 1
+    $$$$$:   20-block  6
+    $$$$$:   20-block  7
+    $$$$$:   20-block  8
+    $$$$$:   20-block  9
+call   20 never executed
+    $$$$$:   20-block 10
+    $$$$$:   20-block 11
+    $$$$$:   20-block 12
+    $$$$$:   20-block 13
+    $$$$$:   20-block 14
+    $$$$$:   20-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   20-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   20-block 17
+call   28 never executed
+    $$$$$:   20-block 18
+call   29 never executed
+        6:   21:    }
+        6:   21-block  0
+call    0 returned 6
+    $$$$$:   21-block  1
+call    1 never executed
+        6:   22:    SECTION("Get decoded html element: '\"'")
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:   22-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:   22-block  1
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:   22-block  2
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:   22-block  3
+call   17 never executed
+    $$$$$:   22-block  4
+    $$$$$:   22-block  5
+    $$$$$:   22-block  6
+call   18 never executed
+    $$$$$:   22-block  7
+    $$$$$:   22-block  8
+call   19 never executed
+    $$$$$:   22-block  9
+        -:   23:    {
+        1:   24:        auto result = GetDecodedHtmlElement("&quot;");
+        1:   24-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   24-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   24-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   24-block  3
+call    9 never executed
+    $$$$$:   24-block  4
+    $$$$$:   24-block  5
+call   10 never executed
+    $$$$$:   24-block  6
+        1:   25:        REQUIRE(result == '\"');
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   25-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   25-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   25-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   25-block  3
+call   15 returned 1
+        1:   25-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   25-block  5
+call   19 returned 1
+    $$$$$:   25-block  6
+    $$$$$:   25-block  7
+    $$$$$:   25-block  8
+    $$$$$:   25-block  9
+call   20 never executed
+    $$$$$:   25-block 10
+    $$$$$:   25-block 11
+    $$$$$:   25-block 12
+    $$$$$:   25-block 13
+    $$$$$:   25-block 14
+    $$$$$:   25-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   25-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   25-block 17
+call   28 never executed
+    $$$$$:   25-block 18
+call   29 never executed
+        6:   26:    }
+        6:   26-block  0
+call    0 returned 6
+    $$$$$:   26-block  1
+call    1 never executed
+        6:   27:    SECTION("Get decoded html element: '\''")
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:   27-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:   27-block  1
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:   27-block  2
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:   27-block  3
+call   17 never executed
+    $$$$$:   27-block  4
+    $$$$$:   27-block  5
+    $$$$$:   27-block  6
+call   18 never executed
+    $$$$$:   27-block  7
+    $$$$$:   27-block  8
+call   19 never executed
+    $$$$$:   27-block  9
+        -:   28:    {
+        1:   29:        auto result = GetDecodedHtmlElement("&apos;");
+        1:   29-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   29-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   29-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   29-block  3
+call    9 never executed
+    $$$$$:   29-block  4
+    $$$$$:   29-block  5
+call   10 never executed
+    $$$$$:   29-block  6
+        1:   30:        REQUIRE(result == '\'');
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   30-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   30-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   30-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   30-block  3
+call   15 returned 1
+        1:   30-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   30-block  5
+call   19 returned 1
+    $$$$$:   30-block  6
+    $$$$$:   30-block  7
+    $$$$$:   30-block  8
+    $$$$$:   30-block  9
+call   20 never executed
+    $$$$$:   30-block 10
+    $$$$$:   30-block 11
+    $$$$$:   30-block 12
+    $$$$$:   30-block 13
+    $$$$$:   30-block 14
+    $$$$$:   30-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   30-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   30-block 17
+call   28 never executed
+    $$$$$:   30-block 18
+call   29 never executed
+        6:   31:    }
+        6:   31-block  0
+call    0 returned 6
+    $$$$$:   31-block  1
+call    1 never executed
+        6:   32:    SECTION("Get decoded html element: unknown")
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:   32-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:   32-block  1
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:   32-block  2
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:   32-block  3
+call   17 never executed
+    $$$$$:   32-block  4
+    $$$$$:   32-block  5
+    $$$$$:   32-block  6
+call   18 never executed
+    $$$$$:   32-block  7
+    $$$$$:   32-block  8
+call   19 never executed
+    $$$$$:   32-block  9
+        -:   33:    {
+        1:   34:        auto result = GetDecodedHtmlElement("&l3t;");
+        1:   34-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   34-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   34-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   34-block  3
+call    9 never executed
+    $$$$$:   34-block  4
+    $$$$$:   34-block  5
+call   10 never executed
+    $$$$$:   34-block  6
+        1:   35:        REQUIRE(result == std::nullopt);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   35-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   35-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   35-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   35-block  3
+call   15 returned 1
+        1:   35-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   35-block  5
+call   19 returned 1
+    $$$$$:   35-block  6
+    $$$$$:   35-block  7
+    $$$$$:   35-block  8
+    $$$$$:   35-block  9
+call   20 never executed
+    $$$$$:   35-block 10
+    $$$$$:   35-block 11
+    $$$$$:   35-block 12
+    $$$$$:   35-block 13
+    $$$$$:   35-block 14
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   35-block 15
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   35-block 16
+call   28 never executed
+    $$$$$:   35-block 17
+call   29 never executed
+        6:   36:    }
+        6:   36-block  0
+call    0 returned 6
+    $$$$$:   36-block  1
+call    1 never executed
+        6:   37:}
+        -:   38:
+function _ZL19C_A_T_C_H_T_E_S_T_8v called 12 returned 100% blocks executed 43%
+       12:   39:TEST_CASE("Test: Html decode")
+        -:   40:{
+       12:   41:    SECTION("Decode empty string")
+       12:   41-block  0
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:   41-block  1
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:   41-block  2
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:   41-block  3
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:   41-block  4
+call   17 never executed
+    $$$$$:   41-block  5
+    $$$$$:   41-block  6
+    $$$$$:   41-block  7
+call   18 never executed
+    $$$$$:   41-block  8
+    $$$$$:   41-block  9
+call   19 never executed
+    $$$$$:   41-block 10
+        -:   42:    {
+        -:   43:        // упростить тесты избавиться от переменных
+        1:   44:        std::string initialHtml;
+        1:   44-block  0
+call    0 returned 1
+        1:   45:        std::string expectedHtml;
+call    0 returned 1
+        1:   46:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   47:        REQUIRE(result == expectedHtml);
+        1:   47-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   47-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   47-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   47-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   47-block  4
+call   15 returned 1
+        1:   47-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   47-block  6
+call   19 returned 1
+    $$$$$:   47-block  7
+    $$$$$:   47-block  8
+    $$$$$:   47-block  9
+    $$$$$:   47-block 10
+call   20 never executed
+    $$$$$:   47-block 11
+    $$$$$:   47-block 12
+    $$$$$:   47-block 13
+    $$$$$:   47-block 14
+    $$$$$:   47-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   47-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   47-block 17
+call   28 never executed
+    $$$$$:   47-block 18
+call   29 never executed
+       13:   48:    }
+        1:   48-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:   48-block  1
+call    3 returned 12
+    $$$$$:   48-block  2
+call    4 never executed
+    $$$$$:   48-block  3
+call    5 never executed
+    $$$$$:   48-block  4
+call    6 never executed
+    $$$$$:   48-block  5
+call    7 never executed
+       12:   49:    SECTION("Decode string without html element")
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:   49-block  0
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:   49-block  1
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:   49-block  2
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:   49-block  3
+call   17 never executed
+    $$$$$:   49-block  4
+    $$$$$:   49-block  5
+    $$$$$:   49-block  6
+call   18 never executed
+    $$$$$:   49-block  7
+    $$$$$:   49-block  8
+call   19 never executed
+    $$$$$:   49-block  9
+        -:   50:    {
+        1:   51:        std::string initialHtml = "Hello world";
+        1:   51-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   51-block  1
+        1:   52:        std::string expectedHtml = "Hello world";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   52-block  0
+        1:   53:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   54:        REQUIRE(result == expectedHtml);
+        1:   54-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   54-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   54-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   54-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   54-block  4
+call   15 returned 1
+        1:   54-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   54-block  6
+call   19 returned 1
+    $$$$$:   54-block  7
+    $$$$$:   54-block  8
+    $$$$$:   54-block  9
+    $$$$$:   54-block 10
+call   20 never executed
+    $$$$$:   54-block 11
+    $$$$$:   54-block 12
+    $$$$$:   54-block 13
+    $$$$$:   54-block 14
+    $$$$$:   54-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   54-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   54-block 17
+call   28 never executed
+    $$$$$:   54-block 18
+call   29 never executed
+       13:   55:    }
+        1:   55-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:   55-block  1
+call    3 returned 12
+    $$$$$:   55-block  2
+call    4 never executed
+    $$$$$:   55-block  3
+call    5 never executed
+    $$$$$:   55-block  4
+call    6 never executed
+    $$$$$:   55-block  5
+call    7 never executed
+       12:   56:    SECTION("Decode string with breaking html element")
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:   56-block  0
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:   56-block  1
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:   56-block  2
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:   56-block  3
+call   17 never executed
+    $$$$$:   56-block  4
+    $$$$$:   56-block  5
+    $$$$$:   56-block  6
+call   18 never executed
+    $$$$$:   56-block  7
+    $$$$$:   56-block  8
+call   19 never executed
+    $$$$$:   56-block  9
+        -:   57:    {
+        1:   58:        std::string initialHtml = "&gt Hello  world; ";
+        1:   58-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   58-block  1
+        1:   59:        std::string expectedHtml = "&gt Hello  world; ";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   59-block  0
+        1:   60:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   61:        REQUIRE(result == expectedHtml);
+        1:   61-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   61-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   61-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   61-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   61-block  4
+call   15 returned 1
+        1:   61-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   61-block  6
+call   19 returned 1
+    $$$$$:   61-block  7
+    $$$$$:   61-block  8
+    $$$$$:   61-block  9
+    $$$$$:   61-block 10
+call   20 never executed
+    $$$$$:   61-block 11
+    $$$$$:   61-block 12
+    $$$$$:   61-block 13
+    $$$$$:   61-block 14
+    $$$$$:   61-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   61-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   61-block 17
+call   28 never executed
+    $$$$$:   61-block 18
+call   29 never executed
+       13:   62:    }
+        1:   62-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:   62-block  1
+call    3 returned 12
+    $$$$$:   62-block  2
+call    4 never executed
+    $$$$$:   62-block  3
+call    5 never executed
+    $$$$$:   62-block  4
+call    6 never executed
+    $$$$$:   62-block  5
+call    7 never executed
+       12:   63:    SECTION("Decode string with unfinished html element")
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:   63-block  0
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:   63-block  1
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:   63-block  2
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:   63-block  3
+call   17 never executed
+    $$$$$:   63-block  4
+    $$$$$:   63-block  5
+    $$$$$:   63-block  6
+call   18 never executed
+    $$$$$:   63-block  7
+    $$$$$:   63-block  8
+call   19 never executed
+    $$$$$:   63-block  9
+        -:   64:    {
+        1:   65:        std::string initialHtml = "Hello world &gt";
+        1:   65-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   65-block  1
+        1:   66:        std::string expectedHtml = "Hello world &gt";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   66-block  0
+        1:   67:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   68:        REQUIRE(result == expectedHtml);
+        1:   68-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   68-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   68-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   68-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   68-block  4
+call   15 returned 1
+        1:   68-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   68-block  6
+call   19 returned 1
+    $$$$$:   68-block  7
+    $$$$$:   68-block  8
+    $$$$$:   68-block  9
+    $$$$$:   68-block 10
+call   20 never executed
+    $$$$$:   68-block 11
+    $$$$$:   68-block 12
+    $$$$$:   68-block 13
+    $$$$$:   68-block 14
+    $$$$$:   68-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   68-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   68-block 17
+call   28 never executed
+    $$$$$:   68-block 18
+call   29 never executed
+       13:   69:    }
+        1:   69-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:   69-block  1
+call    3 returned 12
+    $$$$$:   69-block  2
+call    4 never executed
+    $$$$$:   69-block  3
+call    5 never executed
+    $$$$$:   69-block  4
+call    6 never executed
+    $$$$$:   69-block  5
+call    7 never executed
+       12:   70:    SECTION("Decode string with only char amp")
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:   70-block  0
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:   70-block  1
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:   70-block  2
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:   70-block  3
+call   17 never executed
+    $$$$$:   70-block  4
+    $$$$$:   70-block  5
+    $$$$$:   70-block  6
+call   18 never executed
+    $$$$$:   70-block  7
+    $$$$$:   70-block  8
+call   19 never executed
+    $$$$$:   70-block  9
+        -:   71:    {
+        1:   72:        std::string initialHtml = "&";
+        1:   72-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   72-block  1
+        1:   73:        std::string expectedHtml = "&";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   73-block  0
+        1:   74:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   75:        REQUIRE(result == expectedHtml);
+        1:   75-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   75-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   75-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   75-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   75-block  4
+call   15 returned 1
+        1:   75-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   75-block  6
+call   19 returned 1
+    $$$$$:   75-block  7
+    $$$$$:   75-block  8
+    $$$$$:   75-block  9
+    $$$$$:   75-block 10
+call   20 never executed
+    $$$$$:   75-block 11
+    $$$$$:   75-block 12
+    $$$$$:   75-block 13
+    $$$$$:   75-block 14
+    $$$$$:   75-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   75-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   75-block 17
+call   28 never executed
+    $$$$$:   75-block 18
+call   29 never executed
+       13:   76:    }
+        1:   76-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:   76-block  1
+call    3 returned 12
+    $$$$$:   76-block  2
+call    4 never executed
+    $$$$$:   76-block  3
+call    5 never executed
+    $$$$$:   76-block  4
+call    6 never executed
+    $$$$$:   76-block  5
+call    7 never executed
+       12:   77:    SECTION("Decode string with only multi char amp")
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:   77-block  0
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:   77-block  1
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:   77-block  2
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:   77-block  3
+call   17 never executed
+    $$$$$:   77-block  4
+    $$$$$:   77-block  5
+    $$$$$:   77-block  6
+call   18 never executed
+    $$$$$:   77-block  7
+    $$$$$:   77-block  8
+call   19 never executed
+    $$$$$:   77-block  9
+        -:   78:    {
+        1:   79:        std::string initialHtml = "&&&&&";
+        1:   79-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   79-block  1
+        1:   80:        std::string expectedHtml = "&&&&&";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   80-block  0
+        1:   81:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   82:        REQUIRE(result == expectedHtml);
+        1:   82-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   82-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   82-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   82-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   82-block  4
+call   15 returned 1
+        1:   82-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   82-block  6
+call   19 returned 1
+    $$$$$:   82-block  7
+    $$$$$:   82-block  8
+    $$$$$:   82-block  9
+    $$$$$:   82-block 10
+call   20 never executed
+    $$$$$:   82-block 11
+    $$$$$:   82-block 12
+    $$$$$:   82-block 13
+    $$$$$:   82-block 14
+    $$$$$:   82-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   82-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   82-block 17
+call   28 never executed
+    $$$$$:   82-block 18
+call   29 never executed
+       13:   83:    }
+        1:   83-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:   83-block  1
+call    3 returned 12
+    $$$$$:   83-block  2
+call    4 never executed
+    $$$$$:   83-block  3
+call    5 never executed
+    $$$$$:   83-block  4
+call    6 never executed
+    $$$$$:   83-block  5
+call    7 never executed
+       12:   84:    SECTION("Decode string with only char ';'")
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:   84-block  0
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:   84-block  1
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:   84-block  2
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:   84-block  3
+call   17 never executed
+    $$$$$:   84-block  4
+    $$$$$:   84-block  5
+    $$$$$:   84-block  6
+call   18 never executed
+    $$$$$:   84-block  7
+    $$$$$:   84-block  8
+call   19 never executed
+    $$$$$:   84-block  9
+        -:   85:    {
+        1:   86:        std::string initialHtml = ";";
+        1:   86-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   86-block  1
+        1:   87:        std::string expectedHtml = ";";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   87-block  0
+        1:   88:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   89:        REQUIRE(result == expectedHtml);
+        1:   89-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   89-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   89-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   89-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   89-block  4
+call   15 returned 1
+        1:   89-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   89-block  6
+call   19 returned 1
+    $$$$$:   89-block  7
+    $$$$$:   89-block  8
+    $$$$$:   89-block  9
+    $$$$$:   89-block 10
+call   20 never executed
+    $$$$$:   89-block 11
+    $$$$$:   89-block 12
+    $$$$$:   89-block 13
+    $$$$$:   89-block 14
+    $$$$$:   89-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   89-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   89-block 17
+call   28 never executed
+    $$$$$:   89-block 18
+call   29 never executed
+       13:   90:    }
+        1:   90-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:   90-block  1
+call    3 returned 12
+    $$$$$:   90-block  2
+call    4 never executed
+    $$$$$:   90-block  3
+call    5 never executed
+    $$$$$:   90-block  4
+call    6 never executed
+    $$$$$:   90-block  5
+call    7 never executed
+       12:   91:    SECTION("Decode string with only multi char ';'")
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:   91-block  0
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:   91-block  1
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:   91-block  2
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:   91-block  3
+call   17 never executed
+    $$$$$:   91-block  4
+    $$$$$:   91-block  5
+    $$$$$:   91-block  6
+call   18 never executed
+    $$$$$:   91-block  7
+    $$$$$:   91-block  8
+call   19 never executed
+    $$$$$:   91-block  9
+        -:   92:    {
+        1:   93:        std::string initialHtml = ";;;";
+        1:   93-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   93-block  1
+        1:   94:        std::string expectedHtml = ";;;";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   94-block  0
+        1:   95:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   96:        REQUIRE(result == expectedHtml);
+        1:   96-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   96-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   96-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   96-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   96-block  4
+call   15 returned 1
+        1:   96-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   96-block  6
+call   19 returned 1
+    $$$$$:   96-block  7
+    $$$$$:   96-block  8
+    $$$$$:   96-block  9
+    $$$$$:   96-block 10
+call   20 never executed
+    $$$$$:   96-block 11
+    $$$$$:   96-block 12
+    $$$$$:   96-block 13
+    $$$$$:   96-block 14
+    $$$$$:   96-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   96-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   96-block 17
+call   28 never executed
+    $$$$$:   96-block 18
+call   29 never executed
+       13:   97:    }
+        1:   97-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:   97-block  1
+call    3 returned 12
+    $$$$$:   97-block  2
+call    4 never executed
+    $$$$$:   97-block  3
+call    5 never executed
+    $$$$$:   97-block  4
+call    6 never executed
+    $$$$$:   97-block  5
+call    7 never executed
+       12:   98:    SECTION("Decode string with html element on center")
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:   98-block  0
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:   98-block  1
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:   98-block  2
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:   98-block  3
+call   17 never executed
+    $$$$$:   98-block  4
+    $$$$$:   98-block  5
+    $$$$$:   98-block  6
+call   18 never executed
+    $$$$$:   98-block  7
+    $$$$$:   98-block  8
+call   19 never executed
+    $$$$$:   98-block  9
+        -:   99:    {
+        1:  100:        std::string initialHtml = "Hello &lt; world";
+        1:  100-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  100-block  1
+        1:  101:        std::string expectedHtml = "Hello < world";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  101-block  0
+        1:  102:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  103:        REQUIRE(result == expectedHtml);
+        1:  103-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  103-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  103-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  103-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  103-block  4
+call   15 returned 1
+        1:  103-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  103-block  6
+call   19 returned 1
+    $$$$$:  103-block  7
+    $$$$$:  103-block  8
+    $$$$$:  103-block  9
+    $$$$$:  103-block 10
+call   20 never executed
+    $$$$$:  103-block 11
+    $$$$$:  103-block 12
+    $$$$$:  103-block 13
+    $$$$$:  103-block 14
+    $$$$$:  103-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:  103-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  103-block 17
+call   28 never executed
+    $$$$$:  103-block 18
+call   29 never executed
+       13:  104:    }
+        1:  104-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:  104-block  1
+call    3 returned 12
+    $$$$$:  104-block  2
+call    4 never executed
+    $$$$$:  104-block  3
+call    5 never executed
+    $$$$$:  104-block  4
+call    6 never executed
+    $$$$$:  104-block  5
+call    7 never executed
+       12:  105:    SECTION("Decode string with html element on start")
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:  105-block  0
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:  105-block  1
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:  105-block  2
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:  105-block  3
+call   17 never executed
+    $$$$$:  105-block  4
+    $$$$$:  105-block  5
+    $$$$$:  105-block  6
+call   18 never executed
+    $$$$$:  105-block  7
+    $$$$$:  105-block  8
+call   19 never executed
+    $$$$$:  105-block  9
+        -:  106:    {
+        1:  107:        std::string initialHtml = "&gt;Hello world";
+        1:  107-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  107-block  1
+        1:  108:        std::string expectedHtml = ">Hello world";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  108-block  0
+        1:  109:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  110:        REQUIRE(result == expectedHtml);
+        1:  110-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  110-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  110-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  110-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  110-block  4
+call   15 returned 1
+        1:  110-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  110-block  6
+call   19 returned 1
+    $$$$$:  110-block  7
+    $$$$$:  110-block  8
+    $$$$$:  110-block  9
+    $$$$$:  110-block 10
+call   20 never executed
+    $$$$$:  110-block 11
+    $$$$$:  110-block 12
+    $$$$$:  110-block 13
+    $$$$$:  110-block 14
+    $$$$$:  110-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:  110-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  110-block 17
+call   28 never executed
+    $$$$$:  110-block 18
+call   29 never executed
+       13:  111:    }
+        1:  111-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:  111-block  1
+call    3 returned 12
+    $$$$$:  111-block  2
+call    4 never executed
+    $$$$$:  111-block  3
+call    5 never executed
+    $$$$$:  111-block  4
+call    6 never executed
+    $$$$$:  111-block  5
+call    7 never executed
+       12:  112:    SECTION("Decode string with html element on end")
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:  112-block  0
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:  112-block  1
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:  112-block  2
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:  112-block  3
+call   17 never executed
+    $$$$$:  112-block  4
+    $$$$$:  112-block  5
+    $$$$$:  112-block  6
+call   18 never executed
+    $$$$$:  112-block  7
+    $$$$$:  112-block  8
+call   19 never executed
+    $$$$$:  112-block  9
+        -:  113:    {
+        1:  114:        std::string initialHtml = "Hello world&amp;";
+        1:  114-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  114-block  1
+        1:  115:        std::string expectedHtml = "Hello world&";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  115-block  0
+        1:  116:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  117:        REQUIRE(result == expectedHtml);
+        1:  117-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  117-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  117-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  117-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  117-block  4
+call   15 returned 1
+        1:  117-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  117-block  6
+call   19 returned 1
+    $$$$$:  117-block  7
+    $$$$$:  117-block  8
+    $$$$$:  117-block  9
+    $$$$$:  117-block 10
+call   20 never executed
+    $$$$$:  117-block 11
+    $$$$$:  117-block 12
+    $$$$$:  117-block 13
+    $$$$$:  117-block 14
+    $$$$$:  117-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:  117-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  117-block 17
+call   28 never executed
+    $$$$$:  117-block 18
+call   29 never executed
+       13:  118:    }
+        1:  118-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:  118-block  1
+call    3 returned 12
+    $$$$$:  118-block  2
+call    4 never executed
+    $$$$$:  118-block  3
+call    5 never executed
+    $$$$$:  118-block  4
+call    6 never executed
+    $$$$$:  118-block  5
+call    7 never executed
+       12:  119:    SECTION("Decode encoded string \" Cat &lt;says&gt; &quot;Meow&quot;. M&apos; \"")
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:  119-block  0
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:  119-block  1
+call    8 returned 12
+branch  9 taken 12 (fallthrough)
+branch 10 taken 0 (throw)
+       12:  119-block  2
+call   11 returned 12
+call   12 returned 12
+call   13 returned 12
+call   14 returned 12
+branch 15 taken 1 (fallthrough)
+branch 16 taken 11
+    $$$$$:  119-block  3
+call   17 never executed
+    $$$$$:  119-block  4
+    $$$$$:  119-block  5
+    $$$$$:  119-block  6
+call   18 never executed
+    $$$$$:  119-block  7
+    $$$$$:  119-block  8
+call   19 never executed
+    $$$$$:  119-block  9
+        -:  120:    {
+        1:  121:        std::string initialHtml = "Hello world&amp;";
+        1:  121-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  121-block  1
+        1:  122:        std::string expectedHtml = "Hello world&";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  122-block  0
+        1:  123:        std::string result = HtmlDecode(initialHtml);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  124:        REQUIRE(result == expectedHtml);
+        1:  124-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  124-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  124-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  124-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  124-block  4
+call   15 returned 1
+        1:  124-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  124-block  6
+call   19 returned 1
+    $$$$$:  124-block  7
+    $$$$$:  124-block  8
+    $$$$$:  124-block  9
+    $$$$$:  124-block 10
+call   20 never executed
+    $$$$$:  124-block 11
+    $$$$$:  124-block 12
+    $$$$$:  124-block 13
+    $$$$$:  124-block 14
+    $$$$$:  124-block 15
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+    $$$$$:  124-block 16
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  124-block 17
+call   28 never executed
+    $$$$$:  124-block 18
+call   29 never executed
+       13:  125:    }
+        1:  125-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+       12:  125-block  1
+call    3 returned 12
+    $$$$$:  125-block  2
+call    4 never executed
+    $$$$$:  125-block  3
+call    5 never executed
+    $$$$$:  125-block  4
+call    6 never executed
+    $$$$$:  125-block  5
+call    7 never executed
+       12:  126:}

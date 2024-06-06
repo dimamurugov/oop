@@ -1,0 +1,8 @@
+# ninja log v5
+1	121	7012973353781582	build.ninja	7d0fb2b82ab6f57c
+1	931	7012856236086368	CMakeFiles/task_1.dir/main.cpp.obj	a896bc0c9bd7aad6
+1034	1468	7012856241397564	task_1.exe	9f15a4d37bfc3e05
+7	1034	7012856237126607	CMakeFiles/task_1.dir/Functions.cpp.obj	2af606f9bfbc137e
+1	765	7012856338514254	tests/CMakeFiles/tests.dir/__/Functions.cpp.obj	ace9305b23677f0c
+3	14202	7012972579888198	tests/CMakeFiles/tests.dir/tests.cpp.obj	d60fa36809bf1dcd
+14203	35822	7012972796335736	tests/tests.exe	9cf1365640bb6949

@@ -1,0 +1,7 @@
+# ninja log v5
+3	533	7043228869815869	CMakeFiles/task_2.dir/main.cpp.obj	a5880b7d7156444b
+10	590	7043228870388560	CMakeFiles/task_2.dir/DecodeHtmlFunctions.cpp.obj	f1d0340158e5e959
+594	1018	7043228874617093	task_2.exe	5f5bb9012214adc2
+14	724	7043228951043163	tests/CMakeFiles/tests.dir/__/DecodeHtmlFunctions.cpp.obj	c12ccc8d32b8a187
+6	15403	7043229097516202	tests/CMakeFiles/tests.dir/tests.cpp.obj	48084fa00cb17d04
+15403	36302	7043229306707142	tests/tests.exe	2ce3b255e7f16cdf

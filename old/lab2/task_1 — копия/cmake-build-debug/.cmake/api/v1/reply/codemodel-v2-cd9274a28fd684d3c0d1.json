@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "tests",
+					"jsonFile" : "directory-tests-Debug-70e4927a02b591d5c1f8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "task_1",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "task_1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-task_1-Debug-d9c5d596b6877f167e5c.json",
+					"name" : "task_1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "tests::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-tests-Debug-6ddcf2e46eaf80d12dbd.json",
+					"name" : "tests",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/C++/lab2/task_1 \u2014 \u043a\u043e\u043f\u0438\u044f/cmake-build-debug",
+		"source" : "D:/C++/lab2/task_1 \u2014 \u043a\u043e\u043f\u0438\u044f"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

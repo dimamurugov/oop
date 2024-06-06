@@ -1,0 +1,6 @@
+D:/C++/lab3/task1/cmake-build-debug-coverage/CMakeFiles/task1.dir
+D:/C++/lab3/task1/cmake-build-debug-coverage/CMakeFiles/edit_cache.dir
+D:/C++/lab3/task1/cmake-build-debug-coverage/CMakeFiles/rebuild_cache.dir
+D:/C++/lab3/task1/cmake-build-debug-coverage/tests/CMakeFiles/tests.dir
+D:/C++/lab3/task1/cmake-build-debug-coverage/tests/CMakeFiles/edit_cache.dir
+D:/C++/lab3/task1/cmake-build-debug-coverage/tests/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,10 @@
+# ninja log v5
+1	186	7043239684130633	build.ninja	1a683028f4077be7
+8	326	7043198212844446	CMakeFiles/task1.dir/Car.cpp.obj	288a5401d810d86c
+896	1489	7043234225600286	task1.exe	77e1d42c1ded7d0d
+4	800	7043217157289173	CMakeFiles/task1.dir/main.cpp.obj	9a835c27ce11e7f5
+4	895	7043234219759869	CMakeFiles/task1.dir/CarController.cpp.obj	c8b248128882100e
+25	1129	7043239137502465	tests/CMakeFiles/tests.dir/__/CarController.cpp.obj	3956c342f54399ad
+16	633	7043239132551349	tests/CMakeFiles/tests.dir/__/Car.cpp.obj	b72b8577921b6b84
+6	14854	7043239274529108	tests/CMakeFiles/tests.dir/tests.cpp.obj	25537472915a5657
+14855	34884	7043239475005961	tests/tests.exe	a6b0c61b83ecebd
