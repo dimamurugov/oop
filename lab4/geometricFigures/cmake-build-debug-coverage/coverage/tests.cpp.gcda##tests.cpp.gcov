@@ -1,0 +1,2009 @@
+        -:    0:Source:C:/Users/dmitriy.murugov/Documents/OOP/myRepo/oop/lab4/geometricFigures/tests/tests.cpp
+        -:    0:Graph:C:\Users\dmitriy.murugov\Documents\OOP\myRepo\oop\lab4\geometricFigures\cmake-build-debug-coverage\tests\CMakeFiles\tests.dir\tests.cpp.gcno
+        -:    0:Data:C:\Users\dmitriy.murugov\Documents\OOP\myRepo\oop\lab4\geometricFigures\cmake-build-debug-coverage\tests\CMakeFiles\tests.dir\tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#define CATCH_CONFIG_MAIN
+        -:    2:#include "../../../../../catch2/catch.hpp"
+        -:    3:
+        -:    4:#include "../CPoint.h"
+        -:    5:#include "../CCircle.h"
+        -:    6:#include "../CLineSegment.h"
+        -:    7:
+function _ZL19C_A_T_C_H_T_E_S_T_0v called 10 returned 100% blocks executed 45%
+       10:    8:TEST_CASE("Testing class CCircle")
+        -:    9:{
+       10:   10:    std::cout << "Init" << std::endl;
+       10:   10-block  0
+call    0 returned 10
+call    1 returned 10
+       10:   11:    SECTION("Init CCircle")
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   11-block  0
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 10 (fallthrough)
+branch  7 taken 0 (throw)
+       10:   11-block  1
+call    8 returned 10
+branch  9 taken 10 (fallthrough)
+branch 10 taken 0 (throw)
+       10:   11-block  2
+call   11 returned 10
+call   12 returned 10
+call   13 returned 10
+call   14 returned 10
+branch 15 taken 1 (fallthrough)
+branch 16 taken 9
+    $$$$$:   11-block  3
+call   17 never executed
+    $$$$$:   11-block  4
+    $$$$$:   11-block  5
+    $$$$$:   11-block  6
+call   18 never executed
+    $$$$$:   11-block  7
+    $$$$$:   11-block  8
+call   19 never executed
+    $$$$$:   11-block  9
+        -:   12:    {
+        1:   13:        double x = 10.3;
+        1:   14:        double y = 20.15;
+        1:   15:        double radius = 30;
+        1:   16:        CPoint center(x, y);
+        1:   16-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   17:        ColorTypes colors;
+        1:   18:        CCircle circle(center, radius, colors);
+        1:   18-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   19:        REQUIRE(circle.GetRadius() == radius);
+        1:   19-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   19-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   19-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   19-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   19-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   19-block  5
+call   18 returned 1
+        1:   19-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   19-block  7
+call   22 returned 1
+    $$$$$:   19-block  8
+    $$$$$:   19-block  9
+    $$$$$:   19-block 10
+    $$$$$:   19-block 11
+call   23 never executed
+    $$$$$:   19-block 12
+    $$$$$:   19-block 13
+    $$$$$:   19-block 14
+    $$$$$:   19-block 15
+    $$$$$:   19-block 16
+    $$$$$:   19-block 17
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   19-block 18
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   19-block 19
+call   31 never executed
+    $$$$$:   19-block 20
+call   32 never executed
+       11:   20:    }
+        1:   20-block  0
+call    0 returned 1
+       10:   20-block  1
+call    1 returned 10
+    $$$$$:   20-block  2
+call    2 never executed
+    $$$$$:   20-block  3
+call    3 never executed
+       10:   21:    std::cout << "CCircle Perimeter" << std::endl;
+call    0 returned 10
+call    1 returned 10
+       10:   22:    SECTION("Init CCircle")
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   22-block  0
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 10 (fallthrough)
+branch  7 taken 0 (throw)
+       10:   22-block  1
+call    8 returned 10
+branch  9 taken 10 (fallthrough)
+branch 10 taken 0 (throw)
+       10:   22-block  2
+call   11 returned 10
+call   12 returned 10
+call   13 returned 10
+call   14 returned 10
+branch 15 taken 1 (fallthrough)
+branch 16 taken 9
+    $$$$$:   22-block  3
+call   17 never executed
+    $$$$$:   22-block  4
+    $$$$$:   22-block  5
+    $$$$$:   22-block  6
+call   18 never executed
+    $$$$$:   22-block  7
+    $$$$$:   22-block  8
+call   19 never executed
+    $$$$$:   22-block  9
+        -:   23:    {
+        1:   24:        double x = 10.3;
+        1:   25:        double y = 20.15;
+        1:   26:        double radius = 30;
+        1:   27:        double perimeter = 188.4955592154;
+        1:   28:        CPoint center(x, y);
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   29:        ColorTypes colors;
+        1:   30:        CCircle circle(center, radius, colors);
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   31:        REQUIRE(round(circle.GetPerimeter()) == round(perimeter));
+        1:   31-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   31-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   31-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   31-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   31-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   31-block  5
+call   18 returned 1
+        1:   31-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   31-block  7
+call   22 returned 1
+    $$$$$:   31-block  8
+    $$$$$:   31-block  9
+    $$$$$:   31-block 10
+    $$$$$:   31-block 11
+call   23 never executed
+    $$$$$:   31-block 12
+    $$$$$:   31-block 13
+    $$$$$:   31-block 14
+    $$$$$:   31-block 15
+    $$$$$:   31-block 16
+    $$$$$:   31-block 17
+    $$$$$:   31-block 18
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   31-block 19
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   31-block 20
+call   31 never executed
+    $$$$$:   31-block 21
+call   32 never executed
+       11:   32:    }
+        1:   32-block  0
+call    0 returned 1
+       10:   32-block  1
+call    1 returned 10
+    $$$$$:   32-block  2
+call    2 never executed
+    $$$$$:   32-block  3
+call    3 never executed
+       10:   33:    std::cout << "CCircle GetArea" << std::endl;
+call    0 returned 10
+call    1 returned 10
+       10:   34:    SECTION("Init CCircle")
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   34-block  0
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 10 (fallthrough)
+branch  7 taken 0 (throw)
+       10:   34-block  1
+call    8 returned 10
+branch  9 taken 10 (fallthrough)
+branch 10 taken 0 (throw)
+       10:   34-block  2
+call   11 returned 10
+call   12 returned 10
+call   13 returned 10
+call   14 returned 10
+branch 15 taken 1 (fallthrough)
+branch 16 taken 9
+    $$$$$:   34-block  3
+call   17 never executed
+    $$$$$:   34-block  4
+    $$$$$:   34-block  5
+    $$$$$:   34-block  6
+call   18 never executed
+    $$$$$:   34-block  7
+    $$$$$:   34-block  8
+call   19 never executed
+    $$$$$:   34-block  9
+        -:   35:    {
+        1:   36:        double x = 10.3;
+        1:   37:        double y = 20.15;
+        1:   38:        double radius = 30;
+        1:   39:        double area = 2827.433388;
+        1:   40:        CPoint center(x, y);
+        1:   40-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   41:        ColorTypes colors;
+        1:   42:        CCircle circle(center, radius, colors);
+        1:   42-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   43:        REQUIRE(round(circle.GetArea()) == round(area));
+        1:   43-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   43-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   43-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   43-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   43-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   43-block  5
+call   18 returned 1
+        1:   43-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   43-block  7
+call   22 returned 1
+    $$$$$:   43-block  8
+    $$$$$:   43-block  9
+    $$$$$:   43-block 10
+    $$$$$:   43-block 11
+call   23 never executed
+    $$$$$:   43-block 12
+    $$$$$:   43-block 13
+    $$$$$:   43-block 14
+    $$$$$:   43-block 15
+    $$$$$:   43-block 16
+    $$$$$:   43-block 17
+    $$$$$:   43-block 18
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   43-block 19
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   43-block 20
+call   31 never executed
+    $$$$$:   43-block 21
+call   32 never executed
+       11:   44:    }
+        1:   44-block  0
+call    0 returned 1
+       10:   44-block  1
+call    1 returned 10
+    $$$$$:   44-block  2
+call    2 never executed
+    $$$$$:   44-block  3
+call    3 never executed
+       10:   45:    std::cout << "CCircle GetCenter" << std::endl;
+call    0 returned 10
+call    1 returned 10
+       10:   46:    SECTION("CCircle")
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   46-block  0
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 10 (fallthrough)
+branch  7 taken 0 (throw)
+       10:   46-block  1
+call    8 returned 10
+branch  9 taken 10 (fallthrough)
+branch 10 taken 0 (throw)
+       10:   46-block  2
+call   11 returned 10
+call   12 returned 10
+call   13 returned 10
+call   14 returned 10
+branch 15 taken 1 (fallthrough)
+branch 16 taken 9
+    $$$$$:   46-block  3
+call   17 never executed
+    $$$$$:   46-block  4
+    $$$$$:   46-block  5
+    $$$$$:   46-block  6
+call   18 never executed
+    $$$$$:   46-block  7
+    $$$$$:   46-block  8
+call   19 never executed
+    $$$$$:   46-block  9
+        -:   47:    {
+        1:   48:        double x = 10.3;
+        1:   49:        double y = 20.15;
+        1:   50:        double radius = 30;
+        1:   51:        double area = 2827.433388;
+        1:   52:        CPoint center(x, y);
+        1:   52-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   53:        ColorTypes colors;
+        1:   54:        CCircle circle(center, radius, colors);
+        1:   54-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   55:        REQUIRE(round(circle.GetCenter().GetPoint()[0]) == round(x));
+        1:   55-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   55-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   55-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   55-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   55-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   55-block  5
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   55-block  6
+call   22 returned 1
+call   23 returned 1
+        1:   55-block  7
+call   24 returned 1
+branch 25 taken 1 (fallthrough)
+branch 26 taken 0 (throw)
+        1:   55-block  8
+call   27 returned 1
+    $$$$$:   55-block  9
+    $$$$$:   55-block 10
+    $$$$$:   55-block 11
+    $$$$$:   55-block 12
+call   28 never executed
+    $$$$$:   55-block 13
+    $$$$$:   55-block 14
+    $$$$$:   55-block 15
+    $$$$$:   55-block 16
+    $$$$$:   55-block 17
+call   29 never executed
+    $$$$$:   55-block 18
+    $$$$$:   55-block 19
+    $$$$$:   55-block 20
+    $$$$$:   55-block 21
+    $$$$$:   55-block 22
+call   30 never executed
+call   31 never executed
+branch 32 never executed
+branch 33 never executed
+    $$$$$:   55-block 23
+call   34 never executed
+branch 35 never executed
+branch 36 never executed
+    $$$$$:   55-block 24
+call   37 never executed
+    $$$$$:   55-block 25
+call   38 never executed
+       11:   56:    }
+        1:   56-block  0
+call    0 returned 1
+       10:   56-block  1
+call    1 returned 10
+    $$$$$:   56-block  2
+call    2 never executed
+    $$$$$:   56-block  3
+call    3 never executed
+       10:   57:    std::cout << "CCircle FillColor" << std::endl;
+call    0 returned 10
+call    1 returned 10
+       10:   58:    SECTION("Init CCircle")
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   58-block  0
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 10 (fallthrough)
+branch  7 taken 0 (throw)
+       10:   58-block  1
+call    8 returned 10
+branch  9 taken 10 (fallthrough)
+branch 10 taken 0 (throw)
+       10:   58-block  2
+call   11 returned 10
+call   12 returned 10
+call   13 returned 10
+call   14 returned 10
+branch 15 taken 1 (fallthrough)
+branch 16 taken 9
+    $$$$$:   58-block  3
+call   17 never executed
+    $$$$$:   58-block  4
+    $$$$$:   58-block  5
+    $$$$$:   58-block  6
+call   18 never executed
+    $$$$$:   58-block  7
+    $$$$$:   58-block  8
+call   19 never executed
+    $$$$$:   58-block  9
+        -:   59:    {
+        1:   60:        double x = 10.3;
+        1:   61:        double y = 20.15;
+        1:   62:        double radius = 30;
+        1:   63:        uint32_t fillColor = 0x00ff00;
+        1:   64:        CPoint center(x, y);
+        1:   64-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   65:        ColorTypes colors={0x00ff00, 0x00ff00};
+        1:   66:        CCircle circle(center, radius, colors);
+        1:   66-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   67:        REQUIRE(circle.GetFillColor() == fillColor);
+        1:   67-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   67-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   67-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   67-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   67-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   67-block  5
+call   18 returned 1
+        1:   67-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   67-block  7
+call   22 returned 1
+    $$$$$:   67-block  8
+    $$$$$:   67-block  9
+    $$$$$:   67-block 10
+    $$$$$:   67-block 11
+call   23 never executed
+    $$$$$:   67-block 12
+    $$$$$:   67-block 13
+    $$$$$:   67-block 14
+    $$$$$:   67-block 15
+    $$$$$:   67-block 16
+    $$$$$:   67-block 17
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   67-block 18
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   67-block 19
+call   31 never executed
+    $$$$$:   67-block 20
+call   32 never executed
+       11:   68:    }
+        1:   68-block  0
+call    0 returned 1
+       10:   68-block  1
+call    1 returned 10
+    $$$$$:   68-block  2
+call    2 never executed
+    $$$$$:   68-block  3
+call    3 never executed
+       10:   69:    std::cout << "CCircle outlineColor" << std::endl;
+call    0 returned 10
+call    1 returned 10
+       10:   70:    SECTION("Init CCircle")
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   70-block  0
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 10 (fallthrough)
+branch  7 taken 0 (throw)
+       10:   70-block  1
+call    8 returned 10
+branch  9 taken 10 (fallthrough)
+branch 10 taken 0 (throw)
+       10:   70-block  2
+call   11 returned 10
+call   12 returned 10
+call   13 returned 10
+call   14 returned 10
+branch 15 taken 1 (fallthrough)
+branch 16 taken 9
+    $$$$$:   70-block  3
+call   17 never executed
+    $$$$$:   70-block  4
+    $$$$$:   70-block  5
+    $$$$$:   70-block  6
+call   18 never executed
+    $$$$$:   70-block  7
+    $$$$$:   70-block  8
+call   19 never executed
+    $$$$$:   70-block  9
+        -:   71:    {
+        1:   72:        double x = 10.3;
+        1:   73:        double y = 20.15;
+        1:   74:        double radius = 30;
+        1:   75:        uint32_t outlineColor = 0x00ff00;
+        1:   76:        CPoint center(x, y);
+        1:   76-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   77:        ColorTypes colors={0x00ff00, 0x00ff00};
+        1:   78:        CCircle circle(center, radius, colors);
+        1:   78-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   79:        REQUIRE(circle.GetOutlineColor() == outlineColor);
+        1:   79-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   79-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   79-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   79-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   79-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   79-block  5
+call   18 returned 1
+        1:   79-block  6
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:   79-block  7
+call   22 returned 1
+    $$$$$:   79-block  8
+    $$$$$:   79-block  9
+    $$$$$:   79-block 10
+    $$$$$:   79-block 11
+call   23 never executed
+    $$$$$:   79-block 12
+    $$$$$:   79-block 13
+    $$$$$:   79-block 14
+    $$$$$:   79-block 15
+    $$$$$:   79-block 16
+    $$$$$:   79-block 17
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   79-block 18
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   79-block 19
+call   31 never executed
+    $$$$$:   79-block 20
+call   32 never executed
+       11:   80:    }
+        1:   80-block  0
+call    0 returned 1
+       10:   80-block  1
+call    1 returned 10
+    $$$$$:   80-block  2
+call    2 never executed
+    $$$$$:   80-block  3
+call    3 never executed
+       10:   81:    std::cout << "CCircle outlineColor" << std::endl;
+call    0 returned 10
+call    1 returned 10
+       10:   82:    SECTION("Init CCircle")
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   82-block  0
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 10 (fallthrough)
+branch  7 taken 0 (throw)
+       10:   82-block  1
+call    8 returned 10
+branch  9 taken 10 (fallthrough)
+branch 10 taken 0 (throw)
+       10:   82-block  2
+call   11 returned 10
+call   12 returned 10
+call   13 returned 10
+call   14 returned 10
+branch 15 taken 1 (fallthrough)
+branch 16 taken 9
+    $$$$$:   82-block  3
+call   17 never executed
+    $$$$$:   82-block  4
+    $$$$$:   82-block  5
+    $$$$$:   82-block  6
+call   18 never executed
+    $$$$$:   82-block  7
+    $$$$$:   82-block  8
+call   19 never executed
+    $$$$$:   82-block  9
+        -:   83:    {
+        1:   84:        double x = 10.3;
+        1:   85:        double y = 20.15;
+        1:   86:        double radius = 30;
+        1:   87:        CPoint center(x, y);
+        1:   87-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   88:        ColorTypes colors={0x00ff00};
+        1:   89:        CCircle circle(center, radius, colors);
+        1:   89-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   90:        REQUIRE(!circle.GetFillColor().has_value());
+        1:   90-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   90-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   90-block  2
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   90-block  3
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   90-block  4
+        1:   90-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   90-block  6
+call   19 returned 1
+    $$$$$:   90-block  7
+    $$$$$:   90-block  8
+    $$$$$:   90-block  9
+    $$$$$:   90-block 10
+    $$$$$:   90-block 11
+    $$$$$:   90-block 12
+    $$$$$:   90-block 13
+    $$$$$:   90-block 14
+call   20 never executed
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    $$$$$:   90-block 15
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    $$$$$:   90-block 16
+call   27 never executed
+    $$$$$:   90-block 17
+call   28 never executed
+       11:   91:    }
+        1:   91-block  0
+call    0 returned 1
+       10:   91-block  1
+call    1 returned 10
+    $$$$$:   91-block  2
+call    2 never executed
+    $$$$$:   91-block  3
+call    3 never executed
+       10:   92:    std::cout << "CCircle outlineColor" << std::endl;
+call    0 returned 10
+call    1 returned 10
+       10:   93:    SECTION("Init CCircle")
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   93-block  0
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 10 (fallthrough)
+branch  7 taken 0 (throw)
+       10:   93-block  1
+call    8 returned 10
+branch  9 taken 10 (fallthrough)
+branch 10 taken 0 (throw)
+       10:   93-block  2
+call   11 returned 10
+call   12 returned 10
+call   13 returned 10
+call   14 returned 10
+branch 15 taken 1 (fallthrough)
+branch 16 taken 9
+    $$$$$:   93-block  3
+call   17 never executed
+    $$$$$:   93-block  4
+    $$$$$:   93-block  5
+    $$$$$:   93-block  6
+call   18 never executed
+    $$$$$:   93-block  7
+    $$$$$:   93-block  8
+call   19 never executed
+    $$$$$:   93-block  9
+        -:   94:    {
+        1:   95:        double x = 10.3;
+        1:   96:        double y = 20.15;
+        1:   97:        double radius = 30;
+        1:   98:        CPoint center(x, y);
+        1:   98-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   99:        ColorTypes colors={};
+        1:  100:        CCircle circle(center, radius, colors);
+        1:  100-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  101:        REQUIRE(!circle.GetOutlineColor().has_value());
+        1:  101-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  101-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  101-block  2
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:  101-block  3
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  101-block  4
+        1:  101-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  101-block  6
+call   19 returned 1
+    $$$$$:  101-block  7
+    $$$$$:  101-block  8
+    $$$$$:  101-block  9
+    $$$$$:  101-block 10
+    $$$$$:  101-block 11
+    $$$$$:  101-block 12
+    $$$$$:  101-block 13
+    $$$$$:  101-block 14
+call   20 never executed
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    $$$$$:  101-block 15
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    $$$$$:  101-block 16
+call   27 never executed
+    $$$$$:  101-block 17
+call   28 never executed
+       11:  102:    }
+        1:  102-block  0
+call    0 returned 1
+       10:  102-block  1
+call    1 returned 10
+    $$$$$:  102-block  2
+call    2 never executed
+    $$$$$:  102-block  3
+call    3 never executed
+       10:  103:    std::cout << "CCircle ToString" << std::endl;
+call    0 returned 10
+call    1 returned 10
+       10:  104:    SECTION("Init CCircle")
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:  104-block  0
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 10 (fallthrough)
+branch  7 taken 0 (throw)
+       10:  104-block  1
+call    8 returned 10
+branch  9 taken 10 (fallthrough)
+branch 10 taken 0 (throw)
+       10:  104-block  2
+call   11 returned 10
+call   12 returned 10
+call   13 returned 10
+call   14 returned 10
+branch 15 taken 1 (fallthrough)
+branch 16 taken 9
+    $$$$$:  104-block  3
+call   17 never executed
+    $$$$$:  104-block  4
+    $$$$$:  104-block  5
+    $$$$$:  104-block  6
+call   18 never executed
+    $$$$$:  104-block  7
+    $$$$$:  104-block  8
+call   19 never executed
+    $$$$$:  104-block  9
+        -:  105:    {
+        1:  106:        double x = 10.3;
+        1:  107:        double y = 20.15;
+        1:  108:        double radius = 30;
+        1:  109:        CPoint center(x, y);
+        1:  109-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  110:        ColorTypes colors ={0xff0000, 0x00ff00};
+        1:  111:        CCircle circle(center, radius, colors);
+        1:  111-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  112:        std::string result = "Shape: Circle\n"
+        -:  113:                             "Perimeter: 188.5\n"
+        -:  114:                             "Area: 2827\n"
+        -:  115:                             "Radius: 30\n"
+        -:  116:                             "Center X:10.3 20.15\n"
+        -:  117:                             "Outline color: ff0000\n"
+        1:  118:                             "Fill color: 00ff00\n";
+        1:  118-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  118-block  1
+        1:  119:        REQUIRE(circle.ToString() == result);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  119-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  119-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  119-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  119-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  119-block  4
+call   18 returned 1
+call   19 returned 1
+        1:  119-block  5
+call   20 returned 1
+branch 21 taken 1 (fallthrough)
+branch 22 taken 0 (throw)
+        1:  119-block  6
+call   23 returned 1
+    $$$$$:  119-block  7
+    $$$$$:  119-block  8
+    $$$$$:  119-block  9
+    $$$$$:  119-block 10
+call   24 never executed
+    $$$$$:  119-block 11
+    $$$$$:  119-block 12
+    $$$$$:  119-block 13
+    $$$$$:  119-block 14
+call   25 never executed
+    $$$$$:  119-block 15
+    $$$$$:  119-block 16
+    $$$$$:  119-block 17
+call   26 never executed
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+    $$$$$:  119-block 18
+call   30 never executed
+branch 31 never executed
+branch 32 never executed
+    $$$$$:  119-block 19
+call   33 never executed
+    $$$$$:  119-block 20
+call   34 never executed
+       11:  120:    }
+        1:  120-block  0
+call    0 returned 1
+call    1 returned 1
+       10:  120-block  1
+call    2 returned 10
+    $$$$$:  120-block  2
+call    3 never executed
+    $$$$$:  120-block  3
+call    4 never executed
+    $$$$$:  120-block  4
+call    5 never executed
+       10:  121:    std::cout << "CCircle outlineColor" << std::endl;
+call    0 returned 10
+call    1 returned 10
+       10:  122:    SECTION("Init CCircle")
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:  122-block  0
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 10 (fallthrough)
+branch  7 taken 0 (throw)
+       10:  122-block  1
+call    8 returned 10
+branch  9 taken 10 (fallthrough)
+branch 10 taken 0 (throw)
+       10:  122-block  2
+call   11 returned 10
+call   12 returned 10
+call   13 returned 10
+call   14 returned 10
+branch 15 taken 1 (fallthrough)
+branch 16 taken 9
+    $$$$$:  122-block  3
+call   17 never executed
+    $$$$$:  122-block  4
+    $$$$$:  122-block  5
+    $$$$$:  122-block  6
+call   18 never executed
+    $$$$$:  122-block  7
+    $$$$$:  122-block  8
+call   19 never executed
+    $$$$$:  122-block  9
+        -:  123:    {
+        1:  124:        double x = 10.3;
+        1:  125:        double y = 20.15;
+        1:  126:        double radius = 30;
+        1:  127:        CPoint center(x, y);
+        1:  127-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  128:        ColorTypes colors={0x00ff00};
+        1:  129:        CCircle circle(center, radius, colors);
+        1:  129-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  130:        REQUIRE(!circle.GetFillColor().has_value());
+        1:  130-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  130-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  130-block  2
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:  130-block  3
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  130-block  4
+        1:  130-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  130-block  6
+call   19 returned 1
+    $$$$$:  130-block  7
+    $$$$$:  130-block  8
+    $$$$$:  130-block  9
+    $$$$$:  130-block 10
+    $$$$$:  130-block 11
+    $$$$$:  130-block 12
+    $$$$$:  130-block 13
+    $$$$$:  130-block 14
+call   20 never executed
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    $$$$$:  130-block 15
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    $$$$$:  130-block 16
+call   27 never executed
+    $$$$$:  130-block 17
+call   28 never executed
+       11:  131:    }
+        1:  131-block  0
+call    0 returned 1
+       10:  131-block  1
+call    1 returned 10
+    $$$$$:  131-block  2
+call    2 never executed
+    $$$$$:  131-block  3
+call    3 never executed
+       10:  132:}
+        -:  133:
+function _ZL20C_A_T_C_H_T_E_S_T_12v called 6 returned 100% blocks executed 44%
+        6:  134:TEST_CASE("Testing class CLineSegment")
+        -:  135:{
+        6:  136:    std::cout << "Init CLineSegment" << std::endl;
+        6:  136-block  0
+call    0 returned 6
+call    1 returned 6
+        6:  137:    SECTION("CLineSegment")
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:  137-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:  137-block  1
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:  137-block  2
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:  137-block  3
+call   17 never executed
+    $$$$$:  137-block  4
+    $$$$$:  137-block  5
+    $$$$$:  137-block  6
+call   18 never executed
+    $$$$$:  137-block  7
+    $$$$$:  137-block  8
+call   19 never executed
+    $$$$$:  137-block  9
+        -:  138:    {
+        1:  139:        double x1 = 10.3;
+        1:  140:        double y1 = 20.15;
+        1:  141:        double x2 = 30.7;
+        1:  142:        double y2 = 40.4;
+        1:  143:        CPoint startPoint(x1, y1);
+        1:  143-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  144:        CPoint endPoint(x2, y2);
+        1:  144-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  145:        std::vector<CPoint> points = {startPoint, endPoint};
+        1:  145-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  145-block  1
+    $$$$$:  145-block  2
+        1:  146:        ColorTypes colors={0x00ff00};
+        1:  147:        CLineSegment lineSegment(points, colors);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  147-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  147-block  1
+        1:  148:        REQUIRE(lineSegment.GetStartPoint().GetPoint()[0] == x1);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  148-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  148-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  148-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  148-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  148-block  4
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  148-block  5
+call   22 returned 1
+call   23 returned 1
+        1:  148-block  6
+call   24 returned 1
+branch 25 taken 1 (fallthrough)
+branch 26 taken 0 (throw)
+        1:  148-block  7
+call   27 returned 1
+    $$$$$:  148-block  8
+    $$$$$:  148-block  9
+    $$$$$:  148-block 10
+    $$$$$:  148-block 11
+call   28 never executed
+    $$$$$:  148-block 12
+    $$$$$:  148-block 13
+    $$$$$:  148-block 14
+    $$$$$:  148-block 15
+call   29 never executed
+    $$$$$:  148-block 16
+    $$$$$:  148-block 17
+    $$$$$:  148-block 18
+    $$$$$:  148-block 19
+call   30 never executed
+call   31 never executed
+branch 32 never executed
+branch 33 never executed
+    $$$$$:  148-block 20
+call   34 never executed
+branch 35 never executed
+branch 36 never executed
+    $$$$$:  148-block 21
+call   37 never executed
+    $$$$$:  148-block 22
+call   38 never executed
+        7:  149:    }
+        1:  149-block  0
+call    0 returned 1
+call    1 returned 1
+        6:  149-block  1
+call    2 returned 6
+    $$$$$:  149-block  2
+call    3 never executed
+    $$$$$:  149-block  3
+call    4 never executed
+    $$$$$:  149-block  4
+call    5 never executed
+        6:  150:    std::cout << " CLineSegment" << std::endl;
+call    0 returned 6
+call    1 returned 6
+        6:  151:    SECTION("CLineSegment")
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:  151-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:  151-block  1
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:  151-block  2
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:  151-block  3
+call   17 never executed
+    $$$$$:  151-block  4
+    $$$$$:  151-block  5
+    $$$$$:  151-block  6
+call   18 never executed
+    $$$$$:  151-block  7
+    $$$$$:  151-block  8
+call   19 never executed
+    $$$$$:  151-block  9
+        -:  152:    {
+        1:  153:        double x1 = 10.3;
+        1:  154:        double y1 = 20.15;
+        1:  155:        double x2 = 30.7;
+        1:  156:        double y2 = 40.4;
+        1:  157:        CPoint startPoint(x1, y1);
+        1:  157-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  158:        CPoint endPoint(x2, y2);
+        1:  158-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  159:        std::vector<CPoint> points = {startPoint, endPoint};
+        1:  159-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  159-block  1
+    $$$$$:  159-block  2
+        1:  160:        ColorTypes colors={0x00ff00};
+        1:  161:        CLineSegment lineSegment(points, colors);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  161-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  161-block  1
+        1:  162:        REQUIRE(lineSegment.GetEndPoint().GetPoint()[0] == x2);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  162-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  162-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  162-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  162-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  162-block  4
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  162-block  5
+call   22 returned 1
+call   23 returned 1
+        1:  162-block  6
+call   24 returned 1
+branch 25 taken 1 (fallthrough)
+branch 26 taken 0 (throw)
+        1:  162-block  7
+call   27 returned 1
+    $$$$$:  162-block  8
+    $$$$$:  162-block  9
+    $$$$$:  162-block 10
+    $$$$$:  162-block 11
+call   28 never executed
+    $$$$$:  162-block 12
+    $$$$$:  162-block 13
+    $$$$$:  162-block 14
+    $$$$$:  162-block 15
+call   29 never executed
+    $$$$$:  162-block 16
+    $$$$$:  162-block 17
+    $$$$$:  162-block 18
+    $$$$$:  162-block 19
+call   30 never executed
+call   31 never executed
+branch 32 never executed
+branch 33 never executed
+    $$$$$:  162-block 20
+call   34 never executed
+branch 35 never executed
+branch 36 never executed
+    $$$$$:  162-block 21
+call   37 never executed
+    $$$$$:  162-block 22
+call   38 never executed
+        7:  163:    }
+        1:  163-block  0
+call    0 returned 1
+call    1 returned 1
+        6:  163-block  1
+call    2 returned 6
+    $$$$$:  163-block  2
+call    3 never executed
+    $$$$$:  163-block  3
+call    4 never executed
+    $$$$$:  163-block  4
+call    5 never executed
+        6:  164:    std::cout << "CLineSegment" << std::endl;
+call    0 returned 6
+call    1 returned 6
+        6:  165:    SECTION("CLineSegment")
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:  165-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:  165-block  1
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:  165-block  2
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:  165-block  3
+call   17 never executed
+    $$$$$:  165-block  4
+    $$$$$:  165-block  5
+    $$$$$:  165-block  6
+call   18 never executed
+    $$$$$:  165-block  7
+    $$$$$:  165-block  8
+call   19 never executed
+    $$$$$:  165-block  9
+        -:  166:    {
+        1:  167:        double x1 = 10.3;
+        1:  168:        double y1 = 20.15;
+        1:  169:        double x2 = 30.7;
+        1:  170:        double y2 = 40.4;
+        1:  171:        CPoint startPoint(x1, y1);
+        1:  171-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  172:        CPoint endPoint(x2, y2);
+        1:  172-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  173:        std::vector<CPoint> points = {startPoint, endPoint};
+        1:  173-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  173-block  1
+    $$$$$:  173-block  2
+        1:  174:        ColorTypes colors={0x00ff00};
+        1:  175:        CLineSegment lineSegment(points, colors);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  175-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  175-block  1
+        1:  176:        uint32_t fillColor = 0x00ff00;
+        1:  177:        REQUIRE(lineSegment.GetOutlineColor() == fillColor);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  177-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  177-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  177-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  177-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  177-block  4
+call   18 returned 1
+        1:  177-block  5
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  177-block  6
+call   22 returned 1
+    $$$$$:  177-block  7
+    $$$$$:  177-block  8
+    $$$$$:  177-block  9
+    $$$$$:  177-block 10
+call   23 never executed
+    $$$$$:  177-block 11
+    $$$$$:  177-block 12
+    $$$$$:  177-block 13
+    $$$$$:  177-block 14
+    $$$$$:  177-block 15
+    $$$$$:  177-block 16
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  177-block 17
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  177-block 18
+call   31 never executed
+    $$$$$:  177-block 19
+call   32 never executed
+        7:  178:    }
+        1:  178-block  0
+call    0 returned 1
+call    1 returned 1
+        6:  178-block  1
+call    2 returned 6
+    $$$$$:  178-block  2
+call    3 never executed
+    $$$$$:  178-block  3
+call    4 never executed
+    $$$$$:  178-block  4
+call    5 never executed
+        6:  179:    std::cout << "CLineSegment getArea" << std::endl;
+call    0 returned 6
+call    1 returned 6
+        6:  180:    SECTION("CLineSegment")
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:  180-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:  180-block  1
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:  180-block  2
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:  180-block  3
+call   17 never executed
+    $$$$$:  180-block  4
+    $$$$$:  180-block  5
+    $$$$$:  180-block  6
+call   18 never executed
+    $$$$$:  180-block  7
+    $$$$$:  180-block  8
+call   19 never executed
+    $$$$$:  180-block  9
+        -:  181:    {
+        1:  182:        double x1 = 10.3;
+        1:  183:        double y1 = 20.15;
+        1:  184:        double x2 = 30.7;
+        1:  185:        double y2 = 40.4;
+        1:  186:        CPoint startPoint(x1, y1);
+        1:  186-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  187:        CPoint endPoint(x2, y2);
+        1:  187-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  188:        std::vector<CPoint> points = {startPoint, endPoint};
+        1:  188-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  188-block  1
+    $$$$$:  188-block  2
+        1:  189:        ColorTypes colors={0x00ff00, 0xff0000};
+        1:  190:        CLineSegment lineSegment(points, colors);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  190-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  190-block  1
+        1:  191:        REQUIRE(lineSegment.GetArea() == 0);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  191-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  191-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  191-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  191-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  191-block  4
+call   18 returned 1
+        1:  191-block  5
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  191-block  6
+call   22 returned 1
+    $$$$$:  191-block  7
+    $$$$$:  191-block  8
+    $$$$$:  191-block  9
+    $$$$$:  191-block 10
+call   23 never executed
+    $$$$$:  191-block 11
+    $$$$$:  191-block 12
+    $$$$$:  191-block 13
+    $$$$$:  191-block 14
+    $$$$$:  191-block 15
+    $$$$$:  191-block 16
+    $$$$$:  191-block 17
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  191-block 18
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  191-block 19
+call   31 never executed
+    $$$$$:  191-block 20
+call   32 never executed
+        7:  192:    }
+        1:  192-block  0
+call    0 returned 1
+call    1 returned 1
+        6:  192-block  1
+call    2 returned 6
+    $$$$$:  192-block  2
+call    3 never executed
+    $$$$$:  192-block  3
+call    4 never executed
+    $$$$$:  192-block  4
+call    5 never executed
+        6:  193:    std::cout << "CLineSegment getPerimeter" << std::endl;
+call    0 returned 6
+call    1 returned 6
+        6:  194:    SECTION("CLineSegment")
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:  194-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:  194-block  1
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:  194-block  2
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:  194-block  3
+call   17 never executed
+    $$$$$:  194-block  4
+    $$$$$:  194-block  5
+    $$$$$:  194-block  6
+call   18 never executed
+    $$$$$:  194-block  7
+    $$$$$:  194-block  8
+call   19 never executed
+    $$$$$:  194-block  9
+        -:  195:    {
+        1:  196:        double x1 = 10.3;
+        1:  197:        double y1 = 20.15;
+        1:  198:        double x2 = 30.7;
+        1:  199:        double y2 = 40.4;
+        1:  200:        CPoint startPoint(x1, y1);
+        1:  200-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  201:        CPoint endPoint(x2, y2);
+        1:  201-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  202:        std::vector<CPoint> points = {startPoint, endPoint};
+        1:  202-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  202-block  1
+    $$$$$:  202-block  2
+        1:  203:        ColorTypes colors={0x00ff00, 0xff0000};
+        1:  204:        CLineSegment lineSegment(points, colors);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  204-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  204-block  1
+        1:  205:        double result = 28.74;
+        1:  206:        REQUIRE(round(lineSegment.GetPerimeter()) == round(result));
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  206-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  206-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  206-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  206-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  206-block  4
+call   18 returned 1
+        1:  206-block  5
+call   19 returned 1
+branch 20 taken 1 (fallthrough)
+branch 21 taken 0 (throw)
+        1:  206-block  6
+call   22 returned 1
+    $$$$$:  206-block  7
+    $$$$$:  206-block  8
+    $$$$$:  206-block  9
+    $$$$$:  206-block 10
+call   23 never executed
+    $$$$$:  206-block 11
+    $$$$$:  206-block 12
+    $$$$$:  206-block 13
+    $$$$$:  206-block 14
+    $$$$$:  206-block 15
+    $$$$$:  206-block 16
+    $$$$$:  206-block 17
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  206-block 18
+call   28 never executed
+branch 29 never executed
+branch 30 never executed
+    $$$$$:  206-block 19
+call   31 never executed
+    $$$$$:  206-block 20
+call   32 never executed
+        7:  207:    }
+        1:  207-block  0
+call    0 returned 1
+call    1 returned 1
+        6:  207-block  1
+call    2 returned 6
+    $$$$$:  207-block  2
+call    3 never executed
+    $$$$$:  207-block  3
+call    4 never executed
+    $$$$$:  207-block  4
+call    5 never executed
+        6:  208:    std::cout << "CLineSegment getPerimeter" << std::endl;
+call    0 returned 6
+call    1 returned 6
+        6:  209:    SECTION("CLineSegment")
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:  209-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:  209-block  1
+call    8 returned 6
+branch  9 taken 6 (fallthrough)
+branch 10 taken 0 (throw)
+        6:  209-block  2
+call   11 returned 6
+call   12 returned 6
+call   13 returned 6
+call   14 returned 6
+branch 15 taken 1 (fallthrough)
+branch 16 taken 5
+    $$$$$:  209-block  3
+call   17 never executed
+    $$$$$:  209-block  4
+    $$$$$:  209-block  5
+    $$$$$:  209-block  6
+call   18 never executed
+    $$$$$:  209-block  7
+    $$$$$:  209-block  8
+call   19 never executed
+    $$$$$:  209-block  9
+        -:  210:    {
+        1:  211:        double x1 = 10.3;
+        1:  212:        double y1 = 20.15;
+        1:  213:        double x2 = 30.7;
+        1:  214:        double y2 = 40.4;
+        1:  215:        CPoint startPoint(x1, y1);
+        1:  215-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  216:        CPoint endPoint(x2, y2);
+        1:  216-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  217:        std::vector<CPoint> points = {startPoint, endPoint};
+        1:  217-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  217-block  1
+    $$$$$:  217-block  2
+        1:  218:        ColorTypes colors={0x00ff00};
+        1:  219:        CLineSegment lineSegment(points, colors);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  219-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  219-block  1
+        -:  220:        std::string result = "Shape: LineSegment\n"
+        -:  221:                             "Perimeter: 28.74\n"
+        -:  222:                             "Start point: 10.3 20.15\n"
+        -:  223:                             "Start point: 30.7 40.4\n"
+        1:  224:                             "Outline color: 00ff00\n";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  224-block  0
+        1:  225:        REQUIRE(lineSegment.ToString() == result);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  225-block  0
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  225-block  1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  225-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  225-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  225-block  4
+call   18 returned 1
+call   19 returned 1
+        1:  225-block  5
+call   20 returned 1
+branch 21 taken 1 (fallthrough)
+branch 22 taken 0 (throw)
+        1:  225-block  6
+call   23 returned 1
+    $$$$$:  225-block  7
+    $$$$$:  225-block  8
+    $$$$$:  225-block  9
+    $$$$$:  225-block 10
+call   24 never executed
+    $$$$$:  225-block 11
+    $$$$$:  225-block 12
+    $$$$$:  225-block 13
+    $$$$$:  225-block 14
+call   25 never executed
+    $$$$$:  225-block 15
+    $$$$$:  225-block 16
+    $$$$$:  225-block 17
+call   26 never executed
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+    $$$$$:  225-block 18
+call   30 never executed
+branch 31 never executed
+branch 32 never executed
+    $$$$$:  225-block 19
+call   33 never executed
+    $$$$$:  225-block 20
+call   34 never executed
+        7:  226:    }
+        1:  226-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        6:  226-block  1
+call    3 returned 6
+    $$$$$:  226-block  2
+call    4 never executed
+    $$$$$:  226-block  3
+call    5 never executed
+    $$$$$:  226-block  4
+call    6 never executed
+    $$$$$:  226-block  5
+call    7 never executed
+        6:  227:}
+        -:  228:
+function _ZL20C_A_T_C_H_T_E_S_T_20v called 1 returned 100% blocks executed 100%
+        1:  229:TEST_CASE("Testing class Circle")
+        -:  230:{
+        -:  231:    
+        1:  232:}

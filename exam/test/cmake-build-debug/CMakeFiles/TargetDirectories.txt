@@ -1,0 +1,3 @@
+C:/Users/dmitriy.murugov/Documents/OOP/myRepo/exam/test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/dmitriy.murugov/Documents/OOP/myRepo/exam/test/cmake-build-debug/CMakeFiles/test.dir
+C:/Users/dmitriy.murugov/Documents/OOP/myRepo/exam/test/cmake-build-debug/CMakeFiles/edit_cache.dir
